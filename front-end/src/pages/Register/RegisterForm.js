@@ -7,12 +7,6 @@ export default function RegisterForm() {
         email: '',
         age: '',
         gender: '',
-        preferences: {
-            gaming: false,
-            movies: false,
-            music: false
-        },
-        advertising: ""
     };
 
     const validate = (values) => {
@@ -45,8 +39,8 @@ export default function RegisterForm() {
         if (!values.age) {
             errors.age = "Age is required!";
         }
-        else if (values.age < 18) {
-            errors.age = "You must be over 18!";
+        else if (values.age < 16) {
+            errors.age = "You must be over 16!";
         }
         else if (values.age > 99) {
             errors.age = `You can't be over ${values.age}!`;
@@ -73,7 +67,7 @@ export default function RegisterForm() {
             validate={validate}
             onSubmit={handleSubmit}
         >
-            {({ values }) => (
+            {() => (
                 <Form className="todoForm">
                     <div className="column">
                         <div className="row">
@@ -131,52 +125,6 @@ export default function RegisterForm() {
                                 </Field>
                                 <ErrorMessage name='gender' className='error' component='p' />
                             </div>
-                        </div>
-                        <div className="checkboxContainer">
-                            <h3>Preferences:</h3>
-                            <label className="checkboxLabel">
-                                <Field
-                                    type='checkbox'
-                                    name='preferences.gaming'
-                                    className="checkboxField"
-                                    checked={values.preferences.gaming}
-                                />
-                                Gaming
-                            </label>
-                            <label className="checkboxLabel">
-                                <Field
-                                    type='checkbox'
-                                    name='preferences.movies'
-                                    className="checkboxField"
-                                    checked={values.preferences.movies}
-                                />
-                                Movies
-                            </label>
-                            <label className="checkboxLabel">
-                                <Field
-                                    type='checkbox'
-                                    name='preferences.music'
-                                    className="checkboxField"
-                                    checked={values.preferences.music}
-                                />
-                                Music
-                            </label>
-                        </div>
-                        <div className="radioContainer">
-                            <h3>How did you hear about us?</h3>
-                            <label>
-                                <Field type="radio" name="advertising" value="relatives-friends"/>
-                                Relatives/Friends
-                            </label>
-                            <label>
-                                <Field type="radio" name="advertising" value="social"/>
-                                Social
-                            </label>
-                            <label>
-                                <Field type="radio" name="advertising" value="other"/>
-                                Other
-                            </label>
-                            <ErrorMessage name='advertising' className='error' component='p' />
                         </div>
                         <button className="registrationButton" type="submit">Register</button>
                     </div>
