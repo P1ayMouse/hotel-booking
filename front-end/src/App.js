@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
+import {destinationsLoader} from "./loaders/destinationsLoader";
 
 const router = createBrowserRouter([
     {
@@ -13,7 +14,8 @@ const router = createBrowserRouter([
         children: [
             {
               index: true,
-              element: <Home/>
+              element: <Home/>,
+              loader: destinationsLoader
             },
             {
                 path: "/login",

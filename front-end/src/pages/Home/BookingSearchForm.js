@@ -1,14 +1,9 @@
 import { Form, Field, ErrorMessage, Formik } from "formik";
-import { Button, Box, MenuItem, TextField } from "@mui/material";
-import { LocationOnOutlined } from "@mui/icons-material";
+import { Button, Box, TextField, Autocomplete } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-
-const destinations = [
-    { value: 122, label: "Paris" },
-    { value: 123, label: "London" },
-    { value: 124, label: "New York" },
-];
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function BookingSearchForm() {
     const bookingSearchData = {
@@ -16,8 +11,24 @@ export default function BookingSearchForm() {
         checkIn: null,
         checkOut: null,
         adults: 1,
-        children: 0
+        children: 0,
     };
+
+    const { destinations, loading } = useSelector(
+        (state) => state.destination) || { destinations: [], loading: false };
+
+    const [query, setQuery] = useState("");
+    const [filteredDestinations, setFilteredDestinations] = useState(destinations);
+
+    // Фільтрація пунктів призначення за введеним значенням.
+    useEffect(() => {
+        setFilteredDestinations(
+            destinations
+                .filter(
+                    (destination) => destination.label.toLowerCase().startsWith(query.toLowerCase())
+                )
+        );
+    }, [query]);
 
     const validate = (values) => {
         const errors = {};
@@ -25,37 +36,15 @@ export default function BookingSearchForm() {
         if (!values.destination) {
             errors.destination = "Destination is required!";
         }
-
-
-        if (!values.adults) {
-            errors.adults = "Required!";
-        }
-        if (values.adults > 5) {
-            values.adults = 5;
-        }
-        else if (values.adults < 0) {
-            values.adults = 1;
-        }
-
-        if (values.children > 5) {
-            values.children = 5;
-        }
-        else if (values.children < 0) {
-            values.children = 0;
-        }
-
         if (!values.checkIn) {
             errors.checkIn = "Check-in date is required!";
         }
-
         if (!values.checkOut) {
             errors.checkOut = "Check-out date is required!";
         }
-
-        if (values.checkIn > values.checkOut) {
-            errors.checkOut = "Check-in date is bigger than check-out date!";
+        if (values.checkIn && values.checkOut && values.checkIn > values.checkOut) {
+            errors.checkOut = "Check-in date cannot be later than check-out date!";
         }
-
         return errors;
     };
 
@@ -69,65 +58,64 @@ export default function BookingSearchForm() {
             validate={validate}
             onSubmit={handleSubmit}
         >
-            {({ errors, touched, setFieldValue }) => (
+            {({ errors, touched, setFieldValue, values }) => (
                 <Form style={{ display: "flex", gap: 22, alignItems: "center" }}>
                     <Box>
-                        <Field
-                            name="destination"
-                            as={TextField}
-                            select
-                            label="Destination"
-                            sx={{ width: "250px", height: "56px" }}
-                            error={touched.destination && Boolean(errors.destination)}
-                            helperText={<ErrorMessage name="destination" />}
-                            SelectProps={{
-                                "renderValue": (selected) => {
-                                    const found = destinations.find((d) => d.value === selected);
-                                    return found ? found.label : "";
-                                },
-                            }}
-                        >
-                            {destinations.map((option) => (
-                                <MenuItem key={option.value} value={option.value}>
-                                    <LocationOnOutlined style={{ marginRight: 5 }} />
-                                    {option.label}
-                                </MenuItem>
-                            ))}
-                        </Field>
+                        <Autocomplete
+                            options={filteredDestinations.slice(0, 5)}
+                            filterOptions={(options) => options}
+                            getOptionLabel={(option) => option.label}
+                            getOptionKey={(option) => option.value}
+                            onInputChange={(e, newInputValue) => setQuery(newInputValue)}
+                            onChange={(e, newValue) =>
+                                setFieldValue("destination", newValue ? newValue.value : "")
+                            }
+                            loading={loading}
+                            renderInput={(params) => (
+                                <TextField
+                                    {...params}
+                                    label="Destination"
+                                    sx={{ width: "250px", height: "56px" }}
+                                    error={touched.destination && Boolean(errors.destination)}
+                                    helperText={touched.destination && errors.destination}
+                                />
+                            )}
+                        />
                     </Box>
-                        <Box>
-                            <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                <DatePicker
-                                    label="Check In"
-                                    value={bookingSearchData.checkIn}
-                                    onChange={(newValue) => setFieldValue("checkIn", newValue)}
-                                    slotProps={{
-                                        textField: {
-                                            sx: { width: "150px", height: "56px" },
-                                            error: touched.checkIn && Boolean(errors.checkIn),
-                                            helperText: errors.checkIn
-                                        }
-                                    }}
-                                />
-                            </LocalizationProvider>
-                        </Box>
-                        —
-                        <Box>
-                            <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                <DatePicker
-                                    label="Check Out"
-                                    value={bookingSearchData.checkOut}
-                                    onChange={(newValue) => setFieldValue("checkOut", newValue)}
-                                    slotProps={{
-                                        textField: {
-                                            sx: { width: "150px", height: "56px" },
-                                            error: touched.checkOut&& Boolean(errors.checkOut),
-                                            helperText: errors.checkOut
-                                        }
-                                    }}
-                                />
-                            </LocalizationProvider>
-                        </Box>
+
+                    <Box>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <DatePicker
+                                label="Check In"
+                                value={values.checkIn}
+                                onChange={(newValue) => setFieldValue("checkIn", newValue)}
+                                slotProps={{
+                                    textField: {
+                                        sx: { width: "150px", height: "56px" },
+                                        error: touched.checkIn && Boolean(errors.checkIn),
+                                        helperText: errors.checkIn,
+                                    },
+                                }}
+                            />
+                        </LocalizationProvider>
+                    </Box>
+                    —
+                    <Box>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <DatePicker
+                                label="Check Out"
+                                value={values.checkOut}
+                                onChange={(newValue) => setFieldValue("checkOut", newValue)}
+                                slotProps={{
+                                    textField: {
+                                        sx: { width: "150px", height: "56px" },
+                                        error: touched.checkOut && Boolean(errors.checkOut),
+                                        helperText: errors.checkOut,
+                                    },
+                                }}
+                            />
+                        </LocalizationProvider>
+                    </Box>
 
                     <Box>
                         <Field
@@ -140,6 +128,7 @@ export default function BookingSearchForm() {
                             helperText={<ErrorMessage name="adults" />}
                         />
                     </Box>
+
                     <Box>
                         <Field
                             name="children"
@@ -151,11 +140,8 @@ export default function BookingSearchForm() {
                             helperText={<ErrorMessage name="children" />}
                         />
                     </Box>
-                    <Button
-                        type="submit"
-                        variant="outlined"
-                        sx={{ height: "56px" }}
-                    >
+
+                    <Button type="submit" variant="outlined" sx={{ height: "56px" }}>
                         Submit
                     </Button>
                 </Form>
