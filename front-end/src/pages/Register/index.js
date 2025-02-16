@@ -1,6 +1,6 @@
 import RegisterForm from "./RegisterForm";
 
-import "./Register.css"
+import "./Register.scss"
 
 export default function Register() {
     return (

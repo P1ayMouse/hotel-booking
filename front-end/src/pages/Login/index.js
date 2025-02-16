@@ -1,7 +1,7 @@
 import {useLocation, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 
-import "./Login.css"
+import "./Login.scss"
 
 import {login} from "../../store/slices/userSlices";
 import {Button} from "antd";

@@ -4,7 +4,7 @@ import Layout from "./components/Layout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
-import {destinationsLoader} from "./loaders/destinationsLoader";
+import {hotelsAndDestinationsLoader} from "./loaders/hotelsAndDestinationsLoader";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
             {
               index: true,
               element: <Home/>,
-              loader: destinationsLoader
+              loader: hotelsAndDestinationsLoader
             },
             {
                 path: "/login",
