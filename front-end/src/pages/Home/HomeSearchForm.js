@@ -5,6 +5,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import dayjs from 'dayjs';
+import {useTranslation} from "react-i18next";
 
 export default function HomeSearchForm() {
     const bookingSearchData = {
@@ -20,6 +21,8 @@ export default function HomeSearchForm() {
 
     const [query, setQuery] = useState("");
     const [filteredDestinations, setFilteredDestinations] = useState(destinations);
+
+    const { t } = useTranslation();
 
     // Фільтрація пунктів призначення за введеним значенням.
     useEffect(() => {
@@ -76,7 +79,6 @@ export default function HomeSearchForm() {
             initialValues={bookingSearchData}
             validate={validate}
             onSubmit={handleSubmit}
-
         >
             {({ errors, touched, setFieldValue, values }) => (
                 <Form style={{ display: "flex", gap: 22, alignItems: "center" }} >
@@ -94,7 +96,7 @@ export default function HomeSearchForm() {
                             renderInput={(params) => (
                                 <TextField
                                     {...params}
-                                    label="Destination"
+                                    label={t("destination")}
                                     sx={{ width: "250px", height: "56px" }}
                                     error={touched.destination && Boolean(errors.destination)}
                                     helperText={touched.destination && errors.destination}
@@ -106,12 +108,12 @@ export default function HomeSearchForm() {
                     <Box>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DatePicker
-                                label="Check In"
+                                label={t("checkIn")}
                                 value={values.checkIn ? dayjs(values.checkIn) : null}
                                 onChange={(newValue) => setFieldValue("checkIn", newValue ? newValue.format("YYYY-MM-DD") : "")}
                                 slotProps={{
                                     textField: {
-                                        sx: { width: "150px", height: "56px" },
+                                        sx: { width: "180px", height: "56px" },
                                         error: touched.checkIn && Boolean(errors.checkIn),
                                         helperText: touched.checkIn && errors.checkIn,
                                     },
@@ -123,12 +125,12 @@ export default function HomeSearchForm() {
                     <Box>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DatePicker
-                                label="Check Out"
+                                label={t("checkOut")}
                                 value={values.checkOut ? dayjs(values.checkOut) : null}
                                 onChange={(newValue) => setFieldValue("checkOut", newValue ? newValue.format("YYYY-MM-DD") : "")}
                                 slotProps={{
                                     textField: {
-                                        sx: { width: "150px", height: "56px" },
+                                        sx: { width: "180px", height: "56px" },
                                         error: touched.checkOut && Boolean(errors.checkOut),
                                         helperText: touched.checkOut && errors.checkOut,
                                     },
@@ -142,7 +144,7 @@ export default function HomeSearchForm() {
                             name="adults"
                             as={TextField}
                             type="number"
-                            label="Adults"
+                            label={t("adults")}
                             sx={{ width: "100px", height: "56px" }}
                             error={touched.adults && Boolean(errors.adults)}
                             helperText={<ErrorMessage name="adults" />}
@@ -154,7 +156,7 @@ export default function HomeSearchForm() {
                             name="children"
                             as={TextField}
                             type="number"
-                            label="Children"
+                            label={t("children")}
                             sx={{ width: "100px", height: "56px" }}
                             error={touched.children && Boolean(errors.children)}
                             helperText={<ErrorMessage name="children" />}
@@ -162,7 +164,7 @@ export default function HomeSearchForm() {
                     </Box>
 
                     <Button type="submit" variant="outlined" sx={{ height: "56px" }}>
-                        Submit
+                        {t("submit")}
                     </Button>
                 </Form>
             )}

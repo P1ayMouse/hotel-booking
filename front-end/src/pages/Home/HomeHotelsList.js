@@ -1,6 +1,6 @@
 import {Box, Card, CardActionArea, CardContent, CardMedia, Typography, IconButton, Rating} from "@mui/material";
 import { useSelector } from "react-redux";
-import {ArrowBackIos, ArrowForwardIos, PlaceOutlined} from "@mui/icons-material";
+import {NavigateBefore, NavigateNext, PlaceOutlined} from "@mui/icons-material";
 import { useRef } from "react";
 
 export default function HomeHotelsList() {
@@ -21,7 +21,7 @@ export default function HomeHotelsList() {
     return (
         <Box display="flex" alignItems="center" justifyContent="center">
             <IconButton onClick={() => scroll("left")} className="scroll-btn scroll-btn-left">
-                <ArrowBackIos />
+                <NavigateBefore fontSize="large" />
             </IconButton>
             <Box ref={scrollContainerRef} className="scroll-container">
                 {topRatedHotels().slice(0,10).map((hotel) => (
@@ -49,7 +49,7 @@ export default function HomeHotelsList() {
                 ))}
             </Box>
             <IconButton onClick={() => scroll("right")} className="scroll-btn scroll-btn-right">
-                <ArrowForwardIos />
+                <NavigateNext fontSize="large" />
             </IconButton>
         </Box>
     );

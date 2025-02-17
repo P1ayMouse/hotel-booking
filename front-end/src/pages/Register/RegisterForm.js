@@ -1,6 +1,9 @@
-import {Form, Field, ErrorMessage, Formik} from "formik";
+import { Form, Field, ErrorMessage, Formik } from "formik";
+import { useTranslation } from "react-i18next";
 
 export default function RegisterForm() {
+    const { t } = useTranslation();
+
     const registrationData = {
         name: '',
         surname: '',
@@ -13,45 +16,41 @@ export default function RegisterForm() {
         const errors = {};
 
         if (!values.name) {
-            errors.name = "Name is required!";
+            errors.name = t("firstName") + " " + t("isRequired");
         }
         else if (values.name.length < 3) {
-            errors.name = "Name must be at least 3 characters long!";
+            errors.name = t("firstName") + " " + t("minThreeChars");
         }
 
         if (!values.surname) {
-            errors.surname = "Surname is required!";
+            errors.surname = t("lastName") + " " + t("isRequired");
         }
         else if (values.surname.length < 3) {
-            errors.surname = "Surname must be at least 3 characters long!";
+            errors.surname = t("lastName") + " " + t("minThreeChars");
         }
 
         if (!values.email) {
-            errors.email = "Email is required!";
+            errors.email = t("email") + " " + t("isRequired");
         }
         else if (values.email.length < 11) {
-            errors.email = "Email must be at least 11 characters long!";
+            errors.email = t("email") + " " + t("minElevenChars");
         }
         else if (values.email.slice(-4) !== ".com") {
-            errors.email = "Email must have .com in the name!";
+            errors.email = t("email") + " " + t("mustContainDotCom");
         }
 
         if (!values.age) {
-            errors.age = "Age is required!";
+            errors.age = t("age") + " " + t("isRequired");
         }
         else if (values.age < 16) {
-            errors.age = "You must be over 16!";
+            errors.age = t("age") + " " + t("mustBeOverSixteen");
         }
         else if (values.age > 99) {
-            errors.age = `You can't be over ${values.age}!`;
+            errors.age = t("age") + ` ${t("cannotBeOver")} ${values.age}!`;
         }
 
         if (!values.gender) {
-            errors.gender = "Gender is required!";
-        }
-
-        if (!values.advertising) {
-            errors.advertising = "Advertising is required!";
+            errors.gender = t("gender") + " " + t("isRequired");
         }
 
         return errors;
@@ -63,7 +62,7 @@ export default function RegisterForm() {
 
     return (
         <Formik
-            initialValues={ registrationData }
+            initialValues={registrationData}
             validate={validate}
             onSubmit={handleSubmit}
         >
@@ -75,7 +74,7 @@ export default function RegisterForm() {
                                 <Field
                                     type="text"
                                     name="name"
-                                    placeholder="First name"
+                                    placeholder={t("firstName")}
                                     className="registrationField"
                                 />
                                 <ErrorMessage name="name" className="error" component="p" />
@@ -84,7 +83,7 @@ export default function RegisterForm() {
                                 <Field
                                     type="text"
                                     name="surname"
-                                    placeholder="Last name"
+                                    placeholder={t("lastName")}
                                     className="registrationField"
                                 />
                                 <ErrorMessage name="surname" className="error" component="p" />
@@ -95,7 +94,7 @@ export default function RegisterForm() {
                                 <Field
                                     type='email'
                                     name='email'
-                                    placeholder='Email'
+                                    placeholder={t("email")}
                                     className="registrationField"
                                 />
                                 <ErrorMessage name='email' className='error' component='p' />
@@ -106,7 +105,7 @@ export default function RegisterForm() {
                                 <Field
                                     type='number'
                                     name='age'
-                                    placeholder='Age'
+                                    placeholder={t("age")}
                                     className="registrationField"
                                 />
                                 <ErrorMessage name='age' className='error' component='p' />
@@ -116,17 +115,16 @@ export default function RegisterForm() {
                                     as='select'
                                     name='gender'
                                     className="registrationField"
-
                                 >
-                                    <option value="" disabled hidden>Gender</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                    <option value="another">Another</option>
+                                    <option value="" disabled hidden>{t("gender")}</option>
+                                    <option value="male">{t("male")}</option>
+                                    <option value="female">{t("female")}</option>
+                                    <option value="another">{t("another")}</option>
                                 </Field>
                                 <ErrorMessage name='gender' className='error' component='p' />
                             </div>
                         </div>
-                        <button className="registrationButton" type="submit">Register</button>
+                        <button className="registrationButton" type="submit">{t("register")}</button>
                     </div>
                 </Form>
             )}
