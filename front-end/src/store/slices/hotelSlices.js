@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {fetchHotels, bookHotel, updateBook, deleteBook} from "../thunks/hotelsThunk";
+import {fetchHotels, bookHotel, updateBook, deleteBook, fetchHotel} from "../thunks/hotelsThunk";
 
 const initialState = {
     hotels: [],
+    hotel: {},
     loading: false,
     error: '',
 };
@@ -73,6 +74,20 @@ const hotelSlices = createSlice({
                 }
             })
             .addCase(deleteBook.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
+            //fetchHotel
+            .addCase(fetchHotel.pending, (state) => {
+                state.loading = true;
+                state.error = '';
+            })
+            .addCase(fetchHotel.fulfilled, (state, action) => {
+                state.loading = false;
+                state.hotel = action.payload;
+                state.error = '';
+            })
+            .addCase(fetchHotel.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             })

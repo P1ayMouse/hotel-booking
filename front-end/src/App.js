@@ -4,7 +4,9 @@ import Layout from "./components/Layout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
-import {hotelsAndDestinationsLoader} from "./loaders/hotelsAndDestinationsLoader";
+import Hotel from "./pages/Hotel";
+
+import { hotelsAndDestinationsLoader } from "./loaders/hotelsAndDestinationsLoader";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register/>
+            },
+            {
+                path: "hotels/hotel/:id",
+                element: <Hotel/>
             },
             {
                 path: "*",

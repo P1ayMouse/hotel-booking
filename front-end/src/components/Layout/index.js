@@ -1,187 +1,211 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
-import {useTranslation} from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import {
-    AppBar, Toolbar, MenuItem, Typography, IconButton, Box, List, ListItemButton,
-    ListItemText, ListItemIcon, Tooltip, Menu
+    AppBar, Toolbar, Typography, IconButton, Box, List, ListItemButton, ListItemText, Button, Divider
 } from "@mui/material";
-import {
-    LoginOutlined, LogoutOutlined, GitHub, LinkedIn, Email, AccountCircle, ManageAccounts, HowToRegOutlined,
-} from "@mui/icons-material";
 
 import { logout } from "../../store/slices/userSlices";
 
+import {ReactComponent as Logo} from "../../assets/img/Logo.svg";
+import {ReactComponent as FooterLogo} from "../../assets/img/Logo-footer.svg";
+
 import LocalisationButton from "../LocalisationButton";
+import ThemeButton from "../ThemeButton";
+import MailForm from "../MailForm";
+
+import "./index.scss"
 
 export default function LayoutComponent() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
 
+    const theme = useSelector((state) => state.theme.theme);
     const isLogin = useSelector((state) => state.user.isLogin);
-    const selectedKey = isLogin ? location.pathname : "/login";
-
-    const [anchorElUser, setAnchorElUser] = useState(null);
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
-    const handleCloseUserMenu = () => setAnchorElUser(null);
+    const selectedKey = location.pathname;
 
     const { t } = useTranslation();
 
-    const loggedUserSettings = [
-        {
-            label: t("profile"),
-            icon: <AccountCircle fontSize="small" />,
-            onClick: () => {
-                navigate("/profile");
-                handleCloseUserMenu();
-            },
-        },
-        {
-            label: t("logout"),
-            icon: <LogoutOutlined fontSize="small" />,
-            onClick: () => {
-                handleCloseUserMenu();
-                dispatch(logout());
-                navigate("/login");
-            },
-        },
-    ];
+    function handleLogout() {
+        dispatch(logout());
+        navigate("/login");
+    }
 
-    const unloggedUserSettings = [
+    const pagesList = [
         {
-            label: t("register"),
-            icon: <HowToRegOutlined fontSize="small" />,
-            onClick: () => {
-                navigate("/register");
-                handleCloseUserMenu();
-            },
+            label: t("home"),
+            key: "/",
         },
         {
-            label: t("login"),
-            icon: <LoginOutlined fontSize="small" />,
-            onClick: () => {
-                navigate("/login");
-                handleCloseUserMenu();
-            },
+            label: t("about"),
+            key: "/about",
         },
-    ];
+        {
+            label: t("services"),
+            key: "/services",
+        },
+        {
+            label: t("pricing"),
+            key: "/pricing",
+        },
+        {
+            label: t("FAQ"),
+            key: "/faq",
+        }
+    ]
+
+    const footerLinksList = [
+        {
+            label: t("quickLink"),
+            links: [
+                {
+                    label: t("about"),
+                    key: "/about"
+                },
+                {
+                    label: t("deskSupport"),
+                    key: "/desk-support"
+                },
+                {
+                    label: t("services"),
+                    key: "/services"
+                }
+            ]
+        },
+        {
+            label: t("company"),
+            links: [
+                {
+                    label: t("location"),
+                    key: "/location"
+                },
+                {
+                    label: t("ourMission"),
+                    key: "/our-mission"
+                },
+                {
+                    label: t("career"),
+                    key: "/career"
+                }
+            ]
+        },
+        {
+            label: t("legalTerms"),
+            links: [
+                {
+                    label: t("privacy"),
+                    key: "/privacy"
+                },
+                {
+                    label: t("termsOfUse"),
+                    key: "/terms-of-use"
+                },
+                {
+                    label: t("Cookies"),
+                    key: "/cookies"
+                }
+            ]
+        }
+    ]
 
     return (
-        <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-            <AppBar position="static" color="default">
-                <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box className={`layout ${theme}`}>
+            <AppBar position="static" className={`header ${theme}`}>
+                <Toolbar className="toolbar">
                     <Box sx={{ display: "flex", alignItems: "center" }}>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component={NavLink}
-                            to="/"
-                            sx={{
-                                mr: 2,
-                                fontFamily: "monospace",
-                                fontWeight: 700,
-                                letterSpacing: ".3rem",
-                                color: "inherit",
-                                textDecoration: "none",
-                            }}
-                        >
-                            LOGO
-                        </Typography>
-                        <List sx={{ display: "flex" }}>
-
-                            <ListItemButton
-                                component={NavLink}
-                                to="/"
-                                selected={selectedKey === "/"}
-                            >
-                                <ListItemText primary={t("home")} />
-                            </ListItemButton>
-
-                            <ListItemButton
-                                component={NavLink}
-                                to="/about"
-                                selected={selectedKey === "/about"}
-                            >
-                                <ListItemText primary={t("about")} />
-                            </ListItemButton>
-                        </List>
+                        <IconButton disableRipple={true} component={NavLink} to="/" className="logo">
+                            <Logo />
+                        </IconButton>
                     </Box>
 
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
-                        <LocalisationButton />
-                        <Tooltip title={t("openSettings")} arrow placement="bottom">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <ManageAccounts />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: "45px" }}
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: "top",
-                                horizontal: "right",
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: "top",
-                                horizontal: "right",
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {(isLogin ? loggedUserSettings : unloggedUserSettings).map(({ label, icon, onClick }) => (
-                                <MenuItem key={label} onClick={onClick}>
-                                    <ListItemIcon>{icon}</ListItemIcon>
-                                    <Typography textAlign="center">{label}</Typography>
-                                </MenuItem>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: "clamp(16px, 5vw, 96px)" }}>
+                        <List sx={{ display: "flex" }}>
+                            {pagesList.map((page) => (
+                                <ListItemButton
+                                    component={NavLink}
+                                    to={page.key}
+                                    selected={selectedKey === page.key}
+                                    className="nav-button"
+                                    key={page.key}
+                                >
+                                    <ListItemText primary={page.label} />
+                                </ListItemButton>
                             ))}
-                        </Menu>
+                        </List>
+                        {isLogin ?
+                            <Button onClick={handleLogout} className="button">
+                                {t("logout")}
+                            </Button>
+                        :
+                            <Button
+                                onClick={() => navigate("/login")}
+                                className="button"
+                                variant="contained"
+                            >
+                                {t("login")}
+                            </Button>
+                        }
                     </Box>
                 </Toolbar>
             </AppBar>
 
-            <Box
-                sx={{
-                    flexGrow: 1,
-                    display: "flex",
-                    justifyContent: "center",
-                    p: 2,
-                }}
-            >
+            <Box className="content">
                 <Outlet />
             </Box>
 
-            <Box
-                component="footer"
-                sx={{ py: 2, textAlign: "center", mt: "auto", bgcolor: "grey.100" }}
-            >
-                <Typography variant="body2" color="textSecondary">
-                    © 2025 Artem Ryzhenko
-                </Typography>
-                <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
-                    <IconButton href="mailto:artem@ryzhenko.com" color="primary">
-                        <Email />
-                    </IconButton>
-                    <IconButton
-                        href="https://linkedin.com/in/artem-ryzhenko-886601172/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        color="primary"
-                    >
-                        <LinkedIn />
-                    </IconButton>
-                    <IconButton
-                        href="https://github.com/P1ayMouse"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        color="primary"
-                    >
-                        <GitHub />
-                    </IconButton>
+            <Box component="footer" className={`footer ${theme}`}>
+                <Box className="footer-container">
+                    <Box className="newsletter">
+                        <Box className="newsletter-text">
+                            <Typography className="newsletter-title">
+                                {t("joinOurNewsletter")}
+                            </Typography>
+                            <Typography className="newsletter-subtitle">
+                                {t("noSpam")}
+                            </Typography>
+                        </Box>
+                        <Box className="newsletter-form">
+                            <MailForm />
+                        </Box>
+                    </Box>
+
+                    <Divider className="footer-divider-1" orientation="horizontal" flexItem />
+
+                    <Box className="brand-links-row">
+                        <Box className="brand-block">
+                            <Box className="brand-top">
+                                <FooterLogo />
+                                <ThemeButton />
+                                <LocalisationButton />
+                            </Box>
+                            <Typography className="brand-description">
+                                {t("jointVenture")}
+                            </Typography>
+                        </Box>
+
+                        <Box className="links-list-container">
+                            {footerLinksList.map((element) => (
+                                <Box className="links-container" key={element.label}>
+                                    <Typography className="links-title">
+                                        {element.label}
+                                    </Typography>
+                                    {element.links.map((link) => (
+                                        <Typography className="link" key={link.key}>
+                                            {link.label}
+                                        </Typography>
+                                    ))}
+                                </Box>
+                            ))}
+                        </Box>
+                    </Box>
+
+                    <Divider className="footer-divider-2" orientation="horizontal" flexItem />
+
+                    <Typography className="bottom-text">
+                        © Copyright 2025 HOTEE. {t("rightsReserved")}
+                    </Typography>
                 </Box>
             </Box>
         </Box>

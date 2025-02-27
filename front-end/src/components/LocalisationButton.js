@@ -7,8 +7,8 @@ import unknownFlag from "../../src/assets/icons/question-mark.png";
 
 export default function LocalisationButton() {
     const languages = [
-        { code: "en", label: "English", flag: enFlag },
-        { code: "ua", label: "Українська", flag: uaFlag },
+        { id: 1, code: "en", label: "English", flag: enFlag },
+        { id: 2, code: "ua", label: "Українська", flag: uaFlag },
     ];
 
     const { t, i18n } = useTranslation();
@@ -53,7 +53,7 @@ export default function LocalisationButton() {
                 }}            >
                 {languages.map(language => (
                     language.code !== i18n.language &&
-                    <MenuItem onClick={() => handleClose(language.code)}>
+                    <MenuItem key={language.code} onClick={() => handleClose(language.code)}>
                         <img
                             src={language.flag}
                             alt={language.code}

@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import "./Login.scss"
 
 import {login} from "../../store/slices/userSlices";
-import {Button} from "antd";
+import {Button} from "@mui/material";
 import {useTranslation} from "react-i18next";
 
 export default function Login() {

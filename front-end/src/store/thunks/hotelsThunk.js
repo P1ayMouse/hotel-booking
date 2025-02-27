@@ -50,3 +50,14 @@ export const deleteBook = createAsyncThunk('hotels/deleteBook', async (bookId, {
         return rejectWithError(e.message);
     }
 })
+
+export const fetchHotel = createAsyncThunk('hotels/hotel', async (id, {rejectWithError}) => {
+    try {
+        const response = await axios.get(`${url + hotelGetUrl}/hotel/${id}`)
+
+        return response.data;
+    }
+    catch (e) {
+        return rejectWithError(e.response?.data?.message || e.message);
+    }
+})

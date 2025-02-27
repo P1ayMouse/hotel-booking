@@ -1,56 +1,78 @@
-import {Box, Card, CardActionArea, CardContent, CardMedia, Typography, IconButton, Rating} from "@mui/material";
+import { Button, Box, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
+import { PlaceOutlined, StarRate } from "@mui/icons-material";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
-import {NavigateBefore, NavigateNext, PlaceOutlined} from "@mui/icons-material";
-import { useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 
 export default function HomeHotelsList() {
     const { hotels } = useSelector((state) => state.hotel);
-    const scrollContainerRef = useRef(null);
+    const { t } = useTranslation();
 
     function topRatedHotels() {
-        return [...hotels].sort((a, b) => b.hotel_rating - a.hotel_rating);
+        return [...hotels].sort((a, b) => b.hotel_rating - a.hotel_rating).slice(0, 3);
     }
 
-    const scroll = (direction) => {
-        if (scrollContainerRef.current) {
-            const scrollAmount = direction === "left" ? -300 : 300;
-            scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-        }
-    };
-
     return (
-        <Box display="flex" alignItems="center" justifyContent="center">
-            <IconButton onClick={() => scroll("left")} className="scroll-btn scroll-btn-left">
-                <NavigateBefore fontSize="large" />
-            </IconButton>
-            <Box ref={scrollContainerRef} className="scroll-container">
-                {topRatedHotels().slice(0,10).map((hotel) => (
-                    <Card key={hotel.id} variant="outlined" className="hotel-list-card">
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="180"
-                                image={hotel.image_url ? `/assets/img/${hotel.image_url}` : `/assets/img/none.png`}
-                                alt={hotel.name}
-                                onError={(e) => e.target.src = "/assets/img/none.png"}
-                            />
-                            <CardContent>
-                                <Typography gutterBottom className="hotel-card-name" component="div">
-                                    {hotel.name}
-                                </Typography>
-                                <Typography variant="body2" display="flex" alignItems="center" gap={0.5}>
-                                    <PlaceOutlined sx={{ fontSize: 18 }} />
-                                    {hotel.city}{hotel.state && `, ${hotel.state}`}
-                                </Typography>
-                                <Rating name="half-rating-read" defaultValue={hotel.hotel_rating} precision={0.5} readOnly />
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
+        <Box className="home-hotel-list">
+            <Box className="top-info">
+                <Box maxWidth="534px" width="100%">
+                    <Typography style={{fontSize: "16px", fontWeight: 450, textTransform: "uppercase", color: "#7F2203"}}>
+                        {t("recommendedHotel")}
+                    </Typography>
+                    <Typography style={{fontSize: "48px", fontWeight: 500, color: "#322F2A"}} mb={2}>
+                        {t("monthHotels")}
+                    </Typography>
+                    <Typography style={{fontSize: "18px", fontWeight: 280, lineHeight: "32px", color: "#959493"}}>
+                        {t("monthHotelsBottom")}
+                    </Typography>
+                </Box>
+                <Button variant="contained" className="button">
+                    {t("viewAll")}
+                </Button>
+            </Box>
+            <Box className="hotels-list">
+                {topRatedHotels().map((hotel) => (
+                        <Card
+                            key={hotel.id}
+                            variant="outlined"
+                            className="hotel-card"
+                        >
+                            <CardActionArea
+                                component={NavLink} to={`/hotels/hotel/${hotel.id}`}
+                            >
+                                <CardContent className="card-content">
+                                    <CardMedia
+                                        component="img"
+                                        className="card-img"
+                                        image={hotel.image_url ? `/assets/img/hotels/${hotel.image_url}` : `/assets/img/none.png`}
+                                        alt={hotel.name}
+                                        onError={(e) => e.target.src = "/assets/img/none.png"}
+                                    />
+                                    <Box className="main-info">
+                                        <Box>
+                                            <Typography className="card-name" gutterBottom>
+                                                {hotel.name}
+                                            </Typography>
+                                            <Typography variant="body2" display="flex" alignItems="center" color="#959493">
+                                                <PlaceOutlined sx={{ fontSize: "20px", color: "#FEBD22", mr: 1 }} />
+                                                {hotel.address}{hotel.state && `, ${hotel.state}`}
+                                            </Typography>
+                                        </Box>
+                                        <Typography variant="body2" display="flex" alignItems="center" gap={0.5}>
+                                            <StarRate sx={{ fontSize: "20px", color: "#F2AC0D", marginBottom: 0.5 }} />
+                                            {hotel.hotel_rating}
+                                        </Typography>
+                                    </Box>
+                                    <Box className="hotel-price">
+                                        {`$${hotel.price.toFixed(2)}`}
+                                    </Box>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
                 ))}
             </Box>
-            <IconButton onClick={() => scroll("right")} className="scroll-btn scroll-btn-right">
-                <NavigateNext fontSize="large" />
-            </IconButton>
         </Box>
     );
 }

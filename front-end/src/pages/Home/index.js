@@ -4,6 +4,7 @@ import HomeSearchForm from "./HomeSearchForm";
 import HomeHotelsList from "./HomeHotelsList";
 import {Box} from "@mui/material";
 import {useSelector} from "react-redux";
+import HomeHotelBenefits from "./HomeHotelBenefits";
 
 export default function Home() {
     const hotels = useSelector((state) => state.hotel.hotels);
@@ -11,7 +12,8 @@ export default function Home() {
     return (
         <Box className="home-page">
             <HomeSearchForm />
-            {hotels.length > 5 && <HomeHotelsList />}
+            {hotels.length > 3 && <HomeHotelsList />}
+            <HomeHotelBenefits />
         </Box>
     )
 }

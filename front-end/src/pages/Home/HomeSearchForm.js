@@ -1,22 +1,25 @@
-import { Form, Field, ErrorMessage, Formik } from "formik";
-import { Button, Box, TextField, Autocomplete } from "@mui/material";
+import { Form, Formik } from "formik";
+import { Button, Box, TextField, Autocomplete, Container, Typography, Paper, FormHelperText } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import dayjs from 'dayjs';
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
+import imageShowcase from "../../assets/img/image-showcase.jpg"
+import * as yup from "yup";
 
 export default function HomeSearchForm() {
     const bookingSearchData = {
         destination: "",
         checkIn: "",
         checkOut: "",
-        adults: 1,
-        children: 0,
     };
 
-    const { destinations, loading } = useSelector(
+    const navigate = useNavigate();
+
+    const { destinations } = useSelector(
         (state) => state.destination) || { destinations: [], loading: false };
 
     const [query, setQuery] = useState("");
@@ -32,142 +35,157 @@ export default function HomeSearchForm() {
                     (destination) => destination.label.toLowerCase().startsWith(query.toLowerCase())
                 )
         );
-    }, [query]);
+    }, [query, destinations]);
 
-    const validate = (values) => {
-        const errors = {};
+    const tomorrow = dayjs().add(1, "day").startOf("day").toDate();
 
-        if (!values.destination) {
-            errors.destination = "Destination is required!";
-        }
-
-        if (!values.checkIn) {
-            errors.checkIn = "Check-in date is required!";
-        }
-
-        if (!values.checkOut) {
-            errors.checkOut = "Check-out date is required!";
-        }
-
-        if (values.checkIn && values.checkOut && values.checkIn > values.checkOut) {
-            errors.checkOut = "Check-in date cannot be later than check-out date!";
-        }
-
-        if (values.adults < 1) {
-            values.adults = 1;
-        }
-        else if (values.adults > 5) {
-            values.adults = 5;
-        }
-
-        if (values.children < 0) {
-            values.children = 0;
-        }
-        else if (values.children > 5) {
-            values.children = 5;
-        }
-
-        return errors;
-    };
+    const validationSchema = yup.object().shape({
+        destination: yup
+            .string()
+            .required(t("destination") + " " + t("isRequired")),
+        checkIn: yup
+            .date()
+            .required(t("checkIn") + " " + t("isRequired"))
+            .min(tomorrow,
+                t("cannotBeLess") + " " + dayjs(tomorrow).format("D.MM.YYYY")
+            )
+            .max(
+                yup.ref("checkOut"),
+                t("cannotBeOver") + " " + t("checkOut")
+            ),
+        checkOut: yup
+            .date()
+            .required(t("checkOut") + " " + t("isRequired"))
+            .min(tomorrow,
+                t("cannotBeLess") + " " + dayjs(tomorrow).format("D.MM.YYYY")
+            )
+    });
 
     const handleSubmit = (values) => {
+        navigate("/reserve-hotels", {replace: true});
         console.log(values);
     };
 
     return (
-        <Formik
-            initialValues={bookingSearchData}
-            validate={validate}
-            onSubmit={handleSubmit}
+        <Box
+            className="banner"
+            sx={{
+                backgroundImage: {
+                    md: `url('${imageShowcase}')`,
+                },
+            }}
         >
-            {({ errors, touched, setFieldValue, values }) => (
-                <Form style={{ display: "flex", gap: 22, alignItems: "center" }} >
-                    <Box>
-                        <Autocomplete
-                            options={filteredDestinations.slice(0, 5)}
-                            filterOptions={(options) => options}
-                            getOptionLabel={(option) => option.label}
-                            getOptionKey={(option) => option.value}
-                            onInputChange={(e, newInputValue) => setQuery(newInputValue)}
-                            onChange={(e, newValue) =>
-                                setFieldValue("destination", newValue ? newValue.value : "")
-                            }
-                            loading={loading}
-                            renderInput={(params) => (
-                                <TextField
-                                    {...params}
-                                    label={t("destination")}
-                                    sx={{ width: "250px", height: "56px" }}
-                                    error={touched.destination && Boolean(errors.destination)}
-                                    helperText={touched.destination && errors.destination}
-                                />
-                            )}
-                        />
-                    </Box>
+            <Container className="banner-container">
+                <Box className="banner-text">
+                    <Typography style={{fontSize: "60px", lineHeight: "72px"}} fontWeight={500} gutterBottom>
+                        {t("homeBannerTextUp")}
+                    </Typography>
+                    <Typography style={{fontSize: "18px", lineHeight: "32px"}} fontWeight={200}>
+                        {t("homeBannerTextDown")}
+                    </Typography>
+                </Box>
 
+                <Paper className="form-paper" xs={{display: "flex", alignItems: "center"}}>
                     <Box>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DatePicker
-                                label={t("checkIn")}
-                                value={values.checkIn ? dayjs(values.checkIn) : null}
-                                onChange={(newValue) => setFieldValue("checkIn", newValue ? newValue.format("YYYY-MM-DD") : "")}
-                                slotProps={{
-                                    textField: {
-                                        sx: { width: "180px", height: "56px" },
-                                        error: touched.checkIn && Boolean(errors.checkIn),
-                                        helperText: touched.checkIn && errors.checkIn,
-                                    },
-                                }}
-                            />
-                        </LocalizationProvider>
+                        <Typography style={{fontSize: "19px", fontWeight: 400}} gutterBottom>
+                            {t("bookingHotel")}
+                        </Typography>
+                        <Typography style={{fontSize: "13px", fontWeight: 300}} color="#959493" gutterBottom>
+                            {t("homeBookingHotelUnder")}
+                        </Typography>
                     </Box>
-                    —
-                    <Box>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DatePicker
-                                label={t("checkOut")}
-                                value={values.checkOut ? dayjs(values.checkOut) : null}
-                                onChange={(newValue) => setFieldValue("checkOut", newValue ? newValue.format("YYYY-MM-DD") : "")}
-                                slotProps={{
-                                    textField: {
-                                        sx: { width: "180px", height: "56px" },
-                                        error: touched.checkOut && Boolean(errors.checkOut),
-                                        helperText: touched.checkOut && errors.checkOut,
-                                    },
-                                }}
-                            />
-                        </LocalizationProvider>
-                    </Box>
+                    <Formik initialValues={bookingSearchData} validationSchema={validationSchema} onSubmit={handleSubmit}>
+                        {({ errors, touched, setFieldValue, values }) => (
+                            <Form className="form">
+                                <Box>
+                                    <Typography className="label" gutterBottom>
+                                        {t("location")}
+                                    </Typography>
+                                    <Autocomplete
+                                        freeSolo
+                                        options={filteredDestinations.slice(0, 5)}
+                                        filterOptions={(options) => options}
+                                        getOptionLabel={(option) => option.label}
+                                        getOptionKey={(option) => option.value}
+                                        onInputChange={(e, newInputValue) => setQuery(newInputValue)}
+                                        onChange={(e, newValue) =>
+                                            setFieldValue("destination", newValue ? newValue.value : "")}
+                                        className="field"
+                                        renderInput={(params) => (
+                                            <TextField
+                                                {...params}
+                                                fullWidth
+                                                error={touched.destination && Boolean(errors.destination)}
+                                                placeholder={t("chooseCity")}
+                                            />
+                                        )}
+                                    />
+                                    {touched.destination && errors.destination && (
+                                        <FormHelperText className="error">
+                                            {errors.destination}
+                                        </FormHelperText>
+                                    )}
+                                </Box>
+                                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                    <Box display="flex" gap={2} mt={3}>
+                                        <Box flex={1}>
+                                            <Typography className="label" gutterBottom>
+                                                {t("checkIn")}
+                                            </Typography>
+                                            <DatePicker
+                                                className="field"
+                                                format="D MMM YYYY"
+                                                value={values.checkIn ? dayjs(values.checkIn) : null}
+                                                onChange={(newValue) => setFieldValue("checkIn", newValue ? newValue.format("YYYY-MM-DD") : "")}
+                                                slotProps={{
+                                                    textField: {
+                                                        fullWidth: true,
+                                                        error: touched.checkIn && Boolean(errors.checkIn),
+                                                        placeholder: t("chooseDate"),
+                                                    },
+                                                }}
+                                            />
+                                            {touched.checkIn && errors.checkIn && (
+                                                <FormHelperText className="error">
+                                                    {errors.checkIn}
+                                                </FormHelperText>
+                                            )}
+                                        </Box>
+                                        <Box flex={1}>
+                                            <Typography className="label" gutterBottom>
+                                                {t("checkOut")}
+                                            </Typography>
+                                            <DatePicker
+                                                className="field"
+                                                format="D MMM YYYY"
+                                                value={values.checkOut ? dayjs(values.checkOut) : null}
+                                                onChange={(newValue) => setFieldValue("checkOut", newValue ? newValue.format("YYYY-MM-DD") : "")}
+                                                slotProps={{
+                                                    textField: {
+                                                        fullWidth: true,
+                                                        error: touched.checkOut && Boolean(errors.checkOut),
+                                                        label: "",
+                                                        placeholder: t("chooseDate"),
+                                                    },
+                                                }}
+                                            />
+                                            {touched.checkOut && errors.checkOut && (
+                                                <FormHelperText className="error" flex={2}>
+                                                    {errors.checkOut}
+                                                </FormHelperText>
+                                            )}
+                                        </Box>
+                                    </Box>
+                                </LocalizationProvider>
 
-                    <Box>
-                        <Field
-                            name="adults"
-                            as={TextField}
-                            type="number"
-                            label={t("adults")}
-                            sx={{ width: "100px", height: "56px" }}
-                            error={touched.adults && Boolean(errors.adults)}
-                            helperText={<ErrorMessage name="adults" />}
-                        />
-                    </Box>
-
-                    <Box>
-                        <Field
-                            name="children"
-                            as={TextField}
-                            type="number"
-                            label={t("children")}
-                            sx={{ width: "100px", height: "56px" }}
-                            error={touched.children && Boolean(errors.children)}
-                            helperText={<ErrorMessage name="children" />}
-                        />
-                    </Box>
-
-                    <Button type="submit" variant="outlined" sx={{ height: "56px" }}>
-                        {t("submit")}
-                    </Button>
-                </Form>
-            )}
-        </Formik>
+                                <Button type="submit" variant="contained" className="button" fullWidth sx={{ mt: 5 }}>
+                                    {t("discoverPlace")}
+                                </Button>
+                            </Form>
+                        )}
+                    </Formik>
+                </Paper>
+            </Container>
+        </Box>
     );
 }

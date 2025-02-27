@@ -3,107 +3,128 @@
     {
       "id": 1,
       "value": 70,
-      "label": "Atlanta"
+      "label": "Atlanta",
+      "image_url": "70.png"
     },
     {
       "id": 2,
       "value": 149,
-      "label": "Boston"
+      "label": "Boston",
+      "image_url": "149.png"
     },
     {
       "id": 3,
       "value": 5034,
-      "label": "Boston"
+      "label": "Detroit",
+      "image_url": "5034.png"
     },
     {
       "id": 4,
       "value": 34501,
-      "label": "Celebration"
+      "label": "Celebration",
+      "image_url": ""
     },
     {
       "id": 5,
       "value": 40418,
-      "label": "Edgewood"
+      "label": "Edgewood",
+      "image_url": ""
     },
     {
       "id": 6,
       "value": 39505,
-      "label": "Gotha"
+      "label": "Gotha",
+      "image_url": ""
     },
     {
       "id": 7,
       "value": 21017,
-      "label": "Haines City"
+      "label": "Haines City",
+      "image_url": ""
     },
     {
       "id": 8,
       "value": 10,
-      "label": "Los Angeles"
+      "label": "Los Angeles",
+      "image_url": ""
     },
     {
       "id": 9,
       "value": 72,
-      "label": "Miami"
+      "label": "Miami",
+      "image_url": ""
     },
     {
       "id": 10,
       "value": 18421,
-      "label": "Montverde"
+      "label": "Montverde",
+      "image_url": ""
     },
     {
       "id": 11,
       "value": 54,
-      "label": "New York"
+      "label": "New York",
+      "image_url": ""
     },
     {
       "id": 12,
       "value": 23767,
-      "label": "Ocoee"
+      "label": "Ocoee",
+      "image_url": ""
     },
     {
       "id": 13,
       "value": 32190,
-      "label": "Orlando area"
+      "label": "Orlando area",
+      "image_url": ""
     },
     {
       "id": 14,
       "value": 11531,
-      "label": "Poinciana"
+      "label": "Poinciana",
+      "image_url": ""
     },
     {
       "id": 15,
       "value": 10772,
-      "label": "Polk City"
+      "label": "Polk City",
+      "image_url": ""
     },
     {
       "id": 16,
       "value": 17969,
-      "label": "San Francisco Bay"
+      "label": "San Francisco Bay",
+      "image_url": ""
     },
     {
       "id": 17,
       "value": 17365,
-      "label": "St. Cloud"
+      "label": "St. Cloud",
+      "image_url": ""
     },
     {
       "id": 18,
       "value": 24263,
-      "label": "Walt Disney World® Resort"
+      "label": "Walt Disney World® Resort",
+      "image_url": ""
     },
     {
       "id": 19,
       "value": 277,
-      "label": "Washington"
+      "label": "Washington",
+      "image_url": ""
     },
     {
       "id": 20,
       "value": 49764,
-      "label": "Windermere"
+      "label": "Windermere",
+      "image_url": ""
     },
     {
       "id": 21,
       "value": 22282,
-      "label": "Winter Garden"
+      "label": "Winter Garden",
+      "image_url": ""
     }
   ],
   "hotels": [
@@ -117,7 +138,8 @@
       "hotel_rating": 4,
       "phone_number": "18005740835",
       "website": null,
-      "image_url": "5018105.png"
+      "image_url": "5018105.png",
+      "price": 220.00
     },
     {
       "id": 11003176,
@@ -129,7 +151,8 @@
       "hotel_rating": 0,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 80.50
     },
     {
       "id": 747134,
@@ -141,7 +164,8 @@
       "hotel_rating": 3.5,
       "phone_number": "212260414",
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 190.80
     },
     {
       "id": 720550,
@@ -153,7 +177,8 @@
       "hotel_rating": 3,
       "phone_number": "1 212 2191018",
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 145.00
     },
     {
       "id": 797074,
@@ -165,7 +190,8 @@
       "hotel_rating": 2.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 98.30
     },
     {
       "id": 742987,
@@ -177,7 +203,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": "742987.png"
+      "image_url": "742987.png",
+      "price": 80.50
     },
     {
       "id": 743452,
@@ -189,7 +216,8 @@
       "hotel_rating": 3.5,
       "phone_number": "1-212-398-2700",
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 165.00
     },
     {
       "id": 260469,
@@ -201,7 +229,8 @@
       "hotel_rating": 3,
       "phone_number": "1 212 777-0012",
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 130.00
     },
     {
       "id": 740399,
@@ -213,7 +242,8 @@
       "hotel_rating": 3,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 125.00
     },
     {
       "id": 5018104,
@@ -225,7 +255,8 @@
       "hotel_rating": 3,
       "phone_number": "XX",
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 120.00
     },
     {
       "id": 792811,
@@ -237,7 +268,8 @@
       "hotel_rating": 4.5,
       "phone_number": null,
       "website": null,
-      "image_url": "792811.png"
+      "image_url": "792811.png",
+      "price": 250.00
     },
     {
       "id": 804220,
@@ -249,7 +281,8 @@
       "hotel_rating": 2.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 110.00
     },
     {
       "id": 5018107,
@@ -261,7 +294,8 @@
       "hotel_rating": 3,
       "phone_number": "17186985000",
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 130.00
     },
     {
       "id": 700390,
@@ -273,7 +307,8 @@
       "hotel_rating": 4.5,
       "phone_number": null,
       "website": null,
-      "image_url": "700390.png"
+      "image_url": "700390.png",
+      "price": 245.80
     },
     {
       "id": 742946,
@@ -285,7 +320,8 @@
       "hotel_rating": 3,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 130.00
     },
     {
       "id": 776932,
@@ -297,7 +333,8 @@
       "hotel_rating": 4,
       "phone_number": "121-247-51920",
       "website": "https://freehandhotels.com/new-york/rooms/",
-      "image_url": "776932.png"
+      "image_url": "776932.png",
+      "price": 200.00
     },
     {
       "id": 741741,
@@ -309,7 +346,8 @@
       "hotel_rating": 2,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 100.00
     },
     {
       "id": 716815,
@@ -321,7 +359,8 @@
       "hotel_rating": 3,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 130.00
     },
     {
       "id": 802583,
@@ -333,7 +372,8 @@
       "hotel_rating": 5,
       "phone_number": "+1 212 842 5500",
       "website": null,
-      "image_url": "802583.png"
+      "image_url": "802583.png",
+      "price": 300.50
     },
     {
       "id": 5018106,
@@ -345,7 +385,8 @@
       "hotel_rating": 3,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 120.00
     },
     {
       "id": 751736,
@@ -357,7 +398,8 @@
       "hotel_rating": 3,
       "phone_number": "703-261-5677",
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 140.00
     },
     {
       "id": 386689,
@@ -369,7 +411,8 @@
       "hotel_rating": 2.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 100.00
     },
     {
       "id": 567484,
@@ -381,7 +424,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677300,
@@ -393,7 +437,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": "677300.png"
+      "image_url": "677300.png",
+      "price": 160.00
     },
     {
       "id": 820605,
@@ -405,7 +450,8 @@
       "hotel_rating": null,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 140.00
     },
     {
       "id": 731189,
@@ -417,7 +463,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 721848,
@@ -429,7 +476,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": "721848.png"
+      "image_url": "721848.png",
+      "price": 155.00
     },
     {
       "id": 677341,
@@ -441,7 +489,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677347,
@@ -453,7 +502,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 810445,
@@ -465,7 +515,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677372,
@@ -477,7 +528,8 @@
       "hotel_rating": 3,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 140.00
     },
     {
       "id": 822534,
@@ -489,7 +541,8 @@
       "hotel_rating": null,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 140.00
     },
     {
       "id": 793847,
@@ -501,7 +554,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": "793847.png"
+      "image_url": "793847.png",
+      "price": 160.00
     },
     {
       "id": 677396,
@@ -513,7 +567,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": "677396.png"
+      "image_url": "677396.png",
+      "price": 160.00
     },
     {
       "id": 677411,
@@ -525,7 +580,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677410,
@@ -537,7 +593,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677425,
@@ -549,7 +606,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": "677425.png"
+      "image_url": "677425.png",
+      "price": 160.00
     },
     {
       "id": 677426,
@@ -561,7 +619,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 721859,
@@ -573,7 +632,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 801610,
@@ -585,7 +645,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 677429,
@@ -597,7 +658,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677433,
@@ -609,7 +671,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 677449,
@@ -621,7 +684,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 677450,
@@ -633,7 +697,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677452,
@@ -645,7 +710,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 677455,
@@ -657,7 +723,8 @@
       "hotel_rating": 3,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 140.00
     },
     {
       "id": 677470,
@@ -669,7 +736,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 677476,
@@ -681,7 +749,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677477,
@@ -693,7 +762,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677480,
@@ -705,7 +775,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677481,
@@ -717,7 +788,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677519,
@@ -729,7 +801,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 677520,
@@ -741,7 +814,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 705227,
@@ -753,7 +827,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 696618,
@@ -765,7 +840,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 677526,
@@ -777,7 +853,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677527,
@@ -789,7 +866,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677528,
@@ -801,7 +879,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677537,
@@ -813,7 +892,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 696614,
@@ -825,7 +905,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677694,
@@ -837,7 +918,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 677550,
@@ -849,7 +931,8 @@
       "hotel_rating": 3,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 140.00
     },
     {
       "id": 787996,
@@ -861,7 +944,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 731262,
@@ -873,7 +957,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 677559,
@@ -885,7 +970,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 677565,
@@ -897,7 +983,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 677571,
@@ -909,7 +996,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 724715,
@@ -921,7 +1009,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 677574,
@@ -933,7 +1022,8 @@
       "hotel_rating": 4,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 160.00
     },
     {
       "id": 677577,
@@ -945,7 +1035,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     },
     {
       "id": 757401,
@@ -957,7 +1048,8 @@
       "hotel_rating": 3.5,
       "phone_number": null,
       "website": null,
-      "image_url": ""
+      "image_url": "",
+      "price": 150.00
     }
   ]
 }
