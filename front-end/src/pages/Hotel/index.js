@@ -16,7 +16,7 @@ export default function Hotel() {
 
     useEffect(() => {
         dispatch(fetchHotel(id));
-    }, [id]);
+    }, [id, dispatch]);
 
     return (
         <Box>
