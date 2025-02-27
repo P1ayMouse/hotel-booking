@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.663a3d5a.css",
+    "main.js": "/static/js/main.16b37667.js",
+    "static/js/734.21f3b658.chunk.js": "/static/js/734.21f3b658.chunk.js",
+    "static/media/Benefit.svg": "/static/media/Benefit.d9fb7708d1a8c851fd4ec83e71e87d3b.svg",
+    "static/media/image-showcase.jpg": "/static/media/image-showcase.8b43c96777ce91d7efd9.jpg",
+    "static/media/united-kingdom.png": "/static/media/united-kingdom.5b550d737b09bc2d6681.png",
+    "static/media/question-mark.png": "/static/media/question-mark.143f338e4cf5899b40ce.png",
+    "static/media/Logo-footer.svg": "/static/media/Logo-footer.34d960fba0e336275deded1b27770156.svg",
+    "static/media/Logo.svg": "/static/media/Logo.14405807f45356aaf66d7d6ff2a7f810.svg",
+    "static/media/ukraine.png": "/static/media/ukraine.0e87144cec2e4ee682c5.png",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/smart-car.svg": "/static/media/smart-car.63af02f1ed7d76f78fb6d4daad8791ff.svg",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/reserve.svg": "/static/media/reserve.0386b52f304f4ac7b00cecefd0387dc7.svg",
+    "static/media/weight.svg": "/static/media/weight.35fbdfc200b20e8019ef07ef2512afd5.svg",
+    "index.html": "/index.html",
+    "main.663a3d5a.css.map": "/static/css/main.663a3d5a.css.map",
+    "main.16b37667.js.map": "/static/js/main.16b37667.js.map",
+    "734.21f3b658.chunk.js.map": "/static/js/734.21f3b658.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.663a3d5a.css",
+    "static/js/main.16b37667.js"
+  ]
+}
