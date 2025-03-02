@@ -1,14 +1,17 @@
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import { Form, Formik } from "formik";
 import { Button, Box, TextField, Autocomplete, Container, Typography, Paper, FormHelperText } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import dayjs from 'dayjs';
-import { useTranslation } from "react-i18next";
-import imageShowcase from "../../assets/img/image-showcase.jpg"
+
+import dayjs from "dayjs";
 import * as yup from "yup";
+
+import imageShowcase from "../../assets/img/image-showcase.jpg"
 
 export default function HomeSearchForm() {
     const bookingSearchData = {
@@ -25,7 +28,7 @@ export default function HomeSearchForm() {
     const [query, setQuery] = useState("");
     const [filteredDestinations, setFilteredDestinations] = useState(destinations);
 
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     // Фільтрація пунктів призначення за введеним значенням.
     useEffect(() => {
@@ -42,20 +45,20 @@ export default function HomeSearchForm() {
     const validationSchema = yup.object().shape({
         destination: yup
             .string()
-            .required(t("destination") + " " + t("isRequired")),
+            .required(t("location") + " " + t("isRequired")),
         checkIn: yup
             .date()
-            .required(t("checkIn") + " " + t("isRequired"))
+            .required(t("checkIn").charAt(0).toUpperCase() + t("checkIn").slice(1) + " " + t("isRequired"))
             .min(tomorrow,
                 t("cannotBeLess") + " " + dayjs(tomorrow).format("D.MM.YYYY")
             )
             .max(
                 yup.ref("checkOut"),
-                t("cannotBeOver") + " " + t("checkOut")
+                t("thereCanBeNoMore") + " " + t("checkOut")
             ),
         checkOut: yup
             .date()
-            .required(t("checkOut") + " " + t("isRequired"))
+            .required(t("checkOut").charAt(0).toUpperCase() + t("checkOut").slice(1) + " " + t("isRequired"))
             .min(tomorrow,
                 t("cannotBeLess") + " " + dayjs(tomorrow).format("D.MM.YYYY")
             )
@@ -94,7 +97,12 @@ export default function HomeSearchForm() {
                             {t("homeBookingHotelUnder")}
                         </Typography>
                     </Box>
-                    <Formik initialValues={bookingSearchData} validationSchema={validationSchema} onSubmit={handleSubmit}>
+                    <Formik
+                        key={i18n.language}
+                        initialValues={bookingSearchData}
+                        validationSchema={validationSchema}
+                        onSubmit={handleSubmit}
+                    >
                         {({ errors, touched, setFieldValue, values }) => (
                             <Form className="form">
                                 <Box>
@@ -130,7 +138,7 @@ export default function HomeSearchForm() {
                                     <Box display="flex" gap={2} mt={3}>
                                         <Box flex={1}>
                                             <Typography className="label" gutterBottom>
-                                                {t("checkIn")}
+                                                {t("checkIn").charAt(0).toUpperCase() + t("checkIn").slice(1)}
                                             </Typography>
                                             <DatePicker
                                                 className="field"
@@ -153,7 +161,7 @@ export default function HomeSearchForm() {
                                         </Box>
                                         <Box flex={1}>
                                             <Typography className="label" gutterBottom>
-                                                {t("checkOut")}
+                                                {t("checkOut").charAt(0).toUpperCase() + t("checkOut").slice(1)}
                                             </Typography>
                                             <DatePicker
                                                 className="field"

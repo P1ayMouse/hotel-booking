@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "id": "64531361-6876-4ad1-bd90-57e02818ba62",
+      "username": "testuser",
+      "email": "test@example.com",
+      "password": "$2b$10$.rf2xUe1t1oq6Np0XEY.d.HYh8l/wPTWnepQgt8GxA0foAcrtb85S",
+      "age": 21,
+      "gender": "male",
+      "reservedHotels": [],
+      "likedHotels": []
+    },
+    {
+      "id": "8709acc7-bdb0-4577-93fc-c247f3ef2df2",
+      "username": "PlayMouse",
+      "email": "artem@ryzhenko.com",
+      "password": "$2b$10$lan3LZqZB9pViccYh0BMcODZFhAqvRnfpLNLV5R4m66W3vuvH4XmK",
+      "age": 21,
+      "gender": "male",
+      "reservedHotels": [],
+      "likedHotels": []
+    },
+    {
+      "id": "42282b42-71a5-4bbd-97dd-022bf7b4d02e",
+      "username": "asdasdasd",
+      "email": "asdasdasd@asdasdasd.com",
+      "password": "$2b$10$XNTnvXPFygKFu18UYf2Kcu0gF/D7WIRNYqdj51HOG1nj5WJOURgiG",
+      "age": 22,
+      "gender": "female",
+      "reservedHotels": [],
+      "likedHotels": []
+    },
+    {
+      "id": "92a4ab00-4bd7-40fb-adc5-0e1db77aa6ac",
+      "username": "asdasdasd",
+      "email": "asdasdasda@asdasdasd.com",
+      "password": "$2b$10$JfdELTZeVrD8pnaihxrWHuwW.E8we6WuiTSePjXgQUHiMpxGc4KfG",
+      "age": 21,
+      "gender": "male",
+      "reservedHotels": [],
+      "likedHotels": []
+    },
+    {
+      "id": "fe4d966c-fd8b-42f7-8399-e989f12406c3",
+      "username": "asdasdasd",
+      "email": "asdasdasdas@asdasdasd.com",
+      "password": "$2b$10$lK0fDZi515mpXAzyDz2CY.gAILZI7pfaXnW60HTECIgFwqnDVreoO",
+      "age": 22,
+      "gender": "male",
+      "reservedHotels": [],
+      "likedHotels": []
+    },
+    {
+      "id": "58eddce5-32ae-4e7a-a91b-1828334cae5b",
+      "username": "qwew2",
+      "email": "as@asd.ua",
+      "password": "$2b$10$QfOEwlGDkdsCE8VLoWcOi.b2fmITNyrRB3SCxd4AtP32n8dSci2WG",
+      "age": 22,
+      "gender": "male",
+      "reservedHotels": [],
+      "likedHotels": []
+    },
+    {
+      "id": "82af03b4-b8f2-4b9f-bc34-c5958b96c1af",
+      "username": "example1",
+      "email": "example1@dsa.com",
+      "password": "$2b$10$5wBbv9257osvk.yysKU0F.2Za9vQgnFVW/cVGoqP7jTgT1KcKU2VS",
+      "age": 22,
+      "gender": "male",
+      "reservedHotels": [],
+      "likedHotels": []
+    },
+    {
+      "id": "a3256cf9-2550-4c9e-af1b-65a296f6a2c8",
+      "username": "example",
+      "email": "example@gmail.com",
+      "password": "$2b$10$MsjYAtMivQ/duACClz3a1OCXgoeNWcc8mwulXe0tYi6JEEDCAxwyK",
+      "age": 22,
+      "gender": "male",
+      "reservedHotels": [],
+      "likedHotels": []
+    }
+  ]
+}

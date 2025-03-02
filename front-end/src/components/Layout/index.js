@@ -6,7 +6,7 @@ import {
     AppBar, Toolbar, Typography, IconButton, Box, List, ListItemButton, ListItemText, Button, Divider
 } from "@mui/material";
 
-import { logout } from "../../store/slices/userSlices";
+import { logout } from "../../store/slices/authSlices";
 
 import {ReactComponent as Logo} from "../../assets/img/Logo.svg";
 import {ReactComponent as FooterLogo} from "../../assets/img/Logo-footer.svg";
@@ -16,6 +16,8 @@ import ThemeButton from "../ThemeButton";
 import MailForm from "../MailForm";
 
 import "./index.scss"
+import { useEffect } from "react";
+import { fetchUserProfile } from "../../store/thunks/authThunk";
 
 export default function LayoutComponent() {
     const dispatch = useDispatch();
@@ -23,7 +25,7 @@ export default function LayoutComponent() {
     const location = useLocation();
 
     const theme = useSelector((state) => state.theme.theme);
-    const isLogin = useSelector((state) => state.user.isLogin);
+    const user = useSelector((state) => state.auth.user);
     const selectedKey = location.pathname;
 
     const { t } = useTranslation();
@@ -32,6 +34,10 @@ export default function LayoutComponent() {
         dispatch(logout());
         navigate("/login");
     }
+
+    useEffect(() => {
+        dispatch(fetchUserProfile());
+    }, [dispatch]);
 
     const pagesList = [
         {
@@ -51,7 +57,7 @@ export default function LayoutComponent() {
             key: "/pricing",
         },
         {
-            label: t("FAQ"),
+            label: "FAQ",
             key: "/faq",
         }
     ]
@@ -103,7 +109,7 @@ export default function LayoutComponent() {
                     key: "/terms-of-use"
                 },
                 {
-                    label: t("Cookies"),
+                    label: "Cookies",
                     key: "/cookies"
                 }
             ]
@@ -134,7 +140,7 @@ export default function LayoutComponent() {
                                 </ListItemButton>
                             ))}
                         </List>
-                        {isLogin ?
+                        {user ?
                             <Button onClick={handleLogout} className="button">
                                 {t("logout")}
                             </Button>

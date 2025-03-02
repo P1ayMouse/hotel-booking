@@ -1,134 +1,190 @@
-import { Form, Field, ErrorMessage, Formik } from "formik";
+import { Formik, Form } from "formik";
+
+import { registerUser } from "../../store/thunks/authThunk";
+import { clearError } from "../../store/slices/authSlices";
+
+import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import { Box, Button, TextField, MenuItem, InputAdornment, IconButton, Alert } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import Grid from '@mui/material/Grid2';
+
+import * as yup from "yup";
 
 export default function RegisterForm() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [showPassword, setShowPassword] = useState(false);
+    const error = useSelector((state) => state.auth.error);
 
-    const registrationData = {
-        name: '',
-        surname: '',
-        email: '',
-        age: '',
-        gender: '',
+    const data = {
+        username: "",
+        email: "",
+        age: "",
+        gender: "",
+        password: ""
     };
 
-    const validate = (values) => {
-        const errors = {};
+    const emailRegex = /^(?!\.)(?!.*\.\.)[a-zA-Z0-9!#$%&'*+=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+=?^_`{|}~-]+){0,63}@(?!-)(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    const validationSchema = yup.object().shape({
+        username: yup
+            .string()
+            .min(5, `${t("username")} ${t("minFiveChars")}`)
+            .required(`${t("username")} ${t("isRequired")}`),
+        email: yup
+            .string()
+            .matches(emailRegex, t("invalidEmail"))
+            .required(`${t("emailAddress")} ${t("isRequired")}`),
+        password: yup
+            .string()
+            .matches(passwordRegex, t("invalidPassword"))
+            .required(`${t("password")} ${t("isRequired")}`),
+        age: yup
+            .number()
+            .required(`${t("age")} ${t("isRequired")}`)
+            .min(16, `${t("age")} ${t("mustBeOverSixteen")}`)
+            .max(99, `${t("age")} ${t("cannotBeOver")} 99!`),
+        gender: yup
+            .string()
+            .required(`${t("gender")} ${t("isRequired")}`)
+    })
 
-        if (!values.name) {
-            errors.name = t("firstName") + " " + t("isRequired");
+    const handleSubmit = async (values) => {
+        const resultAction = await dispatch(registerUser(values));
+        if (registerUser.fulfilled.match(resultAction)) {
+            navigate('/login');
         }
-        else if (values.name.length < 3) {
-            errors.name = t("firstName") + " " + t("minThreeChars");
-        }
+    };
 
-        if (!values.surname) {
-            errors.surname = t("lastName") + " " + t("isRequired");
-        }
-        else if (values.surname.length < 3) {
-            errors.surname = t("lastName") + " " + t("minThreeChars");
-        }
+    useEffect(() => {
+        dispatch(clearError());
+    }, [location.pathname]);
 
-        if (!values.email) {
-            errors.email = t("email") + " " + t("isRequired");
-        }
-        else if (values.email.length < 11) {
-            errors.email = t("email") + " " + t("minElevenChars");
-        }
-        else if (values.email.slice(-4) !== ".com") {
-            errors.email = t("email") + " " + t("mustContainDotCom");
-        }
-
-        if (!values.age) {
-            errors.age = t("age") + " " + t("isRequired");
-        }
-        else if (values.age < 16) {
-            errors.age = t("age") + " " + t("mustBeOverSixteen");
-        }
-        else if (values.age > 99) {
-            errors.age = t("age") + ` ${t("cannotBeOver")} ${values.age}!`;
-        }
-
-        if (!values.gender) {
-            errors.gender = t("gender") + " " + t("isRequired");
-        }
-
-        return errors;
-    }
-
-    const handleSubmit = (values) => {
-
-        console.log(values);
-    }
+    console.log(error)
 
     return (
         <Formik
-            initialValues={registrationData}
-            validate={validate}
+            key={i18n.language}
+            initialValues={data}
+            validationSchema={validationSchema}
             onSubmit={handleSubmit}
         >
-            {() => (
-                <Form className="todoForm">
-                    <div className="column">
-                        <div className="row">
-                            <div className="fieldContainer">
-                                <Field
-                                    type="text"
-                                    name="name"
-                                    placeholder={t("firstName")}
-                                    className="registrationField"
+            {({ values, errors, touched, handleChange, handleBlur }) => (
+                <Form>
+                    {(error !== "invalid_token" && error) &&
+                        <Alert severity="error" sx={{ mb: 6 }}>
+                            {t(`server-errors.${error}`)}
+                        </Alert>
+                    }
+                    <Box sx={{}}>
+                        <Grid container spacing={2}>
+                            <Grid size={{ xs: 12 }}>
+                                <TextField
+                                    fullWidth
+                                    name="username"
+                                    label={t("username")}
+                                    value={values.username}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    error={touched.username && Boolean(errors.username)}
+                                    helperText={touched.username && errors.username}
                                 />
-                                <ErrorMessage name="name" className="error" component="p" />
-                            </div>
-                            <div className="fieldContainer">
-                                <Field
-                                    type="text"
-                                    name="surname"
-                                    placeholder={t("lastName")}
-                                    className="registrationField"
+                            </Grid>
+                            <Grid size={{ xs: 12 }}>
+                                <TextField
+                                    fullWidth
+                                    name="password"
+                                    label={t("password")}
+                                    type={showPassword ? 'text' : 'password'}
+                                    value={values.password}
+                                    onChange={handleChange}
+                                    error={touched.password && Boolean(errors.password)}
+                                    helperText={touched.password && errors.password}
+                                    slotProps={{
+                                        input: {
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
+                                                        {showPassword ? <Visibility/> : <VisibilityOff/>}
+                                                    </IconButton>
+                                                </InputAdornment>
+                                            ),
+                                        }
+                                    }}
                                 />
-                                <ErrorMessage name="surname" className="error" component="p" />
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="fieldContainer">
-                                <Field
-                                    type='email'
-                                    name='email'
-                                    placeholder={t("email")}
-                                    className="registrationField"
+                            </Grid>
+
+                            <Grid size={{ xs: 12 }}>
+                                <TextField
+                                    fullWidth
+                                    name="email"
+                                    label={t("emailAddress")}
+                                    type="email"
+                                    value={values.email}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    error={touched.email && Boolean(errors.email)}
+                                    helperText={touched.email && errors.email}
                                 />
-                                <ErrorMessage name='email' className='error' component='p' />
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="fieldContainer">
-                                <Field
-                                    type='number'
-                                    name='age'
-                                    placeholder={t("age")}
-                                    className="registrationField"
+                            </Grid>
+
+                            <Grid size={{ xs: 12, sm: 6 }}>
+                                <TextField
+                                    fullWidth
+                                    name="age"
+                                    label={t("age")}
+                                    type="number"
+                                    value={values.age}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    error={touched.age && Boolean(errors.age)}
+                                    helperText={touched.age && errors.age}
                                 />
-                                <ErrorMessage name='age' className='error' component='p' />
-                            </div>
-                            <div className="fieldContainer">
-                                <Field
-                                    as='select'
-                                    name='gender'
-                                    className="registrationField"
+                            </Grid>
+                            <Grid size={{ xs: 12, sm: 6 }}>
+                                <TextField
+                                    select
+                                    fullWidth
+                                    name="gender"
+                                    label={t("gender")}
+                                    value={values.gender}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    error={touched.gender && Boolean(errors.gender)}
+                                    helperText={touched.gender && errors.gender}
                                 >
-                                    <option value="" disabled hidden>{t("gender")}</option>
-                                    <option value="male">{t("male")}</option>
-                                    <option value="female">{t("female")}</option>
-                                    <option value="another">{t("another")}</option>
-                                </Field>
-                                <ErrorMessage name='gender' className='error' component='p' />
-                            </div>
-                        </div>
-                        <button className="registrationButton" type="submit">{t("register")}</button>
-                    </div>
+                                    <MenuItem id="male" value="male">{t("male")}</MenuItem>
+                                    <MenuItem id="female" value="female">{t("female")}</MenuItem>
+                                    <MenuItem id="another" value="another">{t("another")}</MenuItem>
+                                </TextField>
+                            </Grid>
+
+                            <Grid size={{ xs: 12 }}>
+                                <Button
+                                    fullWidth
+                                    type="submit"
+                                    variant="contained"
+                                    sx={{
+                                        mt: 2,
+                                        py: 1.5,
+                                        backgroundColor: "#7F2203",
+                                        textTransform: "none",
+                                        fontWeight: "700",
+                                    }}
+                                >
+                                    {t("register")}
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Box>
                 </Form>
             )}
         </Formik>
-    )
+    );
 }

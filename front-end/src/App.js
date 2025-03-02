@@ -1,9 +1,12 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 import Layout from "./components/Layout";
+import PrivateRoute from "./components/PrivateRoute";
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
+import Hotels from "./pages/Hotels";
 import Hotel from "./pages/Hotel";
 
 import { hotelsAndDestinationsLoader } from "./loaders/hotelsAndDestinationsLoader";
@@ -16,7 +19,7 @@ const router = createBrowserRouter([
         children: [
             {
               index: true,
-              element: <Home/>,
+              element: <PrivateRoute><Home/></PrivateRoute>,
               loader: hotelsAndDestinationsLoader
             },
             {
@@ -28,8 +31,18 @@ const router = createBrowserRouter([
                 element: <Register/>
             },
             {
-                path: "hotels/hotel/:id",
-                element: <Hotel/>
+                path: "/hotels",
+                element:
+                    <PrivateRoute>
+                        <Hotels/>
+                    </PrivateRoute>
+            },
+            {
+                path: "/hotels/hotel/:id",
+                element:
+                    <PrivateRoute>
+                        <Hotel/>
+                    </PrivateRoute>
             },
             {
                 path: "*",
