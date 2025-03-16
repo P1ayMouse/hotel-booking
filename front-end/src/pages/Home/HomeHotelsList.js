@@ -4,11 +4,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 
 export default function HomeHotelsList() {
     const { hotels } = useSelector((state) => state.hotel);
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     function topRatedHotels() {
         return [...hotels].sort((a, b) => b.hotel_rating - a.hotel_rating).slice(0, 3);
@@ -28,7 +29,7 @@ export default function HomeHotelsList() {
                         {t("monthHotelsBottom")}
                     </Typography>
                 </Box>
-                <Button variant="contained" className="button">
+                <Button variant="contained" className="button" onClick={() => {navigate("/hotels")}}>
                     {t("viewAll")}
                 </Button>
             </Box>

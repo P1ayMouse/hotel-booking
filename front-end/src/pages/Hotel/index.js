@@ -22,7 +22,7 @@ export default function Hotel() {
         <Box>
             {Object.entries(hotel).map(([key, value]) => (
                 value &&
-                <Box>
+                <Box key={key}>
                     {key}: {value}
                 </Box>
             ))}

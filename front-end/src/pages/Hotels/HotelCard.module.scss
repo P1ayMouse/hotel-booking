@@ -1,0 +1,109 @@
+.hotelCard {
+  display: flex;
+  width: 100%;
+  padding: 8px;
+  gap: 8px;
+  border-radius: 8px;
+  transition: width 0.3s ease-in-out;
+  align-items: stretch;
+
+  .cardImg {
+    height: 100%;
+    width: 200px;
+    min-width: 200px;
+    flex-shrink: 0;
+    border-radius: 4px 0 0 4px;
+    object-fit: cover;
+  }
+
+  .favoriteImg {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    color: #fff;
+    font-size: 20px;
+    opacity: 0.7;
+    border-radius: 50%;
+    padding: 4px;
+
+    &:hover {
+      opacity: 0.4;
+      cursor: pointer;
+    }
+  }
+
+  .cardContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 16px !important;
+    min-height: 200px;
+
+    .hotelHeaderInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-height: 137px;
+
+      .hotelName {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      .hotelLocation {
+        display: flex;
+        align-items: center;
+        color: #565656;
+        font-size: 12px;
+        line-height: 24px;
+      }
+
+      .hotelFeaturesContainer {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 16px;
+        gap: 18px;
+        max-width: 40%;
+
+        .hotelFeature {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          color: #565656;
+          font-size: 12px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    .hotelBottomInfo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .hotelRating {
+        display: flex;
+        height: 100%;
+        align-items: flex-end;
+        gap: 4px;
+      }
+
+      .taxesAndCharges {
+        font-size: 12px;
+        color: var(--Neutral-500, #565656);
+      }
+
+      .availability {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 800;
+        color: #7F2203;
+        text-decoration: none;
+        gap: 8px;
+      }
+    }
+  }
+}

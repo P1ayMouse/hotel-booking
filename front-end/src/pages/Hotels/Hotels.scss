@@ -1,0 +1,9 @@
+.hotels-list-pagination {
+  width: 100%;
+
+  .hotels-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+}

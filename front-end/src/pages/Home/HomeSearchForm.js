@@ -21,13 +21,10 @@ export default function HomeSearchForm() {
     };
 
     const navigate = useNavigate();
-
     const { destinations } = useSelector(
         (state) => state.destination) || { destinations: [], loading: false };
-
     const [query, setQuery] = useState("");
     const [filteredDestinations, setFilteredDestinations] = useState(destinations);
-
     const { t, i18n } = useTranslation();
 
     // Фільтрація пунктів призначення за введеним значенням.
@@ -48,25 +45,59 @@ export default function HomeSearchForm() {
             .required(t("location") + " " + t("isRequired")),
         checkIn: yup
             .date()
-            .required(t("checkIn").charAt(0).toUpperCase() + t("checkIn").slice(1) + " " + t("isRequired"))
-            .min(tomorrow,
+            .nullable()
+            .min(
+                tomorrow,
                 t("cannotBeLess") + " " + dayjs(tomorrow).format("D.MM.YYYY")
             )
-            .max(
-                yup.ref("checkOut"),
-                t("thereCanBeNoMore") + " " + t("checkOut")
+            .test(
+                'checkIn-required-if-checkOut',
+                t("checkIn") + " " + t("isRequired"),
+                function (value) {
+                    const { checkOut } = this.parent;
+                    return !(checkOut && !value);
+                }
+            )
+            .test(
+                'checkIn-max-checkOut',
+                t("thereCanBeNoMore") + " " + t("checkOut"),
+                function (value) {
+                    const { checkOut } = this.parent;
+                    return !(value && checkOut && dayjs(value).isAfter(dayjs(checkOut)));
+                }
             ),
         checkOut: yup
             .date()
-            .required(t("checkOut").charAt(0).toUpperCase() + t("checkOut").slice(1) + " " + t("isRequired"))
-            .min(tomorrow,
+            .nullable()
+            .min(
+                tomorrow,
                 t("cannotBeLess") + " " + dayjs(tomorrow).format("D.MM.YYYY")
+            )
+            .test(
+                'checkOut-required-if-checkIn',
+                t("checkOut") + " " + t("isRequired"),
+                function (value) {
+                    const { checkIn } = this.parent;
+                    return !(checkIn && !value);
+                }
+            )
+            .test(
+                'checkOut-after-checkIn',
+                t("thereCanBeNoLess") + " " + t("checkIn"),
+                function (value) {
+                    const { checkIn } = this.parent;
+                    return !(value && checkIn && dayjs(value).isBefore(dayjs(checkIn)));
+                }
             )
     });
 
     const handleSubmit = (values) => {
-        navigate("/reserve-hotels", {replace: true});
-        console.log(values);
+        const searchParams = new URLSearchParams();
+        searchParams.append("destination", values.destination);
+        if (values.checkIn) searchParams.append("checkIn", values.checkIn);
+        if (values.checkOut) searchParams.append("checkOut", values.checkOut);
+
+        navigate(`/hotels?${searchParams.toString()}`);
     };
 
     return (
@@ -138,7 +169,7 @@ export default function HomeSearchForm() {
                                     <Box display="flex" gap={2} mt={3}>
                                         <Box flex={1}>
                                             <Typography className="label" gutterBottom>
-                                                {t("checkIn").charAt(0).toUpperCase() + t("checkIn").slice(1)}
+                                                {t("checkIn")}
                                             </Typography>
                                             <DatePicker
                                                 className="field"
@@ -161,7 +192,7 @@ export default function HomeSearchForm() {
                                         </Box>
                                         <Box flex={1}>
                                             <Typography className="label" gutterBottom>
-                                                {t("checkOut").charAt(0).toUpperCase() + t("checkOut").slice(1)}
+                                                {t("checkOut")}
                                             </Typography>
                                             <DatePicker
                                                 className="field"

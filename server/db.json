@@ -139,7 +139,8 @@
       "phone_number": "18005740835",
       "website": null,
       "image_url": "5018105.png",
-      "price": 220.00
+      "price": 220.00,
+      "features": ["Breakfast included", "Free Cancellation", "Wi-Fi"]
     },
     {
       "id": 11003176,
@@ -152,7 +153,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 80.50
+      "price": 80.50,
+      "features": ["All-inclusive", "Parking"]
     },
     {
       "id": 747134,
@@ -164,12 +166,13 @@
       "hotel_rating": 3.5,
       "phone_number": "212260414",
       "website": null,
-      "image_url": "",
-      "price": 190.80
+      "image_url": "747134.png",
+      "price": 190.80,
+      "features": ["Free Cancellation", "Pool", "Gym"]
     },
     {
       "id": 720550,
-      "name": "Hotel Richland New York",
+      "name": "Hotel Richland",
       "address": "5 Allen Street",
       "city": "New York",
       "state": "NY",
@@ -177,8 +180,9 @@
       "hotel_rating": 3,
       "phone_number": "1 212 2191018",
       "website": null,
-      "image_url": "",
-      "price": 145.00
+      "image_url": "720550.png",
+      "price": 145.00,
+      "features": ["Breakfast included", "Wi-Fi"]
     },
     {
       "id": 797074,
@@ -190,8 +194,9 @@
       "hotel_rating": 2.5,
       "phone_number": null,
       "website": null,
-      "image_url": "",
-      "price": 98.30
+      "image_url": "797074.png",
+      "price": 98.30,
+      "features": ["Free Cancellation", "All-inclusive", "Parking"]
     },
     {
       "id": 742987,
@@ -204,7 +209,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "742987.png",
-      "price": 80.50
+      "price": 80.50,
+      "features": ["Pool", "Pet friendly", "Gym"]
     },
     {
       "id": 743452,
@@ -217,7 +223,8 @@
       "phone_number": "1-212-398-2700",
       "website": null,
       "image_url": "",
-      "price": 165.00
+      "price": 165.00,
+      "features": ["Breakfast included", "Free Cancellation"]
     },
     {
       "id": 260469,
@@ -230,7 +237,8 @@
       "phone_number": "1 212 777-0012",
       "website": null,
       "image_url": "",
-      "price": 130.00
+      "price": 130.00,
+      "features": ["Wi-Fi", "Parking", "Gym"]
     },
     {
       "id": 740399,
@@ -243,7 +251,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 125.00
+      "price": 125.00,
+      "features": ["All-inclusive", "Pool"]
     },
     {
       "id": 5018104,
@@ -256,7 +265,8 @@
       "phone_number": "XX",
       "website": null,
       "image_url": "",
-      "price": 120.00
+      "price": 120.00,
+      "features": ["Free Cancellation", "Breakfast included", "Gym"]
     },
     {
       "id": 792811,
@@ -269,7 +279,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "792811.png",
-      "price": 250.00
+      "price": 250.00,
+      "features": ["All-inclusive", "Wi-Fi", "Pool"]
     },
     {
       "id": 804220,
@@ -282,7 +293,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 110.00
+      "price": 110.00,
+      "features": ["Free Cancellation", "Parking"]
     },
     {
       "id": 5018107,
@@ -295,7 +307,8 @@
       "phone_number": "17186985000",
       "website": null,
       "image_url": "",
-      "price": 130.00
+      "price": 130.00,
+      "features": ["Breakfast included", "All-inclusive", "Gym"]
     },
     {
       "id": 700390,
@@ -308,7 +321,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "700390.png",
-      "price": 245.80
+      "price": 245.80,
+      "features": ["Pool", "Pet friendly", "Wi-Fi"]
     },
     {
       "id": 742946,
@@ -321,7 +335,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 130.00
+      "price": 130.00,
+      "features": ["Free Cancellation", "Parking", "Gym"]
     },
     {
       "id": 776932,
@@ -334,7 +349,8 @@
       "phone_number": "121-247-51920",
       "website": "https://freehandhotels.com/new-york/rooms/",
       "image_url": "776932.png",
-      "price": 200.00
+      "price": 200.00,
+      "features": ["Breakfast included", "Wi-Fi", "Pool"]
     },
     {
       "id": 741741,
@@ -347,7 +363,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 100.00
+      "price": 100.00,
+      "features": ["All-inclusive", "Free Cancellation"]
     },
     {
       "id": 716815,
@@ -360,7 +377,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 130.00
+      "price": 130.00,
+      "features": ["Pool", "Wi-Fi"]
     },
     {
       "id": 802583,
@@ -373,7 +391,8 @@
       "phone_number": "+1 212 842 5500",
       "website": null,
       "image_url": "802583.png",
-      "price": 300.50
+      "price": 300.50,
+      "features": ["Breakfast included", "Free Cancellation", "Gym"]
     },
     {
       "id": 5018106,
@@ -386,7 +405,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 120.00
+      "price": 120.00,
+      "features": ["Wi-Fi", "Parking"]
     },
     {
       "id": 751736,
@@ -399,7 +419,8 @@
       "phone_number": "703-261-5677",
       "website": null,
       "image_url": "",
-      "price": 140.00
+      "price": 140.00,
+      "features": ["Free Cancellation", "Breakfast included"]
     },
     {
       "id": 386689,
@@ -412,7 +433,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 100.00
+      "price": 100.00,
+      "features": ["Pool", "All-inclusive"]
     },
     {
       "id": 567484,
@@ -425,7 +447,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Wi-Fi", "Free Cancellation"]
     },
     {
       "id": 677300,
@@ -438,7 +461,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "677300.png",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Breakfast included", "Gym"]
     },
     {
       "id": 820605,
@@ -451,7 +475,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 140.00
+      "price": 140.00,
+      "features": ["All-inclusive", "Free Cancellation"]
     },
     {
       "id": 731189,
@@ -464,7 +489,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Wi-Fi", "Parking"]
     },
     {
       "id": 721848,
@@ -477,7 +503,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "721848.png",
-      "price": 155.00
+      "price": 155.00,
+      "features": ["Pool", "Pet friendly"]
     },
     {
       "id": 677341,
@@ -490,7 +517,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Breakfast included", "All-inclusive"]
     },
     {
       "id": 677347,
@@ -503,7 +531,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Free Cancellation", "Gym"]
     },
     {
       "id": 810445,
@@ -516,7 +545,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Wi-Fi", "Pool"]
     },
     {
       "id": 677372,
@@ -529,7 +559,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 140.00
+      "price": 140.00,
+      "features": ["Breakfast included", "Free Cancellation"]
     },
     {
       "id": 822534,
@@ -542,7 +573,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 140.00
+      "price": 140.00,
+      "features": ["All-inclusive", "Gym"]
     },
     {
       "id": 793847,
@@ -555,7 +587,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "793847.png",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Pool", "Free Cancellation", "Wi-Fi"]
     },
     {
       "id": 677396,
@@ -568,7 +601,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "677396.png",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Breakfast included", "Gym"]
     },
     {
       "id": 677411,
@@ -581,7 +615,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["All-inclusive", "Free Cancellation"]
     },
     {
       "id": 677410,
@@ -594,7 +629,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Pool", "Wi-Fi"]
     },
     {
       "id": 677425,
@@ -607,7 +643,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "677425.png",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Breakfast included", "Gym"]
     },
     {
       "id": 677426,
@@ -620,7 +657,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Free Cancellation", "Parking"]
     },
     {
       "id": 721859,
@@ -633,7 +671,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Wi-Fi", "Pool"]
     },
     {
       "id": 801610,
@@ -646,7 +685,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Breakfast included", "Gym"]
     },
     {
       "id": 677429,
@@ -659,7 +699,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Free Cancellation", "All-inclusive"]
     },
     {
       "id": 677433,
@@ -672,12 +713,13 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Wi-Fi", "Gym"]
     },
     {
       "id": 677449,
       "name": "Industrial 3BR in Downtown by Sonder",
-      "address": "Washington Street and Essex St",
+      "address": "Washington Street and Essex st",
       "city": "Boston",
       "state": "MA",
       "country_code": "US",
@@ -685,7 +727,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Breakfast included", "Parking"]
     },
     {
       "id": 677450,
@@ -698,7 +741,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Pool", "Wi-Fi"]
     },
     {
       "id": 677452,
@@ -711,7 +755,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Free Cancellation", "Gym"]
     },
     {
       "id": 677455,
@@ -724,7 +769,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 140.00
+      "price": 140.00,
+      "features": ["Breakfast included", "All-inclusive"]
     },
     {
       "id": 677470,
@@ -737,7 +783,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Wi-Fi", "Parking"]
     },
     {
       "id": 677476,
@@ -750,7 +797,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Free Cancellation", "Gym"]
     },
     {
       "id": 677477,
@@ -763,7 +811,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Breakfast included", "Pool"]
     },
     {
       "id": 677480,
@@ -776,7 +825,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["All-inclusive", "Wi-Fi"]
     },
     {
       "id": 677481,
@@ -789,7 +839,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Free Cancellation", "Pool"]
     },
     {
       "id": 677519,
@@ -802,7 +853,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Breakfast included", "Gym"]
     },
     {
       "id": 677520,
@@ -815,7 +867,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Wi-Fi", "Parking"]
     },
     {
       "id": 705227,
@@ -828,7 +881,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Free Cancellation", "All-inclusive"]
     },
     {
       "id": 696618,
@@ -841,7 +895,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Breakfast included", "Gym"]
     },
     {
       "id": 677526,
@@ -854,7 +909,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Wi-Fi", "Pool"]
     },
     {
       "id": 677527,
@@ -867,7 +923,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Free Cancellation", "Parking"]
     },
     {
       "id": 677528,
@@ -880,7 +937,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Breakfast included", "All-inclusive"]
     },
     {
       "id": 677537,
@@ -893,7 +951,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Pool", "Gym"]
     },
     {
       "id": 696614,
@@ -906,7 +965,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Free Cancellation", "Parking"]
     },
     {
       "id": 677694,
@@ -919,7 +979,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Breakfast included", "Gym"]
     },
     {
       "id": 677550,
@@ -932,7 +993,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 140.00
+      "price": 140.00,
+      "features": ["Wi-Fi", "Free Cancellation"]
     },
     {
       "id": 787996,
@@ -945,7 +1007,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["All-inclusive", "Gym"]
     },
     {
       "id": 731262,
@@ -958,7 +1021,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Pool", "Wi-Fi"]
     },
     {
       "id": 677559,
@@ -971,7 +1035,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Breakfast included", "Parking"]
     },
     {
       "id": 677565,
@@ -984,7 +1049,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Free Cancellation", "All-inclusive"]
     },
     {
       "id": 677571,
@@ -997,7 +1063,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Wi-Fi", "Parking"]
     },
     {
       "id": 724715,
@@ -1010,7 +1077,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["Breakfast included", "Free Cancellation"]
     },
     {
       "id": 677574,
@@ -1023,7 +1091,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00
+      "price": 160.00,
+      "features": ["All-inclusive", "Gym"]
     },
     {
       "id": 677577,
@@ -1036,7 +1105,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Pool", "Parking"]
     },
     {
       "id": 757401,
@@ -1049,7 +1119,8 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00
+      "price": 150.00,
+      "features": ["Free Cancellation", "Gym"]
     }
   ]
 }

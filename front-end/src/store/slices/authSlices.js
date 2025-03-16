@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {fetchUserProfile, loginUser, registerUser} from "../thunks/authThunk";
+import {fetchUserProfile, loginUser, registerUser, toggleLikeHotel} from "../thunks/authThunk";
 
 const initialState = {
     user: null,
     token: localStorage.getItem('token') || null,
-    error: ""
+    error: "",
+    loading: true,
 };
 
 const authSlices = createSlice({
@@ -59,6 +60,20 @@ const authSlices = createSlice({
                 state.error = null;
             })
             .addCase(registerUser.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
+            // toggleLikeHotel
+            .addCase(toggleLikeHotel.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(toggleLikeHotel.fulfilled, (state, action) => {
+                state.loading = false;
+                state.user.likedHotels = action.payload.likedHotels;
+                state.error = null;
+            })
+            .addCase(toggleLikeHotel.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             });

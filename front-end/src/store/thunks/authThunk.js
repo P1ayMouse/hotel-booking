@@ -47,3 +47,22 @@ export const fetchUserProfile = createAsyncThunk('user/fetchProfile', async (_, 
         }
     }
 );
+
+export const toggleLikeHotel = createAsyncThunk('user/toggleLikeHotel', async (hotelId, {rejectWithError}) => {
+    try {
+        const token = localStorage.getItem('token');
+
+        const response = await axios.put(url + "/profile/toggle-like-hotel", {hotelId},
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        );
+
+        return response.data;
+    }
+    catch (e) {
+        return rejectWithError(e.response?.data?.message || e.message);
+    }
+})

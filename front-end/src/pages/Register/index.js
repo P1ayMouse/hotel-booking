@@ -1,14 +1,11 @@
-import RegisterForm from "./RegisterForm";
+import { Divider, IconButton, Typography, Box, Link } from "@mui/material";
 
+import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
+
+import { FacebookIcon, GoogleIcon, XIcon } from "../../components/CustomIcons";
+import RegisterForm from "./RegisterForm";
 import "./Register.scss"
-import {useTranslation} from "react-i18next";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
-import {NavLink} from "react-router-dom";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import {GitHub, Google, X} from "@mui/icons-material";
 
 export default function Register() {
     const { t } = useTranslation();
@@ -38,13 +35,13 @@ export default function Register() {
 
             <Box gap={1} display="flex" justifyContent="center">
                 <IconButton color="inherit">
-                    <Google />
+                    <FacebookIcon />
                 </IconButton>
                 <IconButton color="inherit">
-                    <GitHub />
+                    <GoogleIcon />
                 </IconButton>
                 <IconButton color="inherit">
-                    <X />
+                    <XIcon />
                 </IconButton>
             </Box>
         </Box>

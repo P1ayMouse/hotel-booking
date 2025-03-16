@@ -127,7 +127,7 @@ export default function LayoutComponent() {
                     </Box>
 
                     <Box sx={{ display: "flex", alignItems: "center", gap: "clamp(16px, 5vw, 96px)" }}>
-                        <List sx={{ display: "flex" }}>
+                        <List sx={{ display: "flex" }} className="nav-list">
                             {pagesList.map((page) => (
                                 <ListItemButton
                                     component={NavLink}
@@ -139,6 +139,25 @@ export default function LayoutComponent() {
                                     <ListItemText primary={page.label} />
                                 </ListItemButton>
                             ))}
+                            <ListItemButton
+                                disableRipple
+                                disableTouchRipple
+                                sx={{
+                                    '&:hover': { backgroundColor: 'transparent', cursor: 'default' },
+                                    marginLeft:"8px"
+                                }}
+                            >
+                                <LocalisationButton />
+                            </ListItemButton>
+                            <ListItemButton
+                                disableRipple
+                                disableTouchRipple
+                                sx={{
+                                    '&:hover': { backgroundColor: 'transparent', cursor: 'default' },
+                                }}
+                            >
+                                <ThemeButton />
+                            </ListItemButton>
                         </List>
                         {user ?
                             <Button onClick={handleLogout} className="button">
@@ -183,8 +202,6 @@ export default function LayoutComponent() {
                         <Box className="brand-block">
                             <Box className="brand-top">
                                 <FooterLogo />
-                                <ThemeButton />
-                                <LocalisationButton />
                             </Box>
                             <Typography className="brand-description">
                                 {t("jointVenture")}
@@ -198,7 +215,12 @@ export default function LayoutComponent() {
                                         {element.label}
                                     </Typography>
                                     {element.links.map((link) => (
-                                        <Typography className="link" key={link.key}>
+                                        <Typography
+                                            component={NavLink}
+                                            to={link.key}
+                                            className="link"
+                                            key={link.key}
+                                        >
                                             {link.label}
                                         </Typography>
                                     ))}

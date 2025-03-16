@@ -32,8 +32,8 @@ export default function LocalisationButton() {
                     <img
                         src={currentLanguage.flag}
                         alt={currentLanguage.label}
-                        width="32"
-                        height="32"
+                        width="20"
+                        height="20"
                     />
                 </IconButton>
             </Tooltip>

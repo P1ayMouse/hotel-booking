@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Hotels from "./pages/Hotels";
 import Hotel from "./pages/Hotel";
+import Error404 from "./pages/Error404";
 
 import { hotelsAndDestinationsLoader } from "./loaders/hotelsAndDestinationsLoader";
 
@@ -35,7 +36,8 @@ const router = createBrowserRouter([
                 element:
                     <PrivateRoute>
                         <Hotels/>
-                    </PrivateRoute>
+                    </PrivateRoute>,
+                loader: hotelsAndDestinationsLoader
             },
             {
                 path: "/hotels/hotel/:id",
@@ -46,7 +48,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "*",
-                element: <div>404</div>,
+                element: <Error404/>,
             },
         ]
     }
@@ -54,7 +56,7 @@ const router = createBrowserRouter([
 
 function App() {
     return (
-        <RouterProvider router={router}/>
+        <RouterProvider router={router} />
     );
 }
 

@@ -5,8 +5,8 @@
   "destination": "Пункт призначення",
   "chooseCity": "Оберіть місто",
   "location": "Місце призначення",
-  "checkIn": "дата заселення",
-  "checkOut": "дата виселення",
+  "checkIn": "Дата заселення",
+  "checkOut": "Дата виселення",
   "chooseDate": "Оберіть дату",
   "date": "дата",
   "adults": "Дорослі",
@@ -35,6 +35,7 @@
   "mustBeOverSixteen": "повинен бути більше 16 років!",
   "cannotBeOver": "не може бути більше ніж",
   "thereCanBeNoMore": "Не може бути більше ніж",
+  "thereCanBeNoLess": "Не може бути менше ніж",
   "lightMode": "Світлий режим",
   "darkMode": "Темний режим",
   "pricing": "Ціни",
@@ -78,6 +79,26 @@
   "or": "або",
   "forgotPassword": "Забули пароль",
   "getStarted": "Створіть",
+  "availability": "Доступність",
+  "taxesAndCharges": "Включає податки та збори",
+  "search": "Пошук",
+  "clear": "Очистити",
+  "diffMinMax": "Мінімальна та максимальна різниця має бути не менше {{num}}",
+  "highRated": "Від найкращих",
+  "lowRated": "Від найгірших",
+  "highPrice": "Від дешевих",
+  "lowPrice": "Від дорогих",
+  "belowMinimum": "Значення нижче мінімально допустимого",
+  "aboveMaximum": "Значення перевищує максимально допустиме",
+  "budgetPerNight": "Ваш бюджет за ніч",
+  "filterBy": "Сортування",
+  "chooseIt": "Не обрано",
+  "showMore": "Показати більше",
+  "comfortInHotels": "Відкрийте для себе надзвичайний комфорт у готелях",
+  "exclusiveRewardsInEveryCorner": "Знаходьте ексклюзивні винагороди в будь-якому куточку світу!",
+  "features": {
+    "breakfast": "Сніданок включено"
+  },
   "server-errors": {
     "required_fields_not_filled": "Не заповнено обов’язкові поля!",
     "user_exists": "Користувач з таким email вже існує!",
@@ -90,6 +111,7 @@
     "invalid_token": "Невірний токен!",
     "user_not_found": "Користувача не знайдено!",
     "data_loading_failed": "Не вдалося завантажити дані!",
-    "hotel_not_found": "Готель не знайдено!"
+    "hotel_not_found": "Готель не знайдено!",
+    "Network Error": "Помилка мережі!"
   }
 }

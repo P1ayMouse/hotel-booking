@@ -1,0 +1,13 @@
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  max-width: 258px;
+  width: 100%;
+
+  .filterName {
+    color: var(--Neutral-500, #565656);
+    font-size: 24px;
+    font-weight: 500;
+  }
+}

@@ -5,8 +5,8 @@
   "destination": "Destination",
   "chooseCity": "Choose city",
   "location": "Location",
-  "checkIn": "check in",
-  "checkOut": "check out",
+  "checkIn": "Check in",
+  "checkOut": "Check out",
   "chooseDate": "Choose date",
   "date": "date",
   "adults": "Adults",
@@ -34,6 +34,7 @@
   "minElevenChars": "must be at least 11 characters long!",
   "mustBeOverSixteen": "must be over 16!",
   "thereCanBeNoMore": "There can be no more than",
+  "thereCanBeNoLess": "There can be no less than",
   "cannotBeOver": "cannot be over",
   "lightMode": "Light mode",
   "darkMode": "Dark mode",
@@ -78,6 +79,27 @@
   "or": "or",
   "forgotPassword": "Forgot password",
   "getStarted": "Get started",
+  "availability": "See Availability",
+  "taxesAndCharges": "Includes taxes and charges",
+  "search": "Search",
+  "discoverHotels": "Discover Extraordinary Comfort in Hotels",
+  "clear": "Clear",
+  "diffMinMax": "Minimum and maximum difference must be at least {{num}}",
+  "highRated": "High rated",
+  "lowRated": "Low rated",
+  "highPrice": "High price",
+  "lowPrice": "Low price",
+  "belowMinimum": "Value is below minimum allowed",
+  "aboveMaximum": "Value is above maximum allowed",
+  "budgetPerNight": "Your Budget for per night",
+  "filterBy": "Filter By",
+  "chooseIt": "Choose it",
+  "showMore": "Show More",
+  "comfortInHotels": "Discover Extraordinary Comfort in Hotels",
+  "exclusiveRewardsInEveryCorner": "Find exclusive rewards in every corner of the world!",
+  "features": {
+    "breakfast": "Breakfast included"
+  },
   "server-errors": {
     "required_fields_not_filled": "Required fields are not filled in!",
     "user_exists": "The user with this email already exists!",
@@ -90,6 +112,7 @@
     "invalid_token": "Invalid token!",
     "user_not_found": "The user is not found!",
     "data_loading_failed": "Data loading failed!",
-    "hotel_not_found": "Hotel is not found!"
+    "hotel_not_found": "Hotel is not found!",
+    "Network Error": "Network Error!"
   }
 }

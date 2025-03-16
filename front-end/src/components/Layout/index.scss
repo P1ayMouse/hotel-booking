@@ -83,17 +83,17 @@ $dark-text: #efebe9;
         }
     }
 
-    @media (max-width: 975px) {
+    @media (max-width: 1100px) {
         justify-content: center;
+
+        .nav-list, .button {
+            display: none;
+        }
 
         .logo {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-        }
-
-        .nav-button, .button {
-            display: none;
         }
     }
 }
@@ -209,9 +209,17 @@ $dark-text: #efebe9;
                         font-size: 18px;
                         font-weight: 500;
                     }
+
                     .link {
-                        font-size: 16px;
+                        color: inherit;
+                        text-decoration: none;
+                        cursor: pointer;
+                        transition: color 0.3s ease;
                         font-weight: 100;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
                     }
                 }
             }
@@ -226,7 +234,7 @@ $dark-text: #efebe9;
         }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
         .footer-container {
             gap: 24px;
 

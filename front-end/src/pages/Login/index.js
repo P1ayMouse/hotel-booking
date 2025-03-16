@@ -1,14 +1,11 @@
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { useTranslation } from "react-i18next";
-import { GitHub, Google, X } from "@mui/icons-material";
+import {IconButton, Divider, Link, Box, Typography} from '@mui/material';
 
-import "./Login.scss"
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+import {FacebookIcon, GoogleIcon, XIcon} from "../../components/CustomIcons";
 import LoginForm from "./LoginForm";
-import {NavLink} from "react-router-dom";
+import "./Login.scss"
 
 export default function Login() {
     const { t } = useTranslation();
@@ -37,13 +34,13 @@ export default function Login() {
 
             <Box gap={1} display="flex" justifyContent="center">
                 <IconButton color="inherit">
-                    <Google />
+                    <FacebookIcon />
                 </IconButton>
                 <IconButton color="inherit">
-                    <GitHub />
+                    <GoogleIcon />
                 </IconButton>
                 <IconButton color="inherit">
-                    <X />
+                    <XIcon />
                 </IconButton>
             </Box>
         </Box>

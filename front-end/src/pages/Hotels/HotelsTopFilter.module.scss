@@ -1,0 +1,50 @@
+.filterContainer {
+  width: 100%;
+  margin-bottom: 48px;
+
+  .form {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    .field {
+      width: 256px;
+      .MuiFormControl-root {
+        border: none;
+        background-color: #F5F6F8;
+        color: #959493;
+        border-radius: 12px;
+
+        input {
+          display: flex;
+          align-items: center;
+          font-weight: 300;
+          font-size: 12px;
+        }
+
+        fieldset {
+          border: none;
+          transition: border-color 0.3s ease-in-out;
+        }
+      }
+    }
+
+
+    .button {
+      align-self: flex-end;
+      justify-self: flex-end;
+      font-size: 16px;
+      font-weight: 300;
+      width: 100%;
+      max-width: 182px;
+      height: 56px;
+      padding: 10px;
+      border-radius: 4px;
+      text-transform: capitalize;
+      box-shadow: none;
+      transition: color 0.3s ease-in-out;
+      background-color: #C3731C;
+      color: #FFFFFF;
+    }
+  }
+}

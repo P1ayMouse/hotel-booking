@@ -105,7 +105,34 @@ function authenticateToken(req, res, next) {
 app.get('/profile', authenticateToken, (req, res) => {
     const user = users.find(user => user.id === req.user.id);
     if (!user) return res.status(404).json({ error: 'user_not_found' });
-    res.json({ username: user.username, email: user.email });
+    res.json({
+        username: user.username,
+        email: user.email,
+        age: user.age,
+        gender: user.gender,
+        reservedHotels: user.reservedHotels,
+        likedHotels: user.likedHotels
+    });
+});
+
+app.put('/profile/toggle-like-hotel', authenticateToken, (req, res) => {
+    const { hotelId } = req.body;
+
+    const user = users.find(user => user.id === req.user.id);
+    if (!user) return res.status(404).json({ error: 'user_not_found' });
+
+    if (user.likedHotels.includes(hotelId)) {
+        user.likedHotels = user.likedHotels.filter(id => id !== hotelId);
+    } else {
+        user.likedHotels.push(hotelId);
+    }
+
+    fs.writeFile(dataPath, JSON.stringify({ users }, null, 2), (err) => {
+        if (err) {
+            return res.status(500).json({ error: 'could_not_update' });
+        }
+        res.json({ message: 'success', likedHotels: user.likedHotels });
+    });
 });
 
 app.get('/destination', (req, res) => {
