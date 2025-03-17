@@ -63,7 +63,7 @@ export default function HotelsPriceFilter() {
                 value={sliderValue}
                 onChange={sliderHandleChange}
                 valueLabelDisplay="auto"
-                sx={{ color: "#500903", width: "100%" }}
+                sx={{ color: "var(--accent)", width: "100%" }}
                 min={hotelMinPrice}
                 max={hotelMaxPrice}
                 disableSwap
@@ -104,6 +104,7 @@ export default function HotelsPriceFilter() {
                                 }}
                                 sx={{
                                     "& .MuiOutlinedInput-root": {
+                                        backgroundColor: "#FFF",
                                         borderRadius: "8px",
                                     },
                                 }}
@@ -134,6 +135,7 @@ export default function HotelsPriceFilter() {
                                 }}
                                 sx={{
                                     "& .MuiOutlinedInput-root": {
+                                        backgroundColor: "#FFF",
                                         borderRadius: "8px",
                                     },
                                 }}
@@ -145,7 +147,7 @@ export default function HotelsPriceFilter() {
                             type="submit"
                             variant="contained"
                             sx={{
-                                backgroundColor: "#500903",
+                                backgroundColor: "var(--accent)",
                                 marginTop: "8px",
                                 borderRadius: "8px",
                             }}

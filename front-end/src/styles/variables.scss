@@ -1,0 +1,15 @@
+[data-theme="light"] {
+  --primary-bg: #f5f5f5;
+  --second-bg: #fff;
+  --primary-text: #212121;
+  --second-text: #565656;
+  --accent: #7F2203;
+}
+
+[data-theme="dark"] {
+  --primary-bg: #212121;
+  --second-bg: #424242;
+  --primary-text: #efebe9;
+  --second-text: #efebe9;
+  --accent: #ca3a04;
+}

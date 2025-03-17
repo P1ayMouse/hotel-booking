@@ -9,23 +9,42 @@
 
     .field {
       width: 256px;
-      .MuiFormControl-root {
-        border: none;
-        background-color: #F5F6F8;
-        color: #959493;
-        border-radius: 12px;
+
+      :global(.MuiOutlinedInput-root) {
+        background-color: #FFF;
+        color: var(--text-color, #959493);
+        border-radius: 4px;
 
         input {
           display: flex;
           align-items: center;
           font-weight: 300;
-          font-size: 12px;
+          font-size: 14px;
         }
 
         fieldset {
-          border: none;
           transition: border-color 0.3s ease-in-out;
         }
+      }
+
+      :global(.MuiOutlinedInput-root.Mui-error) {
+        fieldset {
+          border-color: #FF4D4D;
+        }
+      }
+
+      :global(.MuiInputLabel-root.Mui-error) {
+        color: #FF4D4D;
+      }
+
+      // Для Select:
+      :global(.MuiSelect-select) {
+        background-color: #FFF;
+        color: var(--text-color, #959493);
+        display: flex;
+        align-items: center;
+        font-weight: 300;
+        font-size: 14px;
       }
     }
 

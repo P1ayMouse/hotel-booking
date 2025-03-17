@@ -1,10 +1,10 @@
-import { Button, Box, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
-import { PlaceOutlined, StarRate } from "@mui/icons-material";
+import { Button, Box, Typography } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import {NavLink, useNavigate} from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+import HotelCard from "../../components/HotelCard";
 
 export default function HomeHotelsList() {
     const { hotels } = useSelector((state) => state.hotel);
@@ -19,10 +19,10 @@ export default function HomeHotelsList() {
         <Box className="home-hotel-list">
             <Box className="top-info">
                 <Box maxWidth="534px" width="100%">
-                    <Typography style={{fontSize: "16px", fontWeight: 450, textTransform: "uppercase", color: "#7F2203"}}>
+                    <Typography style={{fontSize: "16px", fontWeight: 450, textTransform: "uppercase", color: "var(--accent)"}}>
                         {t("recommendedHotel")}
                     </Typography>
-                    <Typography style={{fontSize: "48px", fontWeight: 500, color: "#322F2A"}} mb={2}>
+                    <Typography style={{fontSize: "48px", fontWeight: 500}} mb={2}>
                         {t("monthHotels")}
                     </Typography>
                     <Typography style={{fontSize: "18px", fontWeight: 280, lineHeight: "32px", color: "#959493"}}>
@@ -35,43 +35,7 @@ export default function HomeHotelsList() {
             </Box>
             <Box className="hotels-list">
                 {topRatedHotels().map((hotel) => (
-                        <Card
-                            key={hotel.id}
-                            variant="outlined"
-                            className="hotel-card"
-                        >
-                            <CardActionArea
-                                component={NavLink} to={`/hotels/hotel/${hotel.id}`}
-                            >
-                                <CardContent className="card-content">
-                                    <CardMedia
-                                        component="img"
-                                        className="card-img"
-                                        image={hotel.image_url ? `/assets/img/hotels/${hotel.image_url}` : `/assets/img/none.png`}
-                                        alt={hotel.name}
-                                        onError={(e) => e.target.src = "/assets/img/none.png"}
-                                    />
-                                    <Box className="main-info">
-                                        <Box>
-                                            <Typography className="card-name" gutterBottom>
-                                                {hotel.name}
-                                            </Typography>
-                                            <Typography variant="body2" display="flex" alignItems="center" color="#959493">
-                                                <PlaceOutlined sx={{ fontSize: "20px", color: "#FEBD22", mr: 1 }} />
-                                                {hotel.address}{hotel.state && `, ${hotel.state}`}
-                                            </Typography>
-                                        </Box>
-                                        <Typography variant="body2" display="flex" alignItems="center" gap={0.5}>
-                                            <StarRate sx={{ fontSize: "20px", color: "#F2AC0D", marginBottom: 0.5 }} />
-                                            {hotel.hotel_rating}
-                                        </Typography>
-                                    </Box>
-                                    <Box className="hotel-price">
-                                        {`$${hotel.price.toFixed(2)}`}
-                                    </Box>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
+                    <HotelCard hotel={hotel} />
                 ))}
             </Box>
         </Box>

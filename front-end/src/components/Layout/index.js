@@ -49,16 +49,16 @@ export default function LayoutComponent() {
             key: "/about",
         },
         {
-            label: t("services"),
-            key: "/services",
+            label: t("hotels"),
+            key: "/hotels",
         },
         {
-            label: t("pricing"),
-            key: "/pricing",
+            label: t("profile"),
+            key: "/profile",
         },
         {
-            label: "FAQ",
-            key: "/faq",
+            label: t("favorite"),
+            key: "/favorite-hotels",
         }
     ]
 
@@ -117,16 +117,16 @@ export default function LayoutComponent() {
     ]
 
     return (
-        <Box className={`layout ${theme}`}>
-            <AppBar position="static" className={`header ${theme}`}>
+        <Box data-theme={theme} className={"layout"}>
+            <AppBar position="static" className="header" sx={{backgroundColor: "var(--primary-bg)"}}>
                 <Toolbar className="toolbar">
                     <Box sx={{ display: "flex", alignItems: "center" }}>
                         <IconButton disableRipple={true} component={NavLink} to="/" className="logo">
-                            <Logo />
+                            {theme === "light" ? <Logo /> : <FooterLogo />}
                         </IconButton>
                     </Box>
 
-                    <Box sx={{ display: "flex", alignItems: "center", gap: "clamp(16px, 5vw, 96px)" }}>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
                         <List sx={{ display: "flex" }} className="nav-list">
                             {pagesList.map((page) => (
                                 <ListItemButton
@@ -180,7 +180,7 @@ export default function LayoutComponent() {
                 <Outlet />
             </Box>
 
-            <Box component="footer" className={`footer ${theme}`}>
+            <Box component="footer" className="footer">
                 <Box className="footer-container">
                     <Box className="newsletter">
                         <Box className="newsletter-text">

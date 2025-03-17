@@ -87,6 +87,7 @@ export default function RegisterForm() {
                             <Grid size={{ xs: 12 }}>
                                 <TextField
                                     fullWidth
+                                    className="register-field"
                                     name="username"
                                     label={t("username")}
                                     value={values.username}
@@ -99,6 +100,7 @@ export default function RegisterForm() {
                             <Grid size={{ xs: 12 }}>
                                 <TextField
                                     fullWidth
+                                    className="register-field"
                                     name="password"
                                     label={t("password")}
                                     type={showPassword ? 'text' : 'password'}
@@ -110,7 +112,11 @@ export default function RegisterForm() {
                                         input: {
                                             endAdornment: (
                                                 <InputAdornment position="end">
-                                                    <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
+                                                    <IconButton
+                                                        onClick={() => setShowPassword(!showPassword)}
+                                                        sx={{color: 'var(--primary-text)'}}
+                                                        edge="end"
+                                                    >
                                                         {showPassword ? <Visibility/> : <VisibilityOff/>}
                                                     </IconButton>
                                                 </InputAdornment>
@@ -123,6 +129,7 @@ export default function RegisterForm() {
                             <Grid size={{ xs: 12 }}>
                                 <TextField
                                     fullWidth
+                                    className="register-field"
                                     name="email"
                                     label={t("emailAddress")}
                                     type="email"
@@ -137,6 +144,7 @@ export default function RegisterForm() {
                             <Grid size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     fullWidth
+                                    className="register-field"
                                     name="age"
                                     label={t("age")}
                                     type="number"
@@ -151,6 +159,7 @@ export default function RegisterForm() {
                                 <TextField
                                     select
                                     fullWidth
+                                    className="register-field"
                                     name="gender"
                                     label={t("gender")}
                                     value={values.gender}

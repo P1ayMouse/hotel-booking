@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .home-page {
   display: flex;
   flex-direction: column;
@@ -49,7 +51,8 @@
       padding: 32px;
       justify-content: space-between;
       border-radius: 24px;
-      background-color: white;
+      background-color: var(--primary-bg);
+      color: var(--primary-text);
       min-width: 356px;
       min-height: 369px;
 
@@ -63,7 +66,7 @@
         .field {
           .MuiOutlinedInput-root {
             border: none;
-            background-color: #F5F6F8;
+            background-color: #ececec;
             color: #959493;
             border-radius: 12px;
 
@@ -112,72 +115,6 @@
     margin: 10px 0 60px;
     flex-wrap: wrap;
     gap: 32px;
-
-    .hotel-card {
-      border: none;
-      height: 397px;
-      width: 384px;
-      border-radius: 32px;
-      box-shadow: 0 2px 44px 0 #322F2A14;
-      background-color: #FCFDFF;
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 24px;
-
-      @media (max-width: 1247px) {
-        width: calc(48% - 12px);
-      }
-
-      @media (max-width: 831px) {
-        max-width: 534px;
-        width: 100%;
-      }
-
-      .MuiCardActionArea-root {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
-
-      .card-content {
-        flex: 1;
-        width: 100%;
-        padding: 24px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .card-img {
-          border-radius: 16px;
-          width: 100%;
-          height: 220px;
-          object-fit: cover;
-          object-position: center;
-        }
-
-        .main-info {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-
-          .card-name {
-            font-size: 20px;
-            font-weight: 500;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-          }
-        }
-
-        .hotel-price {
-          color: #322F2A;
-          font-size: 24px;
-          font-weight: 600;
-        }
-      }
-    }
   }
 
   .top-info {
@@ -186,6 +123,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 61px 0 61px 0;
+    color: var(--primary-text);
 
     .button {
       height: 34px;
@@ -258,7 +196,7 @@
         }
 
         .benefit-title {
-          color: #322F2A;
+          color: var(--primary-text);
           font-size: 18px;
           font-weight: 500;
         }

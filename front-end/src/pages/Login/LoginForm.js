@@ -67,6 +67,7 @@ export default function LoginForm() {
                     <Box display="flex" flexDirection="column" alignItems="flex-end">
                         <TextField
                             fullWidth
+                            className="login-field"
                             name="email"
                             label={t("emailAddress")}
                             value={values.email}
@@ -82,6 +83,7 @@ export default function LoginForm() {
 
                         <TextField
                             fullWidth
+                            className="login-field"
                             name="password"
                             label={t("password")}
                             type={showPassword ? 'text' : 'password'}
@@ -93,7 +95,11 @@ export default function LoginForm() {
                                 input: {
                                     endAdornment: (
                                         <InputAdornment position="end">
-                                            <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
+                                            <IconButton
+                                                onClick={() => setShowPassword(!showPassword)}
+                                                sx={{color: 'var(--primary-text)'}}
+                                                edge="end"
+                                            >
                                                 {showPassword ? <Visibility/> : <VisibilityOff/>}
                                             </IconButton>
                                         </InputAdornment>

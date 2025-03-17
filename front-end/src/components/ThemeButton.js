@@ -16,7 +16,7 @@ export default function ThemeButton() {
     return (
         <Box>
             <Tooltip title={theme === "light" ? t("lightMode") : t("darkMode")}>
-                <IconButton onClick={toggleTheme} color="inherit">
+                <IconButton onClick={toggleTheme} sx={{color: theme === "light" ? "#212121FF": "#F5F5F5FF"}}>
                     {theme === "light" ? <LightMode /> : <DarkMode />}
                 </IconButton>
             </Tooltip>

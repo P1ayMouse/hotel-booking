@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .register-container {
     margin: 80px 0 80px;
     padding: 40px 24px;
@@ -5,7 +7,8 @@
     border-radius: 16px;
     display: flex;
     flex-direction: column;
-    background-color: #F9FAFB;
+    color: var(--primary-text);
+    background-color: var(--second-bg);
     max-width: 400px;
     box-shadow: 0 2px 88px 0 #322F2A14;
 
@@ -20,4 +23,28 @@
         padding: 8px 22px;
         border-radius: 10px;
     }
+
+    .register-field {
+        label {
+            color: var(--text-color);
+        }
+
+        .MuiOutlinedInput-root {
+            color: var(--text-color);
+
+            fieldset {
+                border-color: var(--text-color);
+            }
+
+            &:hover fieldset {
+                border-color: var(--text-color);
+            }
+        }
+
+        .MuiOutlinedInput-root.Mui-error fieldset, .MuiInputLabel-root.Mui-error {
+            border-color: #FF4D4D;
+            color: #FF4D4D;
+        }
+    }
+
 }

@@ -1,5 +1,19 @@
+@import "../../styles/variables.scss";
+
 .hotels-list-pagination {
   width: 100%;
+  button {
+    &:disabled {
+      .pagination-icon {
+        color: grey;
+      }
+    }
+    &:not(:disabled) {
+      .pagination-icon {
+        color: var(--primary-text);
+      }
+    }
+  }
 
   .hotels-list-container {
     display: flex;

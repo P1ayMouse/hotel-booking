@@ -19,6 +19,8 @@
   "login": "Login",
   "logout": "Logout",
   "profile": "Profile",
+  "favorite": "Favorite",
+  "favoriteHotels": "Favorite hotels",
   "firstName": "First Name",
   "lastName": "Last Name",
   "email": "Email",
@@ -97,6 +99,7 @@
   "showMore": "Show More",
   "comfortInHotels": "Discover Extraordinary Comfort in Hotels",
   "exclusiveRewardsInEveryCorner": "Find exclusive rewards in every corner of the world!",
+  "hotels": "Hotels",
   "features": {
     "breakfast": "Breakfast included"
   },

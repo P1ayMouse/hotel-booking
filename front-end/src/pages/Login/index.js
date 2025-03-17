@@ -13,7 +13,7 @@ export default function Login() {
         <Box className="login-container">
             <Box gap={1.5} display="flex" flexDirection="column" alignItems="center" sx={{ mb: 5 }}>
                 <Typography variant="h5" sx={{fontWeight: "bold"}}>{t("signIn")}</Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="var(--primary-text)">
                     {t("doNotHaveAnAccount")}?
                     <Link variant="subtitle2" component={NavLink} to="/register" sx={{ ml: 0.5, textDecoration: "none" }}>
                         {t("getStarted")}
@@ -23,10 +23,10 @@ export default function Login() {
 
             <LoginForm />
 
-            <Divider sx={{ my: 3, '&::before, &::after': { borderTopStyle: 'dashed' } }}>
+            <Divider sx={{ my: 3, '&::before, &::after': { borderTopStyle: 'dashed', borderColor: "var(--primary-text)" } }}>
                 <Typography
                     variant="overline"
-                    sx={{ color: 'text.secondary', fontWeight: 'fontWeightMedium', fontStyle: 'capitalize' }}
+                    sx={{ color: 'var(--primary-text)', fontWeight: 'fontWeightMedium', fontStyle: 'capitalize' }}
                 >
                     {t("or")}
                 </Typography>

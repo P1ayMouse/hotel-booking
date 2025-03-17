@@ -11,10 +11,10 @@ export default function Register() {
     const { t } = useTranslation();
 
     return (
-        <Box className={`register-container`}>
+        <Box className="register-container">
             <Box gap={1.5} display="flex" flexDirection="column" alignItems="center" sx={{ mb: 5 }}>
                 <Typography variant="h5" sx={{fontWeight: "bold"}}>{t("registration")}</Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2">
                     {t("haveAnAccount")}?
                     <Link variant="subtitle2" component={NavLink} to="/login" sx={{ ml: 0.5, textDecoration: "none" }}>
                         {t("signIn")}
@@ -24,12 +24,12 @@ export default function Register() {
 
             <RegisterForm />
 
-            <Divider sx={{ my: 3, '&::before, &::after': { borderTopStyle: 'dashed' } }}>
+            <Divider sx={{ my: 3, '&::before, &::after': { borderTopStyle: 'dashed', borderColor: "var(--primary-text)" } }}>
                 <Typography
                     variant="overline"
-                    sx={{ color: 'text.secondary', fontWeight: 'fontWeightMedium' }}
+                    sx={{ color: 'var(--primary-text)', fontWeight: 'fontWeightMedium', fontStyle: 'capitalize' }}
                 >
-                    OR
+                    {t("or")}
                 </Typography>
             </Divider>
 

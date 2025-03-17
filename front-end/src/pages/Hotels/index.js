@@ -20,10 +20,10 @@ export default function Hotels() {
     return (
         <Box width="1224px">
             <Box marginTop={8} marginBottom={7}>
-                <Typography color="#7F2203" fontSize="24px" fontWeight="700">
+                <Typography color="var(--accent)" fontSize="24px" fontWeight="700">
                     {t("comfortInHotels")}
                 </Typography>
-                <Typography color="#7F2203" fontSize="14px" fontWeight="300">
+                <Typography color="var(--accent)" fontSize="14px" fontWeight="300">
                     {t("exclusiveRewardsInEveryCorner")}
                 </Typography>
             </Box>

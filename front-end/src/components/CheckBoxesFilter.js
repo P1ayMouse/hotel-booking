@@ -50,7 +50,7 @@ export default function CheckBoxesFilter({title, elements, filterKey}) {
                 ))}
             </FormGroup>
             {itemsNum <= elements.length &&
-                <Typography onClick={() => setItemsNum(itemsNum + 3)} sx={{ color: "#500903", cursor: "pointer", fontSize: "12px", fontWeight: 500 }}>
+                <Typography onClick={() => setItemsNum(itemsNum + 3)} sx={{ color: "var(--accent)", cursor: "pointer", fontSize: "12px", fontWeight: 500 }}>
                     {t("showMore")}
                 </Typography>
             }

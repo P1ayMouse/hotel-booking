@@ -15,9 +15,24 @@
         386689,
         567484,
         797074,
-        11003176,
         747134,
-        5018105
+        5018105,
+        720550,
+        743452
+      ]
+    },
+    {
+      "id": "bcad5dde-d8e9-45db-b9d2-ad0862519063",
+      "username": "Artem",
+      "email": "artem@example.com",
+      "password": "$2b$10$R1RWly7RhwvnPgqv/UUqA.45nBqo8pnHKOkVCV88WG7TANTQIt0jG",
+      "age": 21,
+      "gender": "male",
+      "reservedHotels": [],
+      "likedHotels": [
+        5018105,
+        11003176,
+        720550
       ]
     }
   ]

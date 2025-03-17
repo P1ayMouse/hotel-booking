@@ -33,10 +33,10 @@ export default function HomeHotelBenefits() {
         <Box className="home-hotel-benefits">
             <Benefit className="benefit-img" />
             <Box width="100%" className="benefit-content">
-                <Typography style={{fontSize: "16px", fontWeight: 450, lineHeight: "32px", textTransform: "uppercase", color: "#7F2203"}}>
+                <Typography style={{fontSize: "16px", fontWeight: 450, lineHeight: "32px", textTransform: "uppercase", color: "var(--accent)"}}>
                     {t("benefit")}
                 </Typography>
-                <Typography style={{fontSize: "48px", fontWeight: 500, lineHeight: "57px", color: "#322F2A"}} mb={2}>
+                <Typography style={{fontSize: "48px", fontWeight: 500, lineHeight: "57px", color: "var(--primary-text)"}} mb={2}>
                     {t("benefitTitle")}
                 </Typography>
                 <Typography style={{fontSize: "18px", fontWeight: 280, lineHeight: "32px", color: "#959493"}}>

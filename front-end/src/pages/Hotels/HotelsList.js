@@ -1,15 +1,21 @@
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Box, Typography, IconButton } from "@mui/material";
+import {Box, Typography, IconButton, Button} from "@mui/material";
 import { KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, NavigateBefore, NavigateNext } from "@mui/icons-material";
 
 import { features } from "../../data/features";
-import HotelCard from "./HotelCard";
+import HotelsHotelCard from "./HotelsHotelCard";
+import {useTranslation} from "react-i18next";
+import styles from "./HotelsHotelCard.module.scss";
+import {FavoriteIcon} from "../../components/CustomIcons";
 
 export default function HotelsList() {
+    const { t } = useTranslation();
+
     const hotels = useSelector((state) => state.hotel.hotels);
     const destinations = useSelector((state) => state.destination.destinations);
 
+    const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
 
     const destinationParam = searchParams.get("destination");
@@ -111,31 +117,46 @@ export default function HotelsList() {
             <Box className="hotels-list-container">
                 {currentHotels.length > 0 ? (
                     currentHotels.map((hotel) => (
-                        <HotelCard key={hotel.id} hotel={hotel} />
+                        <HotelsHotelCard key={hotel.id} hotel={hotel} />
                     ))
                 ) : (
-                    <Typography marginTop="200px" color="#7F2203" width="100%" textAlign="center" fontSize="24px" fontWeight="700">
-                        Hotels not found.
+                    <Typography marginTop="200px" color="var(--accent)" width="100%" textAlign="center" fontSize="24px" fontWeight="700">
+                        {t("Hotels not found.")}
                     </Typography>
                 )}
             </Box>
+
             { totalPages > 0 &&
-                <Box display="flex" justifyContent="center" alignItems="center" marginTop={4}>
-                    <IconButton onClick={goToFirstPage} disabled={currentPage === 1}>
-                        <KeyboardDoubleArrowLeft />
-                    </IconButton>
-                    <IconButton onClick={handlePrev} disabled={currentPage === 1}>
-                        <NavigateBefore />
-                    </IconButton>
-                    <Typography marginX={2}>
-                        {currentPage} / {totalPages}
-                    </Typography>
-                    <IconButton onClick={handleNext} disabled={currentPage === totalPages}>
-                        <NavigateNext />
-                    </IconButton>
-                    <IconButton onClick={goToLastPage} disabled={currentPage === totalPages}>
-                        <KeyboardDoubleArrowRight />
-                    </IconButton>
+                <Box display="flex" justifyContent="space-between" alignItems="center" marginTop={4}>
+                    <Button
+                        sx={{width: "290px", height: "48px", textTransform: "none", borderRadius: "4px", border: "1px solid #C3731C", background: "var(--Neutral-White, #FFF)", color: "#C3731C", padding: "8px 16px", fontSize: "16px"}}
+                        variant="outlined"
+                        onClick={() => navigate("/favorite-hotels")}
+                    >
+                        List your Favourite Places
+                        <FavoriteIcon
+                            className={styles.favoriteImg}
+                            sx={{background: "var(--Neutral-Black, #000)", fontSize: "20px", opacity: "0.7", borderRadius: "50%", padding: "4px", marginLeft: "10px"}}
+                        />
+                    </Button>
+
+                    <Box display="flex" justifyContent="center" alignItems="center">
+                        <IconButton onClick={goToFirstPage} disabled={currentPage === 1}>
+                            <KeyboardDoubleArrowLeft className="pagination-icon" />
+                        </IconButton>
+                        <IconButton onClick={handlePrev} disabled={currentPage === 1}>
+                            <NavigateBefore className="pagination-icon" />
+                        </IconButton>
+                        <Typography marginX={2}>
+                            {currentPage} / {totalPages}
+                        </Typography>
+                        <IconButton onClick={handleNext} disabled={currentPage === totalPages}>
+                            <NavigateNext className="pagination-icon" />
+                        </IconButton>
+                        <IconButton onClick={goToLastPage} disabled={currentPage === totalPages}>
+                            <KeyboardDoubleArrowRight className="pagination-icon" />
+                        </IconButton>
+                    </Box>
                 </Box>
             }
         </Box>

@@ -8,9 +8,9 @@ import { PlaceOutlined, Star } from "@mui/icons-material";
 import { toggleLikeHotel } from "../../store/thunks/authThunk";
 import { features } from "../../data/features";
 import { FavoriteIcon, RightArrowIcon } from "../../components/CustomIcons";
-import styles from "./HotelCard.module.scss";
+import styles from "./HotelsHotelCard.module.scss";
 
-export default function HotelCard({hotel}) {
+export default function HotelsHotelCard({hotel}) {
     const { t } = useTranslation();
     const likedHotels = useSelector(state => state.auth.user?.likedHotels || []);
     const dispatch = useDispatch();

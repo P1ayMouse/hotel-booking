@@ -206,7 +206,6 @@ export default function HotelsTopFilter() {
                                                 }
                                                 slotProps={{
                                                     textField: {
-                                                        fullWidth: true,
                                                         error: touched.checkIn && Boolean(errors.checkIn),
                                                         placeholder: t("chooseDate"),
                                                         InputProps: {
@@ -244,7 +243,6 @@ export default function HotelsTopFilter() {
                                                 }
                                                 slotProps={{
                                                     textField: {
-                                                        fullWidth: true,
                                                         error: touched.checkOut && Boolean(errors.checkOut),
                                                         placeholder: t("chooseDate"),
                                                         InputProps: {
@@ -279,12 +277,8 @@ export default function HotelsTopFilter() {
                                 IconComponent={() => null}
                                 renderValue={(selected) =>
                                     selected === ""
-                                        ?
-                                        <Typography color="#ADADAD" fontSize="16px"  fontWeight="400">
-                                            {t("filterBy")}: {t("chooseIt")}
-                                        </Typography>
-
-                                    : `${t("filterBy")}: ${sortBy[selected]}`
+                                        ? `${t("filterBy")}: ${t("chooseIt")}`
+                                        : `${t("filterBy")}: ${sortBy[selected]}`
                                 }
                             >
                                 {Object.entries(sortBy).map(([key, value]) => (
