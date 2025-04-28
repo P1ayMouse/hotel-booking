@@ -90,7 +90,7 @@ export default function HotelsPriceFilter() {
                                 value={values.minPrice}
                                 onBlur={handleBlur}
                                 onChange={(e) =>
-                                    setFieldValue("minPrice", Number(e.target.value))
+                                    setFieldValue("minPrice", Number(e.target.value) || "")
                                 }
                                 error={touched.minPrice && Boolean(errors.minPrice)}
                                 slotProps={{
@@ -121,7 +121,7 @@ export default function HotelsPriceFilter() {
                                 value={values.maxPrice}
                                 onBlur={handleBlur}
                                 onChange={(e) =>
-                                    setFieldValue("maxPrice", Number(e.target.value))
+                                    setFieldValue("maxPrice", Number(e.target.value) || "")
                                 }
                                 error={touched.maxPrice && Boolean(errors.maxPrice)}
                                 slotProps={{

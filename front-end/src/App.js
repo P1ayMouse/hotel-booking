@@ -10,6 +10,7 @@ import Hotels from "./pages/Hotels";
 import Hotel from "./pages/Hotel";
 import Error404 from "./pages/Error404";
 import FavoriteHotels from "./pages/FavoriteHotels";
+import About from "./pages/About";
 
 import { hotelsAndDestinationsLoader } from "./loaders/hotelsAndDestinationsLoader";
 import {hotelsLoader} from "./loaders/hotelsLoader";
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
                         <FavoriteHotels/>
                     </PrivateRoute>,
                 loader: hotelsLoader
+            },
+            {
+                path: "/about",
+                element: <About/>
             },
             {
                 path: "*",

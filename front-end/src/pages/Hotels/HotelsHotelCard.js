@@ -18,12 +18,12 @@ export default function HotelsHotelCard({hotel}) {
     const isLiked = likedHotels.includes(hotel.id);
 
     const renderFeature = (feature) => {
-        const info = features.find(item => item.label === feature);
-        if (!info) return null;
+        const featureDetails = features.find(item => item.key === feature);
+        if (!featureDetails) return null;
         return (
-            <Typography key={info.key} className={styles.hotelFeature}>
-                {info.icon}
-                {feature}
+            <Typography key={featureDetails.key} className={styles.hotelFeature}>
+                {featureDetails.icon}
+                {featureDetails.label}
             </Typography>
         );
     };
@@ -94,7 +94,6 @@ export default function HotelsHotelCard({hotel}) {
                     </Box>
                 </CardContent>
             </Card>
-
         </Box>
     )
 }

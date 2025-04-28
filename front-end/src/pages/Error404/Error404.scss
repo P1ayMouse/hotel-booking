@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+
+.error404 {
+  .text-header, .text-body {
+    color: var(--accent);
+    font-size: 24px;
+    font-weight: 700;
+  }
+}

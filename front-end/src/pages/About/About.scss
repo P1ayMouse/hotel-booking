@@ -1,0 +1,58 @@
+@import '../../styles/variables.scss';
+
+.about {
+  .cards-container {
+    max-width: 1224px;
+
+    .card-content {
+      display: flex;
+      padding: 32px 32px 96px;
+      flex-direction: column;
+      gap: 32px;
+      border-radius: 8px;
+      background: var(--second-bg);
+      box-sizing: border-box;
+      height: 100%;
+
+      .title {
+        color: var(--accent);
+        font-size: 32px;
+        font-weight: 700;
+      }
+
+      .body {
+        flex-grow: 1;
+        font-size: 20px;
+        color: var(--primary-text);
+      }
+
+      .button {
+        width: 176px;
+        height: 40px;
+        padding: 8px 16px;
+        border-radius: 4px;
+        background: #C3731C;
+        border-color: #C3731C;
+        color: #FFF;
+        text-transform: none;
+      }
+
+      .button:hover {
+        transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.10);
+      }
+    }
+
+    .card-content.grey {
+      background: var(--primary-bg);
+      border: 4px solid var(--second-bg);
+    }
+
+    .card-content:hover {
+      transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+  }
+}

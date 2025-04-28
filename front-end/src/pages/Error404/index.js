@@ -4,12 +4,12 @@ import "./Error404.scss"
 
 export default function Error404() {
     return (
-        <Box>
+        <Box className="error404">
             <Box marginTop={12} marginBottom={7}>
-                <Typography color="#7F2203" fontSize="24px" fontWeight="700">
+                <Typography className="text-header">
                     Error 404
                 </Typography>
-                <Typography color="#7F2203" fontSize="24px" fontWeight="700">
+                <Typography className="text-body">
                     Page is not found.
                 </Typography>
             </Box>

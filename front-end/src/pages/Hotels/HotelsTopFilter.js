@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import {useNavigate, useSearchParams} from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { Form, Formik } from "formik";
@@ -20,7 +20,6 @@ import * as yup from "yup";
 
 export default function HotelsTopFilter() {
     const { t, i18n } = useTranslation();
-    const navigate = useNavigate();
 
     const [searchParams, setSearchParams] = useSearchParams();
 
@@ -57,11 +56,9 @@ export default function HotelsTopFilter() {
         );
     }, [query, destinations]);
 
-    const handleClear = (resetForm) => {
-        resetForm();
+    const handleClear = () => {
         setQuery("");
-        setSearchParams(new URLSearchParams());
-        navigate("/hotels");
+        setSearchParams({});
     };
 
     const handleSortByChange = (event, setFieldValue, searchParams, setSearchParams) => {
@@ -138,6 +135,7 @@ export default function HotelsTopFilter() {
         <Box className={styles.filterContainer}>
             <Formik
                 key={i18n.language}
+                enableReinitialize
                 initialValues={hotelsFilterData}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
@@ -151,18 +149,20 @@ export default function HotelsTopFilter() {
                                         {t("location")}
                                     </Typography>
                                     <Autocomplete
+                                        clearOnBlur
                                         freeSolo
                                         inputValue={query}
                                         options={filteredDestinations.slice(0, 5)}
                                         filterOptions={(options) => options}
-                                        getOptionLabel={(option) => option.label}
+                                        getOptionLabel={(option) => option.label || ""}
                                         isOptionEqualToValue={(option, value) => option.value === value.value}
                                         value={
                                             destinations.find((destination) => destination.value === values.destination) || null
                                         }
                                         onInputChange={(e, newInputValue) => setQuery(newInputValue)}
                                         onChange={(e, newValue) =>
-                                            setFieldValue("destination", newValue ? newValue.value : "")}
+                                            setFieldValue("destination", newValue ? newValue.value : "")
+                                        }
                                         className={styles.field}
                                         renderInput={(params) => (
                                             <TextField
@@ -174,8 +174,8 @@ export default function HotelsTopFilter() {
                                                     input: {
                                                         ...params.InputProps,
                                                         startAdornment: (
-                                                            <InputAdornment position="start" sx={{marginLeft: "6px"}}>
-                                                                <Hotel/>
+                                                            <InputAdornment position="start" sx={{ marginLeft: "6px" }}>
+                                                                <Hotel />
                                                             </InputAdornment>
                                                         ),
                                                     }
@@ -183,6 +183,7 @@ export default function HotelsTopFilter() {
                                             />
                                         )}
                                     />
+
                                     {touched.destination && errors.destination && (
                                         <FormHelperText className="error">
                                             {errors.destination}

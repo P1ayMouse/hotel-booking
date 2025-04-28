@@ -1,13 +1,12 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import {Box, Typography, IconButton, Button} from "@mui/material";
+import { Box, Typography, IconButton, Button } from "@mui/material";
 import { KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, NavigateBefore, NavigateNext } from "@mui/icons-material";
 
-import { features } from "../../data/features";
 import HotelsHotelCard from "./HotelsHotelCard";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 import styles from "./HotelsHotelCard.module.scss";
-import {FavoriteIcon} from "../../components/CustomIcons";
+import { FavoriteIcon } from "../../components/CustomIcons";
 
 export default function HotelsList() {
     const { t } = useTranslation();
@@ -48,15 +47,10 @@ export default function HotelsList() {
         );
     }
 
-    // Converting key into label
-    const keyToLabel = (arr, key) => {
-        return arr.find(item => item.key === key)?.label;
-    };
-
     // Features filter
     if (filterFeatures.length > 0) {
         filteredHotels = filteredHotels.filter(hotel =>
-            filterFeatures.every(featureKey => hotel.features?.includes(keyToLabel(features, featureKey)))
+            filterFeatures.every(featureKey => hotel.features?.includes(featureKey))
         );
     }
 
@@ -133,7 +127,7 @@ export default function HotelsList() {
                         variant="outlined"
                         onClick={() => navigate("/favorite-hotels")}
                     >
-                        List your Favourite Places
+                        {t("favouritePlacesList")}
                         <FavoriteIcon
                             className={styles.favoriteImg}
                             sx={{background: "var(--Neutral-Black, #000)", fontSize: "20px", opacity: "0.7", borderRadius: "50%", padding: "4px", marginLeft: "10px"}}

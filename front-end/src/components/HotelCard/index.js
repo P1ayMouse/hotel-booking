@@ -1,8 +1,8 @@
 import {Box, Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
+import {PlaceOutlined, StarRate} from "@mui/icons-material";
 
 import "./HotelCard.scss"
 import {NavLink} from "react-router-dom";
-import {PlaceOutlined, StarRate} from "@mui/icons-material";
 
 export default function HotelCard({hotel}) {
     return (
