@@ -6,9 +6,9 @@ import { NavLink } from "react-router-dom";
 import { PlaceOutlined, Star } from "@mui/icons-material";
 
 import { toggleLikeHotel } from "../../store/thunks/authThunk";
-import { features } from "../../data/features";
 import { FavoriteIcon, RightArrowIcon } from "../../components/CustomIcons";
 import styles from "./HotelsHotelCard.module.scss";
+import HotelFeature from "../../components/HotelFeature";
 
 export default function HotelsHotelCard({hotel}) {
     const { t } = useTranslation();
@@ -16,17 +16,6 @@ export default function HotelsHotelCard({hotel}) {
     const dispatch = useDispatch();
 
     const isLiked = likedHotels.includes(hotel.id);
-
-    const renderFeature = (feature) => {
-        const featureDetails = features.find(item => item.key === feature);
-        if (!featureDetails) return null;
-        return (
-            <Typography key={featureDetails.key} className={styles.hotelFeature}>
-                {featureDetails.icon}
-                {featureDetails.label}
-            </Typography>
-        );
-    };
 
     const handleToggle = () => {
         dispatch(toggleLikeHotel(hotel.id));
@@ -65,7 +54,7 @@ export default function HotelsHotelCard({hotel}) {
                                 {hotel.address}, {hotel.city} {hotel.state && `(${hotel.state})`}
                             </Typography>
                             <Box className={styles.hotelFeaturesContainer}>
-                                {hotel.features.map((feature) => renderFeature(feature))}
+                                {hotel.features.map((feature) => HotelFeature(feature))}
                             </Box>
                         </Box>
                     </Box>

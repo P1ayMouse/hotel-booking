@@ -51,13 +51,13 @@ export const deleteBook = createAsyncThunk('hotels/deleteBook', async (bookId, {
     }
 })
 
-export const fetchHotel = createAsyncThunk('hotels/hotel', async (id, {rejectWithError}) => {
+export const fetchHotel = createAsyncThunk('hotels/hotel', async (id, {rejectWithValue}) => {
     try {
         const response = await axios.get(`${url + hotelGetUrl}/hotel/${id}`)
 
         return response.data;
     }
     catch (e) {
-        return rejectWithError(e.response?.data?.message || e.message);
+        return rejectWithValue(e.response?.data?.error || e.message);
     }
 })

@@ -17,7 +17,7 @@ export default function HotelsLeftFilter() {
             </Box>
 
             <HotelsPriceFilter/>
-            <CheckBoxesFilter title="Features" elements={features} filterKey="features" />
+            <CheckBoxesFilter title={t("features")} elements={features} filterKey="features" />
         </Box>
     );
 }

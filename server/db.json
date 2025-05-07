@@ -105,7 +105,7 @@
     {
       "id": 18,
       "value": 24263,
-      "label": "Walt Disney World® Resort",
+      "label": "Walt Disney World\u00ae Resort",
       "image_url": ""
     },
     {
@@ -139,8 +139,13 @@
       "phone_number": "18005740835",
       "website": null,
       "image_url": "5018105.png",
-      "price": 220.00,
-      "features": ["breakfast", "free-cancellation", "wifi"]
+      "price": 220.0,
+      "features": [
+        "breakfast",
+        "free-cancellation",
+        "wifi"
+      ],
+      "description": "Woogo Central Park - Tempo Apartments is a 4-star hotel located at 240 West 73rd Street, New York. It offers features such as breakfast, free-cancellation, wifi. Prices start from $220.00 per night."
     },
     {
       "id": 11003176,
@@ -153,8 +158,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 80.50,
-      "features": ["all-inclusive", "parking"]
+      "price": 80.5,
+      "features": [
+        "all-inclusive",
+        "parking"
+      ],
+      "description": "Amolite Hotel is a Unrated hotel located at Avenida Curitiba, 811, New York. It offers features such as all-inclusive, parking. Prices start from $80.50 per night."
     },
     {
       "id": 747134,
@@ -167,8 +176,13 @@
       "phone_number": "212260414",
       "website": null,
       "image_url": "747134.png",
-      "price": 190.80,
-      "features": ["free-cancellation", "pool", "gym"]
+      "price": 190.8,
+      "features": [
+        "free-cancellation",
+        "pool",
+        "gym"
+      ],
+      "description": "Redford Hotel is a 3.5-star hotel located at 136 Ludlow Street, New York. It offers features such as free-cancellation, pool, gym. Prices start from $190.80 per night."
     },
     {
       "id": 720550,
@@ -181,8 +195,12 @@
       "phone_number": "1 212 2191018",
       "website": null,
       "image_url": "720550.png",
-      "price": 145.00,
-      "features": ["breakfast", "wifi"]
+      "price": 145.0,
+      "features": [
+        "breakfast",
+        "wifi"
+      ],
+      "description": "Hotel Richland is a 3-star hotel located at 5 Allen Street, New York. It offers features such as breakfast, wifi. Prices start from $145.00 per night."
     },
     {
       "id": 797074,
@@ -195,8 +213,13 @@
       "phone_number": null,
       "website": null,
       "image_url": "797074.png",
-      "price": 98.30,
-      "features": ["free-cancellation", "all-inclusive", "parking"]
+      "price": 98.3,
+      "features": [
+        "free-cancellation",
+        "all-inclusive",
+        "parking"
+      ],
+      "description": "Studio Lux Times Square is a 2.5-star hotel located at between 9 Avenue and 8 Avenue, New York. It offers features such as free-cancellation, all-inclusive, parking. Prices start from $98.30 per night."
     },
     {
       "id": 742987,
@@ -209,8 +232,13 @@
       "phone_number": null,
       "website": null,
       "image_url": "742987.png",
-      "price": 80.50,
-      "features": ["pool", "pet", "gym"]
+      "price": 80.5,
+      "features": [
+        "pool",
+        "pet",
+        "gym"
+      ],
+      "description": "The Bowery Hotel is a 4-star hotel located at 335 Bowery, New York. It offers features such as pool, pet, gym. Prices start from $80.50 per night."
     },
     {
       "id": 743452,
@@ -223,8 +251,12 @@
       "phone_number": "1-212-398-2700",
       "website": null,
       "image_url": "",
-      "price": 165.00,
-      "features": ["breakfast", "free-cancellation"]
+      "price": 165.0,
+      "features": [
+        "breakfast",
+        "free-cancellation"
+      ],
+      "description": "AC Hotel by Marriott New York Times Square is a 3.5-star hotel located at 260 West 40th Street, New York. It offers features such as breakfast, free-cancellation. Prices start from $165.00 per night."
     },
     {
       "id": 260469,
@@ -237,8 +269,13 @@
       "phone_number": "1 212 777-0012",
       "website": null,
       "image_url": "",
-      "price": 130.00,
-      "features": ["wifi", "parking", "gym"]
+      "price": 130.0,
+      "features": [
+        "wifi",
+        "parking",
+        "gym"
+      ],
+      "description": "The Ridge Hotel is a 3-star hotel located at 151 East Houston Street, New York. It offers features such as wifi, parking, gym. Prices start from $130.00 per night."
     },
     {
       "id": 740399,
@@ -251,8 +288,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 125.00,
-      "features": ["all-inclusive", "pool"]
+      "price": 125.0,
+      "features": [
+        "all-inclusive",
+        "pool"
+      ],
+      "description": "SoHo 54 Hotel is a 3-star hotel located at 54 Watts St, New York. It offers features such as all-inclusive, pool. Prices start from $125.00 per night."
     },
     {
       "id": 5018104,
@@ -265,8 +306,13 @@
       "phone_number": "XX",
       "website": null,
       "image_url": "",
-      "price": 120.00,
-      "features": ["free-cancellation", "breakfast", "gym"]
+      "price": 120.0,
+      "features": [
+        "free-cancellation",
+        "breakfast",
+        "gym"
+      ],
+      "description": "Hotel Alexander is a 3-star hotel located at 306 W 94th St, New York. It offers features such as free-cancellation, breakfast, gym. Prices start from $120.00 per night."
     },
     {
       "id": 792811,
@@ -279,8 +325,13 @@
       "phone_number": null,
       "website": null,
       "image_url": "792811.png",
-      "price": 250.00,
-      "features": ["all-inclusive", "wifi", "pool"]
+      "price": 250.0,
+      "features": [
+        "all-inclusive",
+        "wifi",
+        "pool"
+      ],
+      "description": "Parker New York, A Hyatt Affiliate Property is a 4.5-star hotel located at 119 West 56th Street, New York. It offers features such as all-inclusive, wifi, pool. Prices start from $250.00 per night."
     },
     {
       "id": 804220,
@@ -293,8 +344,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 110.00,
-      "features": ["free-cancellation", "parking"]
+      "price": 110.0,
+      "features": [
+        "free-cancellation",
+        "parking"
+      ],
+      "description": "Central Park View B&B is a 2.5-star hotel located at 301 West 110th Street, New York. It offers features such as free-cancellation, parking. Prices start from $110.00 per night."
     },
     {
       "id": 5018107,
@@ -307,8 +362,13 @@
       "phone_number": "17186985000",
       "website": null,
       "image_url": "",
-      "price": 130.00,
-      "features": ["breakfast", "all-inclusive", "gym"]
+      "price": 130.0,
+      "features": [
+        "breakfast",
+        "all-inclusive",
+        "gym"
+      ],
+      "description": "Staten Island Hotel is a 3-star hotel located at 1415 Richmond Ave, New York. It offers features such as breakfast, all-inclusive, gym. Prices start from $130.00 per night."
     },
     {
       "id": 700390,
@@ -321,8 +381,13 @@
       "phone_number": null,
       "website": null,
       "image_url": "700390.png",
-      "price": 245.80,
-      "features": ["pool", "pet", "wifi"]
+      "price": 245.8,
+      "features": [
+        "pool",
+        "pet",
+        "wifi"
+      ],
+      "description": "Mondrian Park Avenue is a 4.5-star hotel located at 444 Park Ave S, New York. It offers features such as pool, pet, wifi. Prices start from $245.80 per night."
     },
     {
       "id": 742946,
@@ -335,8 +400,13 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 130.00,
-      "features": ["free-cancellation", "parking", "gym"]
+      "price": 130.0,
+      "features": [
+        "free-cancellation",
+        "parking",
+        "gym"
+      ],
+      "description": "Pod Times Square is a 3-star hotel located at 400 W 42nd Street, New York. It offers features such as free-cancellation, parking, gym. Prices start from $130.00 per night."
     },
     {
       "id": 776932,
@@ -349,8 +419,13 @@
       "phone_number": "121-247-51920",
       "website": "https://freehandhotels.com/new-york/rooms/",
       "image_url": "776932.png",
-      "price": 200.00,
-      "features": ["breakfast", "wifi", "pool"]
+      "price": 200.0,
+      "features": [
+        "breakfast",
+        "wifi",
+        "pool"
+      ],
+      "description": "Freehand New York is a 4-star hotel located at 23 Lexington Ave, New York. It offers features such as breakfast, wifi, pool. Prices start from $200.00 per night."
     },
     {
       "id": 741741,
@@ -363,8 +438,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 100.00,
-      "features": ["all-inclusive", "free-cancellation"]
+      "price": 100.0,
+      "features": [
+        "all-inclusive",
+        "free-cancellation"
+      ],
+      "description": "The Grand NYC is a 2-star hotel located at 38 West 31st Street, New York. It offers features such as all-inclusive, free-cancellation. Prices start from $100.00 per night."
     },
     {
       "id": 716815,
@@ -377,8 +456,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 130.00,
-      "features": ["pool", "wifi"]
+      "price": 130.0,
+      "features": [
+        "pool",
+        "wifi"
+      ],
+      "description": "Hello Broadway is a 3-star hotel located at 38 west 31 st, New York. It offers features such as pool, wifi. Prices start from $130.00 per night."
     },
     {
       "id": 802583,
@@ -391,8 +474,13 @@
       "phone_number": "+1 212 842 5500",
       "website": null,
       "image_url": "802583.png",
-      "price": 300.50,
-      "features": ["breakfast", "free-cancellation", "gym"]
+      "price": 300.5,
+      "features": [
+        "breakfast",
+        "free-cancellation",
+        "gym"
+      ],
+      "description": "The Dominick is a 5-star hotel located at 246 Spring Street, New York. It offers features such as breakfast, free-cancellation, gym. Prices start from $300.50 per night."
     },
     {
       "id": 5018106,
@@ -405,8 +493,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 120.00,
-      "features": ["wifi", "parking"]
+      "price": 120.0,
+      "features": [
+        "wifi",
+        "parking"
+      ],
+      "description": "HomeStay NYC is a 3-star hotel located at 49 Catherine Street, New York. It offers features such as wifi, parking. Prices start from $120.00 per night."
     },
     {
       "id": 751736,
@@ -419,8 +511,12 @@
       "phone_number": "703-261-5677",
       "website": null,
       "image_url": "",
-      "price": 140.00,
-      "features": ["free-cancellation", "breakfast"]
+      "price": 140.0,
+      "features": [
+        "free-cancellation",
+        "breakfast"
+      ],
+      "description": "Fairfield Inn & Suites by Marriott/World Trade Center Area is a 3-star hotel located at 100 Greenwich St, New York. It offers features such as free-cancellation, breakfast. Prices start from $140.00 per night."
     },
     {
       "id": 386689,
@@ -433,8 +529,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 100.00,
-      "features": ["pool", "all-inclusive"]
+      "price": 100.0,
+      "features": [
+        "pool",
+        "all-inclusive"
+      ],
+      "description": "Back Bay Suites is a 2.5-star hotel located at 11 Hereford St., Boston. It offers features such as pool, all-inclusive. Prices start from $100.00 per night."
     },
     {
       "id": 567484,
@@ -447,8 +547,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["wifi", "free-cancellation"]
+      "price": 150.0,
+      "features": [
+        "wifi",
+        "free-cancellation"
+      ],
+      "description": "Global Luxury Suites at The Theatre District is a 3.5-star hotel located at 99 Kneeland St., Boston. It offers features such as wifi, free-cancellation. Prices start from $150.00 per night."
     },
     {
       "id": 677300,
@@ -461,8 +565,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "677300.png",
-      "price": 160.00,
-      "features": ["breakfast", "gym"]
+      "price": 160.0,
+      "features": [
+        "breakfast",
+        "gym"
+      ],
+      "description": "Vibrant 1BR in Fenway by Sonder is a 4-star hotel located at Beacon Street and Park dr, Boston. It offers features such as breakfast, gym. Prices start from $160.00 per night."
     },
     {
       "id": 820605,
@@ -475,8 +583,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 140.00,
-      "features": ["all-inclusive", "free-cancellation"]
+      "price": 140.0,
+      "features": [
+        "all-inclusive",
+        "free-cancellation"
+      ],
+      "description": "Unique 1BR in Financial District by Sonder is a Unrated hotel located at 120 Milk St, Unit 801, Boston. It offers features such as all-inclusive, free-cancellation. Prices start from $140.00 per night."
     },
     {
       "id": 731189,
@@ -489,8 +601,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["wifi", "parking"]
+      "price": 150.0,
+      "features": [
+        "wifi",
+        "parking"
+      ],
+      "description": "Charming 2BR in South End by Sonder is a 3.5-star hotel located at Columbia Road & G Street, Boston. It offers features such as wifi, parking. Prices start from $150.00 per night."
     },
     {
       "id": 721848,
@@ -503,8 +619,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "721848.png",
-      "price": 155.00,
-      "features": ["pool", "pet"]
+      "price": 155.0,
+      "features": [
+        "pool",
+        "pet"
+      ],
+      "description": "Stunning 4BR in Downtown Crossing by Sonder is a 3.5-star hotel located at Hamilton Place, Boston. It offers features such as pool, pet. Prices start from $155.00 per night."
     },
     {
       "id": 677341,
@@ -517,8 +637,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["breakfast", "all-inclusive"]
+      "price": 150.0,
+      "features": [
+        "breakfast",
+        "all-inclusive"
+      ],
+      "description": "Classic 3BR in Allston by Sonder is a 3.5-star hotel located at Brainerd Road and Harvard St, Boston. It offers features such as breakfast, all-inclusive. Prices start from $150.00 per night."
     },
     {
       "id": 677347,
@@ -531,8 +655,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["free-cancellation", "gym"]
+      "price": 150.0,
+      "features": [
+        "free-cancellation",
+        "gym"
+      ],
+      "description": "Posh 2BR in Allston by Sonder is a 3.5-star hotel located at Western Avenue and N Harvard, Boston. It offers features such as free-cancellation, gym. Prices start from $150.00 per night."
     },
     {
       "id": 810445,
@@ -545,8 +673,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["wifi", "pool"]
+      "price": 150.0,
+      "features": [
+        "wifi",
+        "pool"
+      ],
+      "description": "Sophisticated 2BR in Downtown Crossing by Sonder is a 3.5-star hotel located at Boylston Street, Boston. It offers features such as wifi, pool. Prices start from $150.00 per night."
     },
     {
       "id": 677372,
@@ -559,8 +691,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 140.00,
-      "features": ["breakfast", "free-cancellation"]
+      "price": 140.0,
+      "features": [
+        "breakfast",
+        "free-cancellation"
+      ],
+      "description": "Posh Studio in Downtown Crossing by Sonder is a 3-star hotel located at Arch Street and Summer st, Boston. It offers features such as breakfast, free-cancellation. Prices start from $140.00 per night."
     },
     {
       "id": 822534,
@@ -573,8 +709,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 140.00,
-      "features": ["all-inclusive", "gym"]
+      "price": 140.0,
+      "features": [
+        "all-inclusive",
+        "gym"
+      ],
+      "description": "Playful 1BR in Fenway by Sonder is a Unrated hotel located at Commonwealth Avenue, Boston. It offers features such as all-inclusive, gym. Prices start from $140.00 per night."
     },
     {
       "id": 793847,
@@ -587,8 +727,13 @@
       "phone_number": null,
       "website": null,
       "image_url": "793847.png",
-      "price": 160.00,
-      "features": ["pool", "free-cancellation", "wifi"]
+      "price": 160.0,
+      "features": [
+        "pool",
+        "free-cancellation",
+        "wifi"
+      ],
+      "description": "Stunning 1 BR In Allston by Sonder is a 4-star hotel located at 75 Braintree St, Boston. It offers features such as pool, free-cancellation, wifi. Prices start from $160.00 per night."
     },
     {
       "id": 677396,
@@ -601,8 +746,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "677396.png",
-      "price": 160.00,
-      "features": ["breakfast", "gym"]
+      "price": 160.0,
+      "features": [
+        "breakfast",
+        "gym"
+      ],
+      "description": "Sonder - St. Mary's is a 4-star hotel located at Beacon Street and Park dr, Boston. It offers features such as breakfast, gym. Prices start from $160.00 per night."
     },
     {
       "id": 677411,
@@ -615,8 +764,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["all-inclusive", "free-cancellation"]
+      "price": 150.0,
+      "features": [
+        "all-inclusive",
+        "free-cancellation"
+      ],
+      "description": "Bright 2BR in Downtown Crossing by Sonder is a 3.5-star hotel located at Milk Street and Batterymarch st, Boston. It offers features such as all-inclusive, free-cancellation. Prices start from $150.00 per night."
     },
     {
       "id": 677410,
@@ -629,8 +782,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["pool", "wifi"]
+      "price": 150.0,
+      "features": [
+        "pool",
+        "wifi"
+      ],
+      "description": "Simple 1BR in Theater District by Sonder is a 3.5-star hotel located at Warrenton Street and Stuart St, Boston. It offers features such as pool, wifi. Prices start from $150.00 per night."
     },
     {
       "id": 677425,
@@ -643,8 +800,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "677425.png",
-      "price": 160.00,
-      "features": ["breakfast", "gym"]
+      "price": 160.0,
+      "features": [
+        "breakfast",
+        "gym"
+      ],
+      "description": "Central 2BR in South End by Sonder is a 4-star hotel located at Tremont Street and Milford Street, Boston. It offers features such as breakfast, gym. Prices start from $160.00 per night."
     },
     {
       "id": 677426,
@@ -657,8 +818,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["free-cancellation", "parking"]
+      "price": 160.0,
+      "features": [
+        "free-cancellation",
+        "parking"
+      ],
+      "description": "Classic 1BR in Fenway by Sonder is a 4-star hotel located at Beacon Street and Park dr, Boston. It offers features such as free-cancellation, parking. Prices start from $160.00 per night."
     },
     {
       "id": 721859,
@@ -671,8 +836,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["wifi", "pool"]
+      "price": 160.0,
+      "features": [
+        "wifi",
+        "pool"
+      ],
+      "description": "Hip 3BR in Downtown Crossing by Sonder is a 4-star hotel located at Hamilton Place, Boston. It offers features such as wifi, pool. Prices start from $160.00 per night."
     },
     {
       "id": 801610,
@@ -685,8 +854,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["breakfast", "gym"]
+      "price": 160.0,
+      "features": [
+        "breakfast",
+        "gym"
+      ],
+      "description": "Playful 2BR in South End by Sonder is a 4-star hotel located at Albany Street, Boston. It offers features such as breakfast, gym. Prices start from $160.00 per night."
     },
     {
       "id": 677429,
@@ -699,8 +872,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["free-cancellation", "all-inclusive"]
+      "price": 150.0,
+      "features": [
+        "free-cancellation",
+        "all-inclusive"
+      ],
+      "description": "Airy 2BR in Allston by Sonder is a 3.5-star hotel located at Western Avenue and N Harvard, Boston. It offers features such as free-cancellation, all-inclusive. Prices start from $150.00 per night."
     },
     {
       "id": 677433,
@@ -713,8 +890,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["wifi", "gym"]
+      "price": 160.0,
+      "features": [
+        "wifi",
+        "gym"
+      ],
+      "description": "Bright 1BR in South End by Sonder is a 4-star hotel located at Harrison Avenue and Herald Street, Boston. It offers features such as wifi, gym. Prices start from $160.00 per night."
     },
     {
       "id": 677449,
@@ -727,8 +908,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["breakfast", "parking"]
+      "price": 160.0,
+      "features": [
+        "breakfast",
+        "parking"
+      ],
+      "description": "Industrial 3BR in Downtown by Sonder is a 4-star hotel located at Washington Street and Essex st, Boston. It offers features such as breakfast, parking. Prices start from $160.00 per night."
     },
     {
       "id": 677450,
@@ -741,8 +926,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["pool", "wifi"]
+      "price": 150.0,
+      "features": [
+        "pool",
+        "wifi"
+      ],
+      "description": "Chic 1BR in Downtown Crossing by Sonder is a 3.5-star hotel located at Arch Street and Summer st, Boston. It offers features such as pool, wifi. Prices start from $150.00 per night."
     },
     {
       "id": 677452,
@@ -755,8 +944,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["free-cancellation", "gym"]
+      "price": 160.0,
+      "features": [
+        "free-cancellation",
+        "gym"
+      ],
+      "description": "Sonder - Financial District is a 4-star hotel located at Milk Street and Batterymarch st, Boston. It offers features such as free-cancellation, gym. Prices start from $160.00 per night."
     },
     {
       "id": 677455,
@@ -769,8 +962,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 140.00,
-      "features": ["breakfast", "all-inclusive"]
+      "price": 140.0,
+      "features": [
+        "breakfast",
+        "all-inclusive"
+      ],
+      "description": "Bright Studio in Downtown Crossing by Sonder is a 3-star hotel located at Arch Street and Summer st, Boston. It offers features such as breakfast, all-inclusive. Prices start from $140.00 per night."
     },
     {
       "id": 677470,
@@ -783,8 +980,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["wifi", "parking"]
+      "price": 160.0,
+      "features": [
+        "wifi",
+        "parking"
+      ],
+      "description": "Central 3BR in South End by Sonder is a 4-star hotel located at Massachusetts Avenue and Washington st, Boston. It offers features such as wifi, parking. Prices start from $160.00 per night."
     },
     {
       "id": 677476,
@@ -797,8 +998,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["free-cancellation", "gym"]
+      "price": 150.0,
+      "features": [
+        "free-cancellation",
+        "gym"
+      ],
+      "description": "Smart 2BR in Brighton by Sonder is a 3.5-star hotel located at Commonwealth Avenue and Chestnut Hill av, Boston. It offers features such as free-cancellation, gym. Prices start from $150.00 per night."
     },
     {
       "id": 677477,
@@ -811,8 +1016,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["breakfast", "pool"]
+      "price": 150.0,
+      "features": [
+        "breakfast",
+        "pool"
+      ],
+      "description": "Hip 1BR in Allston by Sonder is a 3.5-star hotel located at Brainerd Road and Harvard St, Boston. It offers features such as breakfast, pool. Prices start from $150.00 per night."
     },
     {
       "id": 677480,
@@ -825,8 +1034,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["all-inclusive", "wifi"]
+      "price": 150.0,
+      "features": [
+        "all-inclusive",
+        "wifi"
+      ],
+      "description": "Smart 1BR in Downtown Crossing by Sonder is a 3.5-star hotel located at Arch Street and Summer st, Boston. It offers features such as all-inclusive, wifi. Prices start from $150.00 per night."
     },
     {
       "id": 677481,
@@ -839,8 +1052,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["free-cancellation", "pool"]
+      "price": 150.0,
+      "features": [
+        "free-cancellation",
+        "pool"
+      ],
+      "description": "Hip 2BR in Allston by Sonder is a 3.5-star hotel located at Brainerd Road and Harvard St, Boston. It offers features such as free-cancellation, pool. Prices start from $150.00 per night."
     },
     {
       "id": 677519,
@@ -853,8 +1070,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["breakfast", "gym"]
+      "price": 160.0,
+      "features": [
+        "breakfast",
+        "gym"
+      ],
+      "description": "Charming 1BR in Fenway by Sonder is a 4-star hotel located at Beacon Street and Park dr, Boston. It offers features such as breakfast, gym. Prices start from $160.00 per night."
     },
     {
       "id": 677520,
@@ -867,8 +1088,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["wifi", "parking"]
+      "price": 150.0,
+      "features": [
+        "wifi",
+        "parking"
+      ],
+      "description": "Lively 1BR in Theater District by Sonder is a 3.5-star hotel located at Warrenton Street and Stuart St, Boston. It offers features such as wifi, parking. Prices start from $150.00 per night."
     },
     {
       "id": 705227,
@@ -881,8 +1106,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["free-cancellation", "all-inclusive"]
+      "price": 150.0,
+      "features": [
+        "free-cancellation",
+        "all-inclusive"
+      ],
+      "description": "Charming 1BR in Seaport by Sonder is a 3.5-star hotel located at D Street, Boston. It offers features such as free-cancellation, all-inclusive. Prices start from $150.00 per night."
     },
     {
       "id": 696618,
@@ -895,8 +1124,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["breakfast", "gym"]
+      "price": 160.0,
+      "features": [
+        "breakfast",
+        "gym"
+      ],
+      "description": "Central 1BR in Fenway by Sonder is a 4-star hotel located at Brookline Avenue, Boston. It offers features such as breakfast, gym. Prices start from $160.00 per night."
     },
     {
       "id": 677526,
@@ -909,8 +1142,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["wifi", "pool"]
+      "price": 150.0,
+      "features": [
+        "wifi",
+        "pool"
+      ],
+      "description": "Simple Studio in Downtown Crossing by Sonder is a 3.5-star hotel located at Arch Street and Summer st, Boston. It offers features such as wifi, pool. Prices start from $150.00 per night."
     },
     {
       "id": 677527,
@@ -923,8 +1160,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["free-cancellation", "parking"]
+      "price": 150.0,
+      "features": [
+        "free-cancellation",
+        "parking"
+      ],
+      "description": "Modern 3BR in Brighton by Sonder is a 3.5-star hotel located at Larose Place and Monastery rd, Boston. It offers features such as free-cancellation, parking. Prices start from $150.00 per night."
     },
     {
       "id": 677528,
@@ -937,8 +1178,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["breakfast", "all-inclusive"]
+      "price": 150.0,
+      "features": [
+        "breakfast",
+        "all-inclusive"
+      ],
+      "description": "Pleasant Back Bay Suites by Sonder is a 3.5-star hotel located at Newbury Street and Fairfield Street, Boston. It offers features such as breakfast, all-inclusive. Prices start from $150.00 per night."
     },
     {
       "id": 677537,
@@ -951,8 +1196,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["pool", "gym"]
+      "price": 150.0,
+      "features": [
+        "pool",
+        "gym"
+      ],
+      "description": "Sonder - The Continuum is a 3.5-star hotel located at Western Avenue and N Harvard, Boston. It offers features such as pool, gym. Prices start from $150.00 per night."
     },
     {
       "id": 696614,
@@ -965,8 +1214,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["free-cancellation", "parking"]
+      "price": 150.0,
+      "features": [
+        "free-cancellation",
+        "parking"
+      ],
+      "description": "Smart 1BR in Seaport by Sonder is a 3.5-star hotel located at D Street, Boston. It offers features such as free-cancellation, parking. Prices start from $150.00 per night."
     },
     {
       "id": 677694,
@@ -979,8 +1232,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["breakfast", "gym"]
+      "price": 160.0,
+      "features": [
+        "breakfast",
+        "gym"
+      ],
+      "description": "Unique 2BR in Downtown Crossing by Sonder is a 4-star hotel located at Washington Street and Essex St, Boston. It offers features such as breakfast, gym. Prices start from $160.00 per night."
     },
     {
       "id": 677550,
@@ -993,8 +1250,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 140.00,
-      "features": ["wifi", "free-cancellation"]
+      "price": 140.0,
+      "features": [
+        "wifi",
+        "free-cancellation"
+      ],
+      "description": "Posh Studio in Back Bay by Sonder is a 3-star hotel located at Newbury Street and Fairfield Street, Boston. It offers features such as wifi, free-cancellation. Prices start from $140.00 per night."
     },
     {
       "id": 787996,
@@ -1007,8 +1268,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["all-inclusive", "gym"]
+      "price": 160.0,
+      "features": [
+        "all-inclusive",
+        "gym"
+      ],
+      "description": "Vibrant 2BR in Downtown Crossing by Sonder is a 4-star hotel located at Washington Street, Boston. It offers features such as all-inclusive, gym. Prices start from $160.00 per night."
     },
     {
       "id": 731262,
@@ -1021,8 +1286,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["pool", "wifi"]
+      "price": 150.0,
+      "features": [
+        "pool",
+        "wifi"
+      ],
+      "description": "Stunning 3BR in Downtown Crossing by Sonder is a 3.5-star hotel located at Hamilton Place & Tremont St., Boston. It offers features such as pool, wifi. Prices start from $150.00 per night."
     },
     {
       "id": 677559,
@@ -1035,8 +1304,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["breakfast", "parking"]
+      "price": 160.0,
+      "features": [
+        "breakfast",
+        "parking"
+      ],
+      "description": "Industrial 1BR in Downtown Crossing by Sonder is a 4-star hotel located at Washington Street and Essex st, Boston. It offers features such as breakfast, parking. Prices start from $160.00 per night."
     },
     {
       "id": 677565,
@@ -1049,8 +1322,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["free-cancellation", "all-inclusive"]
+      "price": 160.0,
+      "features": [
+        "free-cancellation",
+        "all-inclusive"
+      ],
+      "description": "Industrial 2BR in Downtown Crossing by Sonder is a 4-star hotel located at Washington Street and Essex st, Boston. It offers features such as free-cancellation, all-inclusive. Prices start from $160.00 per night."
     },
     {
       "id": 677571,
@@ -1063,8 +1340,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["wifi", "parking"]
+      "price": 150.0,
+      "features": [
+        "wifi",
+        "parking"
+      ],
+      "description": "Lovely Brighton Suites by Sonder is a 3.5-star hotel located at Commonwealth Avenue, Boston. It offers features such as wifi, parking. Prices start from $150.00 per night."
     },
     {
       "id": 724715,
@@ -1077,8 +1358,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["breakfast", "free-cancellation"]
+      "price": 160.0,
+      "features": [
+        "breakfast",
+        "free-cancellation"
+      ],
+      "description": "Modern 2BR in Downtown Crossing by Sonder is a 4-star hotel located at Hamilton Place, Boston. It offers features such as breakfast, free-cancellation. Prices start from $160.00 per night."
     },
     {
       "id": 677574,
@@ -1091,8 +1376,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 160.00,
-      "features": ["all-inclusive", "gym"]
+      "price": 160.0,
+      "features": [
+        "all-inclusive",
+        "gym"
+      ],
+      "description": "Loft Style 2BR in Downtown Crossing by Sonder is a 4-star hotel located at Washington Street and Essex st, Boston. It offers features such as all-inclusive, gym. Prices start from $160.00 per night."
     },
     {
       "id": 677577,
@@ -1105,8 +1394,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["pool", "parking"]
+      "price": 150.0,
+      "features": [
+        "pool",
+        "parking"
+      ],
+      "description": "Chic 3BR in Lower Roxbury by Sonder is a 3.5-star hotel located at Tremont Street and St Cyprians Pl, Boston. It offers features such as pool, parking. Prices start from $150.00 per night."
     },
     {
       "id": 757401,
@@ -1119,8 +1412,12 @@
       "phone_number": null,
       "website": null,
       "image_url": "",
-      "price": 150.00,
-      "features": ["free-cancellation", "gym"]
+      "price": 150.0,
+      "features": [
+        "free-cancellation",
+        "gym"
+      ],
+      "description": "Stunning 1BR in Theater District by Sonder is a 3.5-star hotel located at Warrenton Street, Boston. It offers features such as free-cancellation, gym. Prices start from $150.00 per night."
     }
   ]
 }

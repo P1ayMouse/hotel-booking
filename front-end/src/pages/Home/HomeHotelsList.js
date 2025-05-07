@@ -35,7 +35,7 @@ export default function HomeHotelsList() {
             </Box>
             <Box className="hotels-list">
                 {topRatedHotels().map((hotel) => (
-                    <HotelCard hotel={hotel} />
+                    <HotelCard hotel={hotel} key={hotel.id} />
                 ))}
             </Box>
         </Box>

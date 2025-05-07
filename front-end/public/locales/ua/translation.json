@@ -112,8 +112,22 @@
   "findMore": "Знайди більше",
   "vacantCareers": "Вакансій",
   "favouritePlacesList": "Ваші улюблені місця",
-  "features": {
-    "breakfast": "Сніданок включено"
+  "loading": "Завантаження...",
+  "bookNow": "Зарезервувати",
+  "rating": "Рейтинг",
+  "price": "Ціна",
+  "aboutHotel": "Про готель",
+  "features": "Особливості",
+  "phoneNumber": "Номер телефону",
+  "features-list": {
+    "breakfast": "Сніданок включено",
+    "all-inclusive": "Все включено",
+    "free-cancellation": "Безкоштовна ануляція",
+    "pool": "Басейн",
+    "pet": "Допускається розміщення з тваринами",
+    "wifi": "Інтернет",
+    "parking": "Парковка",
+    "gym": "Тренажерний зал"
   },
   "server-errors": {
     "required_fields_not_filled": "Не заповнено обов’язкові поля!",

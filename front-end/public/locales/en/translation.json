@@ -113,8 +113,22 @@
   "vacantCareers": "Vacant Careers",
   "findMore": "Find more",
   "favouritePlacesList": "List your Favourite Places",
-  "features": {
-    "breakfast": "Breakfast included"
+  "loading": "Loading...",
+  "bookNow": "Book Now",
+  "rating": "Rating",
+  "price": "Price",
+  "aboutHotel": "About",
+  "features": "Features",
+  "phoneNumber": "Phone number",
+  "features-list": {
+    "breakfast": "Breakfast included",
+    "all-inclusive": "All-inclusive",
+    "free-cancellation": "Free Cancellation",
+    "pool": "Pool",
+    "pet": "Pet friendly",
+    "wifi": "Wi-Fi",
+    "parking": "Parking",
+    "gym": "Gym"
   },
   "server-errors": {
     "required_fields_not_filled": "Required fields are not filled in!",

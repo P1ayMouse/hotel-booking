@@ -14,7 +14,7 @@ export default function FavoriteHotels() {
 
     return (
         <Box maxWidth="1440px">
-            <Typography style={{fontSize: "32px", fontWeight: 450, color: "var(--accent)", textAlign: "center", margin: "55px 0"}}>
+            <Typography style={{fontSize: "32px", fontWeight: 600, color: "var(--accent)", textAlign: "center", margin: "55px 0"}}>
                 {t("favoriteHotels")}
             </Typography>
 
