@@ -11,9 +11,11 @@ import Hotel from "./pages/Hotel";
 import Error404 from "./pages/Error404";
 import FavoriteHotels from "./pages/FavoriteHotels";
 import About from "./pages/About";
+import Profile from "./pages/Profile";
 
 import { hotelsAndDestinationsLoader } from "./loaders/hotelsAndDestinationsLoader";
-import {hotelsLoader} from "./loaders/hotelsLoader";
+import { hotelsLoader } from "./loaders/hotelsLoader";
+import { userLoader } from "./loaders/userLoader";
 
 const router = createBrowserRouter([
     {
@@ -60,6 +62,11 @@ const router = createBrowserRouter([
             {
                 path: "/about",
                 element: <About/>
+            },
+            {
+                path: "/profile",
+                element: <PrivateRoute><Profile/></PrivateRoute>,
+                loader: userLoader
             },
             {
                 path: "*",

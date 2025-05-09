@@ -27,7 +27,7 @@ export default function FavoriteHotels() {
                 gap: "32px"
             }}>
                 {likedHotels.map((hotel) => (
-                    <HotelCard hotel={hotel}/>
+                    <HotelCard hotel={hotel} key={hotel.id} />
                 ))}
             </Box>
         </Box>

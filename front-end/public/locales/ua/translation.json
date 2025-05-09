@@ -119,6 +119,8 @@
   "aboutHotel": "Про готель",
   "features": "Особливості",
   "phoneNumber": "Номер телефону",
+  "reservedHotels": "Зарезервовані готелі",
+  "favouritePlaces": "Улюблені місця",
   "features-list": {
     "breakfast": "Сніданок включено",
     "all-inclusive": "Все включено",

@@ -120,6 +120,8 @@
   "aboutHotel": "About",
   "features": "Features",
   "phoneNumber": "Phone number",
+  "reservedHotels": "Reserved hotels",
+  "favouritePlaces": "Favourite places",
   "features-list": {
     "breakfast": "Breakfast included",
     "all-inclusive": "All-inclusive",

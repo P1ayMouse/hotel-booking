@@ -1,0 +1,38 @@
+@import '../../styles/variables.scss';
+
+.profile-container {
+    margin-top: 24px;
+    padding: 40px 24px;
+    width: 100%;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    color: var(--primary-text);
+    background-color: var(--second-bg);
+    max-width: 400px;
+    box-shadow: 0 2px 88px 0 #322F2A14;
+
+    .profile-button {
+        margin-top: 12px;
+        padding: 12px;
+        background-color: #C3731C;
+        text-transform: none;
+        font-weight: 700;
+    }
+
+    .profile-field {
+        & .MuiInputBase-input.Mui-disabled  {
+            color: var(--primary-text);
+            -webkit-text-fill-color: var(--primary-text);
+        }
+
+        & .MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline {
+            border-color: var(--primary-text);
+        }
+
+        & .MuiInputLabel-root.Mui-disabled {
+            color: var(--primary-text);
+        }
+    }
+
+}

@@ -66,8 +66,6 @@ export default function RegisterForm() {
         dispatch(clearError());
     }, [location.pathname]);
 
-    console.log(error)
-
     return (
         <Formik
             key={i18n.language}
@@ -82,7 +80,7 @@ export default function RegisterForm() {
                             {t(`server-errors.${error}`)}
                         </Alert>
                     }
-                    <Box sx={{}}>
+                    <Box>
                         <Grid container spacing={2}>
                             <Grid size={{ xs: 12 }}>
                                 <TextField
