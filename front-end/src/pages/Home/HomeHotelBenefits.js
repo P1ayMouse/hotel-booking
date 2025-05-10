@@ -15,20 +15,21 @@ export default function HomeHotelBenefits() {
     const benefits = [
         {
             icon: <SmartCar />,
-            title: "Free Accommodation",
-            body: "Accommodation for you to enjoy exploring around the hotels."
+            title: t("freeAccommodation"),
+            body: t("freeAccommodationDescription")
         },
         {
             icon: <Weight />,
-            title: "Fitness Center",
-            body: "For those of you who like to do fitness thing, fitness is free."
+            title: t("fitnessCenter"),
+            body: t("fitnessCenterDescription")
         },
         {
             icon: <Reserve />,
-            title: "Free Breakfast",
-            body: "Whose does not like meal in the morning, breakfast is free."
+            title: t("freeBreakfast"),
+            body: t("freeBreakfastDescription")
         }
     ];
+
     return (
         <Box className="home-hotel-benefits">
             <Benefit className="benefit-img" />
