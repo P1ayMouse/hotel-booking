@@ -1,12 +1,11 @@
-import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 import {
-    AppBar, Toolbar, Typography, IconButton, Box, List, ListItemButton, ListItemText, Button, Divider
+    AppBar, Toolbar, Typography, IconButton, Box, List, ListItemButton, ListItemText, Divider, Drawer
 } from "@mui/material";
-
-import { logout } from "../../store/slices/authSlices";
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
 import {ReactComponent as Logo} from "../../assets/img/Logo.svg";
 import {ReactComponent as FooterLogo} from "../../assets/img/Logo-footer.svg";
@@ -16,12 +15,12 @@ import ThemeButton from "../ThemeButton";
 import MailForm from "../MailForm";
 
 import "./index.scss"
-import { useEffect } from "react";
+import {useEffect, useState} from "react";
 import { fetchUserProfile } from "../../store/thunks/authThunk";
+import AuthButton from "../AuthButton";
 
 export default function LayoutComponent() {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const location = useLocation();
 
     const theme = useSelector((state) => state.theme.theme);
@@ -29,15 +28,28 @@ export default function LayoutComponent() {
     const selectedKey = location.pathname;
 
     const { t } = useTranslation();
+    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    function handleLogout() {
-        dispatch(logout());
-        navigate("/login");
+    function toggleMobileMenu(open) {
+        setMobileMenuOpen(open);
     }
 
     useEffect(() => {
         dispatch(fetchUserProfile());
     }, [dispatch]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 1100 && isMobileMenuOpen) {
+                setMobileMenuOpen(false);
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [isMobileMenuOpen]);
 
     const pagesList = [
         {
@@ -126,8 +138,15 @@ export default function LayoutComponent() {
                         </IconButton>
                     </Box>
 
-                    <Box sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
-                        <List sx={{ display: "flex" }} className="nav-list">
+                    <Box>
+                        <MenuRoundedIcon
+                            className="menu-icon"
+                            onClick={() => toggleMobileMenu(true)}
+                        />
+                    </Box>
+
+                    <Box className="nav-content">
+                        <List sx={{ display: "flex" }}>
                             {pagesList.map((page) => (
                                 <ListItemButton
                                     component={NavLink}
@@ -158,21 +177,62 @@ export default function LayoutComponent() {
                             >
                                 <ThemeButton />
                             </ListItemButton>
+                            <AuthButton user={user} />
                         </List>
-                        {user ?
-                            <Button onClick={handleLogout} className="button">
-                                {t("logout")}
-                            </Button>
-                        :
-                            <Button
-                                onClick={() => navigate("/login")}
-                                className="button"
-                                variant="contained"
-                            >
-                                {t("login")}
-                            </Button>
-                        }
                     </Box>
+                    <Drawer
+                        anchor="left"
+                        open={isMobileMenuOpen}
+                        onClose={() => toggleMobileMenu(false)}
+                        slotProps={{
+                            paper:
+                                {
+                                    'data-theme': theme,
+                                    sx: {backgroundColor: 'var(--primary-bg)', color: 'var(--primary-text)'}
+                                }
+                        }}
+                    >
+                        <Box sx={{ width: 250 }}>
+                            <List>
+                                {pagesList.map((page) => (
+                                    <ListItemButton
+                                        component={NavLink}
+                                        to={page.key}
+                                        selected={selectedKey === page.key}
+                                        key={page.key}
+                                    >
+                                        <ListItemText primary={page.label} />
+                                    </ListItemButton>
+                                ))}
+                            </List>
+                            <Divider />
+                            <Box sx={{ px: 2, pb: 2, mt: 2 }}>
+                                <AuthButton user={user} fullWidth />
+                            </Box>
+                            <Box sx={{ display: "flex" }}>
+                                <ListItemButton
+                                    disableRipple
+                                    disableTouchRipple
+                                    sx={{
+                                        justifyContent: "center",
+                                        '&:hover': {backgroundColor: 'transparent', cursor: 'default'}
+                                    }}
+                                >
+                                    <LocalisationButton />
+                                </ListItemButton>
+                                <ListItemButton
+                                    disableRipple
+                                    disableTouchRipple
+                                    sx={{
+                                        justifyContent: "center",
+                                        '&:hover': {backgroundColor: 'transparent', cursor: 'default'}
+                                    }}
+                                >
+                                    <ThemeButton />
+                                </ListItemButton>
+                            </Box>
+                        </Box>
+                    </Drawer>
                 </Toolbar>
             </AppBar>
 

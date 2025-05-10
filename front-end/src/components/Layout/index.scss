@@ -24,6 +24,13 @@
         transition: color 0.3s ease-in-out;
     }
 
+    .menu-icon {
+        color: var(--accent);
+        font-size: 45px;
+        cursor: pointer;
+        display: none;
+    }
+
     .toolbar {
         display: flex;
         justify-content: space-between;
@@ -31,49 +38,46 @@
         max-width: 1200px;
         width: 80%;
 
-        .nav-button {
-            transition: color 0.3s ease-in-out;
-            color: #959493;
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
 
-            &:hover {
-                border-bottom: 2px solid rgba(50, 47, 42, 0.15);
-            }
-
-            &.active {
-                background-color: inherit;
-                color: var(--primary-text);
-                border-bottom: 2px solid var(--primary-text);
+            .nav-button {
+                transition: color 0.3s ease-in-out;
+                color: #959493;
 
                 &:hover {
-                    background-color: rgba(50, 47, 42, 0.15);
+                    border-bottom: 2px solid rgba(50, 47, 42, 0.15);
+                }
+
+                &.active {
+                    background-color: inherit;
+                    color: var(--primary-text);
+                    border-bottom: 2px solid var(--primary-text);
+
+                    &:hover {
+                        background-color: rgba(50, 47, 42, 0.15);
+                    }
                 }
             }
         }
-
-        .button {
-            border-radius: 12px;
-            font-size: 16px;
-            width: 100px;
-            height: 50px;
-            text-transform: capitalize;
-            box-shadow: none;
-            transition: color 0.3s ease-in-out;
-            background-color: var(--accent);
-            color: #FCFDFF;
-        }
     }
+}
 
-    @media (max-width: 1100px) {
+
+@media (max-width: 1100px) {
+    .header {
         justify-content: center;
 
-        .nav-list, .button {
-            display: none;
-        }
+        .toolbar {
+            .nav-content {
+                display: none;
+            }
 
-        .logo {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            .menu-icon {
+                display: flex;
+            }
         }
     }
 }

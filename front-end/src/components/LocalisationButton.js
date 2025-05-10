@@ -26,7 +26,7 @@ export default function LocalisationButton() {
     };
 
     return (
-        <Box>
+        <Box sx={{ alignSelf: 'center' }}>
             <Tooltip title={t("chooseLanguage")} arrow placement="bottom">
                 <IconButton onClick={handleClick} sx={{ p: 0, borderRadius: "50%" }}>
                     <img
@@ -50,7 +50,8 @@ export default function LocalisationButton() {
                 transformOrigin={{
                     vertical: "top",
                     horizontal: "right",
-                }}            >
+                }}
+            >
                 {languages.map(language => (
                     language.code !== i18n.language &&
                     <MenuItem key={language.code} onClick={() => handleClose(language.code)}>

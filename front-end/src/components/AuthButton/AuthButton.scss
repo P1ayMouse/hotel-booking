@@ -1,0 +1,12 @@
+@import '../../styles/variables.scss';
+
+.auth-button {
+  border-radius: 12px;
+  font-size: 16px;
+  height: 50px;
+  text-transform: capitalize !important;
+  box-shadow: none;
+  transition: color 0.3s ease-in-out;
+  background-color: var(--accent) !important;
+  color: #FCFDFF;
+}
