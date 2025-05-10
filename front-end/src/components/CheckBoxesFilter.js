@@ -15,18 +15,18 @@ export default function CheckBoxesFilter({title, elements, filterKey}) {
 
     const handleCheckboxChange = (itemKey) => {
         if (selectedFilters.includes(itemKey)) {
-            selectedFilters = selectedFilters.filter(key => key !== itemKey)
+            selectedFilters = selectedFilters.filter(key => key !== itemKey);
         }
         else {
             selectedFilters.push(itemKey);
         }
 
         const newParams = new URLSearchParams(searchParams);
-        if (!selectedFilters.length) newParams.delete(filterKey);
-        else newParams.set(filterKey, selectedFilters.join(","));
+        if (!selectedFilters.length) {newParams.delete(filterKey);}
+        else {newParams.set(filterKey, selectedFilters.join(","));}
         newParams.delete("page");
         setSearchParams(newParams);
-    }
+    };
 
     return (
         <Box display="flex" flexDirection="column">
@@ -40,12 +40,12 @@ export default function CheckBoxesFilter({title, elements, filterKey}) {
                         key={item.key}
                         label={item.label}
                         control={
-                        <Checkbox
-                            onChange={() => handleCheckboxChange(item.key)}
-                            icon={<CheckMark />}
-                            checkedIcon={<CheckedMark />}
-                            checked={selectedFilters.includes(item.key)}
-                        />}
+                            <Checkbox
+                                onChange={() => handleCheckboxChange(item.key)}
+                                icon={<CheckMark />}
+                                checkedIcon={<CheckedMark />}
+                                checked={selectedFilters.includes(item.key)}
+                            />}
                     />
                 ))}
             </FormGroup>

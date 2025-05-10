@@ -5,7 +5,7 @@ const initialState = {
     hotels: [],
     hotel: {},
     loading: false,
-    error: '',
+    error: "",
 };
 
 const hotelSlices = createSlice({
@@ -16,12 +16,12 @@ const hotelSlices = createSlice({
             //fetchHotels
             .addCase(fetchHotels.pending, (state) => {
                 state.loading = true;
-                state.error = '';
+                state.error = "";
             })
             .addCase(fetchHotels.fulfilled, (state, action) => {
                 state.loading = false;
                 state.hotels = action.payload;
-                state.error = '';
+                state.error = "";
             })
             .addCase(fetchHotels.rejected, (state, action) => {
                 state.loading = false;
@@ -30,12 +30,12 @@ const hotelSlices = createSlice({
             //bookHotel
             .addCase(bookHotel.pending, (state) => {
                 state.loading = true;
-                state.error = '';
+                state.error = "";
             })
             .addCase(bookHotel.fulfilled, (state, action) => {
                 state.loading = false;
                 state.hotels.push(action.payload);
-                state.error = '';
+                state.error = "";
             })
             .addCase(bookHotel.rejected, (state, action) => {
                 state.loading = false;
@@ -44,11 +44,11 @@ const hotelSlices = createSlice({
             //updateBook
             .addCase(updateBook.pending, (state) => {
                 state.loading = true;
-                state.error = '';
+                state.error = "";
             })
             .addCase(updateBook.fulfilled, (state, action) => {
                 state.loading = false;
-                state.error = '';
+                state.error = "";
 
                 const index = state.hotels.findIndex((hotel) => hotel.id === action.payload.id);
                 if (index !== -1) {
@@ -62,11 +62,11 @@ const hotelSlices = createSlice({
             //deleteBook
             .addCase(deleteBook.pending, (state) => {
                 state.loading = true;
-                state.error = '';
+                state.error = "";
             })
             .addCase(deleteBook.fulfilled, (state, action) => {
                 state.loading = false;
-                state.error = '';
+                state.error = "";
 
                 const index = state.hotels.findIndex((hotel) => hotel.id === action.payload.id);
                 if (index !== -1) {
@@ -80,17 +80,17 @@ const hotelSlices = createSlice({
             //fetchHotel
             .addCase(fetchHotel.pending, (state) => {
                 state.loading = true;
-                state.error = '';
+                state.error = "";
             })
             .addCase(fetchHotel.fulfilled, (state, action) => {
                 state.loading = false;
                 state.hotel = action.payload;
-                state.error = '';
+                state.error = "";
             })
             .addCase(fetchHotel.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
-            })
+            });
     },
 });
 

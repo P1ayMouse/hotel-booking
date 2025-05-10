@@ -4,7 +4,7 @@ import {fetchDestinations} from "../thunks/destinationsThunk";
 const initialState = {
     destinations: [],
     loading: false,
-    error: '',
+    error: "",
 };
 
 const destinationSlices = createSlice({
@@ -15,17 +15,17 @@ const destinationSlices = createSlice({
             //fetchDestinations
             .addCase(fetchDestinations.pending, (state) => {
                 state.loading = true;
-                state.error = '';
+                state.error = "";
             })
             .addCase(fetchDestinations.fulfilled, (state, action) => {
                 state.loading = false;
                 state.destinations = action.payload;
-                state.error = '';
+                state.error = "";
             })
             .addCase(fetchDestinations.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
-            })
+            });
     },
 });
 

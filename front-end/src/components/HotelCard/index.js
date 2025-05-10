@@ -1,7 +1,7 @@
 import {Box, Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
 import {PlaceOutlined, StarRate} from "@mui/icons-material";
 
-import "./HotelCard.scss"
+import "./HotelCard.scss";
 import {NavLink} from "react-router-dom";
 
 export default function HotelCard({hotel}) {
@@ -19,7 +19,7 @@ export default function HotelCard({hotel}) {
                     <CardMedia
                         component="img"
                         className="card-img"
-                        image={hotel.image_url ? `/assets/img/hotels/${hotel.image_url}` : `/assets/img/none.png`}
+                        image={hotel.image_url ? `/assets/img/hotels/${hotel.image_url}` : "/assets/img/none.png"}
                         alt={hotel.name}
                         onError={(e) => e.target.src = "/assets/img/none.png"}
                     />
@@ -44,5 +44,5 @@ export default function HotelCard({hotel}) {
                 </CardContent>
             </CardActionArea>
         </Card>
-    )
+    );
 }

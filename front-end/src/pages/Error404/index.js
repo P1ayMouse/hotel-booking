@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-import "./Error404.scss"
+import "./Error404.scss";
 
 export default function Error404() {
     return (
@@ -14,5 +14,5 @@ export default function Error404() {
                 </Typography>
             </Box>
         </Box>
-    )
+    );
 }

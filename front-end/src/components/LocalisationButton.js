@@ -21,12 +21,12 @@ export default function LocalisationButton() {
     };
 
     const handleClose = (lang) => {
-        if (lang) i18n.changeLanguage(lang);
+        if (lang) {i18n.changeLanguage(lang);}
         setAnchorEl(null);
     };
 
     return (
-        <Box sx={{ alignSelf: 'center' }}>
+        <Box sx={{ alignSelf: "center" }}>
             <Tooltip title={t("chooseLanguage")} arrow placement="bottom">
                 <IconButton onClick={handleClick} sx={{ p: 0, borderRadius: "50%" }}>
                     <img

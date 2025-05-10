@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 import { FacebookIcon, GoogleIcon, XIcon } from "../../components/CustomIcons";
 import RegisterForm from "./RegisterForm";
-import "./Register.scss"
+import "./Register.scss";
 
 export default function Register() {
     const { t } = useTranslation();
@@ -24,10 +24,10 @@ export default function Register() {
 
             <RegisterForm />
 
-            <Divider sx={{ my: 3, '&::before, &::after': { borderTopStyle: 'dashed', borderColor: "var(--primary-text)" } }}>
+            <Divider sx={{ my: 3, "&::before, &::after": { borderTopStyle: "dashed", borderColor: "var(--primary-text)" } }}>
                 <Typography
                     variant="overline"
-                    sx={{ color: 'var(--primary-text)', fontWeight: 'fontWeightMedium', fontStyle: 'capitalize' }}
+                    sx={{ color: "var(--primary-text)", fontWeight: "fontWeightMedium", fontStyle: "capitalize" }}
                 >
                     {t("or")}
                 </Typography>
@@ -45,5 +45,5 @@ export default function Register() {
                 </IconButton>
             </Box>
         </Box>
-    )
+    );
 }

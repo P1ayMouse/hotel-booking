@@ -21,7 +21,7 @@ export default function HotelsPriceFilter() {
     const [sliderValue, setSliderValue] = useState(price || [hotelMinPrice, hotelMaxPrice]);
 
     const sliderHandleChange = (e, newValue, activeThumb) => {
-        if (!Array.isArray(newValue)) return;
+        if (!Array.isArray(newValue)) {return;}
         if (activeThumb === 0) {
             setSliderValue([Math.min(newValue[0], newValue[1] - priceDiff), newValue[1]]);
         } else {
@@ -110,7 +110,7 @@ export default function HotelsPriceFilter() {
                                 }}
                             />
 
-                            <Remove sx={{ alignSelf: 'center', color: "#999" }} />
+                            <Remove sx={{ alignSelf: "center", color: "#999" }} />
 
                             <TextField
                                 className={styles.priceField}

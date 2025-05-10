@@ -112,10 +112,10 @@ export function RightArrowIcon(props) {
     return (
         <SvgIcon {...props}>
             <svg xmlns="http://www.w3.org/2000/svg"
-                 width="8"
-                 height="12"
-                 viewBox="0 0 8 12"
-                 fill="none"
+                width="8"
+                height="12"
+                viewBox="0 0 8 12"
+                fill="none"
             >
                 <path
                     d="M0.5 1L6.5 6L0.5 11"

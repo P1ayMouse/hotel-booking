@@ -11,7 +11,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import * as yup from "yup";
 
-import imageShowcase from "../../assets/img/image-showcase.jpg"
+import imageShowcase from "../../assets/img/image-showcase.jpg";
 
 export default function HomeSearchForm() {
     const bookingSearchData = {
@@ -42,25 +42,25 @@ export default function HomeSearchForm() {
     const validationSchema = yup.object().shape({
         destination: yup
             .string()
-            .required(t("location") + " " + t("isRequired")),
+            .required(`${t("location")  } ${  t("isRequired")}`),
         checkIn: yup
             .date()
             .nullable()
             .min(
                 tomorrow,
-                t("cannotBeLess") + " " + dayjs(tomorrow).format("D.MM.YYYY")
+                `${t("cannotBeLess")  } ${  dayjs(tomorrow).format("D.MM.YYYY")}`
             )
             .test(
-                'checkIn-required-if-checkOut',
-                t("checkIn") + " " + t("isRequired"),
+                "checkIn-required-if-checkOut",
+                `${t("checkIn")  } ${  t("isRequired")}`,
                 function (value) {
                     const { checkOut } = this.parent;
                     return !(checkOut && !value);
                 }
             )
             .test(
-                'checkIn-max-checkOut',
-                t("thereCanBeNoMore") + " " + t("checkOut"),
+                "checkIn-max-checkOut",
+                `${t("thereCanBeNoMore")  } ${  t("checkOut")}`,
                 function (value) {
                     const { checkOut } = this.parent;
                     return !(value && checkOut && dayjs(value).isAfter(dayjs(checkOut)));
@@ -71,19 +71,19 @@ export default function HomeSearchForm() {
             .nullable()
             .min(
                 tomorrow,
-                t("cannotBeLess") + " " + dayjs(tomorrow).format("D.MM.YYYY")
+                `${t("cannotBeLess")  } ${  dayjs(tomorrow).format("D.MM.YYYY")}`
             )
             .test(
-                'checkOut-required-if-checkIn',
-                t("checkOut") + " " + t("isRequired"),
+                "checkOut-required-if-checkIn",
+                `${t("checkOut")  } ${  t("isRequired")}`,
                 function (value) {
                     const { checkIn } = this.parent;
                     return !(checkIn && !value);
                 }
             )
             .test(
-                'checkOut-after-checkIn',
-                t("thereCanBeNoLess") + " " + t("checkIn"),
+                "checkOut-after-checkIn",
+                `${t("thereCanBeNoLess")  } ${  t("checkIn")}`,
                 function (value) {
                     const { checkIn } = this.parent;
                     return !(value && checkIn && dayjs(value).isBefore(dayjs(checkIn)));
@@ -94,8 +94,8 @@ export default function HomeSearchForm() {
     const handleSubmit = (values) => {
         const searchParams = new URLSearchParams();
         searchParams.append("destination", values.destination);
-        if (values.checkIn) searchParams.append("checkIn", values.checkIn);
-        if (values.checkOut) searchParams.append("checkOut", values.checkOut);
+        if (values.checkIn) {searchParams.append("checkIn", values.checkIn);}
+        if (values.checkOut) {searchParams.append("checkOut", values.checkOut);}
 
         navigate(`/hotels?${searchParams.toString()}`);
     };
@@ -160,7 +160,7 @@ export default function HomeSearchForm() {
                                         )}
                                     />
                                     {touched.destination && errors.destination && (
-                                        <FormHelperText className="error">
+                                        <FormHelperText className="status--error">
                                             {errors.destination}
                                         </FormHelperText>
                                     )}
@@ -185,7 +185,7 @@ export default function HomeSearchForm() {
                                                 }}
                                             />
                                             {touched.checkIn && errors.checkIn && (
-                                                <FormHelperText className="error">
+                                                <FormHelperText className="status--error">
                                                     {errors.checkIn}
                                                 </FormHelperText>
                                             )}
@@ -209,7 +209,7 @@ export default function HomeSearchForm() {
                                                 }}
                                             />
                                             {touched.checkOut && errors.checkOut && (
-                                                <FormHelperText className="error" flex={2}>
+                                                <FormHelperText className="status--error" flex={2}>
                                                     {errors.checkOut}
                                                 </FormHelperText>
                                             )}

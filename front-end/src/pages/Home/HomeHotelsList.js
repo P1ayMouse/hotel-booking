@@ -29,7 +29,7 @@ export default function HomeHotelsList() {
                         {t("monthHotelsBottom")}
                     </Typography>
                 </Box>
-                <Button variant="contained" className="button" onClick={() => {navigate("/hotels")}}>
+                <Button variant="contained" className="button" onClick={() => {navigate("/hotels");}}>
                     {t("viewAll")}
                 </Button>
             </Box>

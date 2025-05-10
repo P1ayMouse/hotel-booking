@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import {
     AppBar, Toolbar, Typography, IconButton, Box, List, ListItemButton, ListItemText, Divider, Drawer
 } from "@mui/material";
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 
 import {ReactComponent as Logo} from "../../assets/img/Logo.svg";
 import {ReactComponent as FooterLogo} from "../../assets/img/Logo-footer.svg";
@@ -14,7 +14,7 @@ import LocalisationButton from "../LocalisationButton";
 import ThemeButton from "../ThemeButton";
 import MailForm from "../MailForm";
 
-import "./index.scss"
+import "./index.scss";
 import {useEffect, useState} from "react";
 import { fetchUserProfile } from "../../store/thunks/authThunk";
 import AuthButton from "../AuthButton";
@@ -72,7 +72,7 @@ export default function LayoutComponent() {
             label: t("favorite"),
             key: "/favorite-hotels",
         }
-    ]
+    ];
 
     const footerLinksList = [
         {
@@ -126,7 +126,7 @@ export default function LayoutComponent() {
                 }
             ]
         }
-    ]
+    ];
 
     return (
         <Box data-theme={theme} className={"layout"}>
@@ -162,7 +162,7 @@ export default function LayoutComponent() {
                                 disableRipple
                                 disableTouchRipple
                                 sx={{
-                                    '&:hover': { backgroundColor: 'transparent', cursor: 'default' },
+                                    "&:hover": { backgroundColor: "transparent", cursor: "default" },
                                     marginLeft:"8px"
                                 }}
                             >
@@ -172,7 +172,7 @@ export default function LayoutComponent() {
                                 disableRipple
                                 disableTouchRipple
                                 sx={{
-                                    '&:hover': { backgroundColor: 'transparent', cursor: 'default' },
+                                    "&:hover": { backgroundColor: "transparent", cursor: "default" },
                                 }}
                             >
                                 <ThemeButton />
@@ -187,8 +187,8 @@ export default function LayoutComponent() {
                         slotProps={{
                             paper:
                                 {
-                                    'data-theme': theme,
-                                    sx: {backgroundColor: 'var(--primary-bg)', color: 'var(--primary-text)'}
+                                    "data-theme": theme,
+                                    sx: {backgroundColor: "var(--primary-bg)", color: "var(--primary-text)"}
                                 }
                         }}
                     >
@@ -215,7 +215,7 @@ export default function LayoutComponent() {
                                     disableTouchRipple
                                     sx={{
                                         justifyContent: "center",
-                                        '&:hover': {backgroundColor: 'transparent', cursor: 'default'}
+                                        "&:hover": {backgroundColor: "transparent", cursor: "default"}
                                     }}
                                 >
                                     <LocalisationButton />
@@ -225,7 +225,7 @@ export default function LayoutComponent() {
                                     disableTouchRipple
                                     sx={{
                                         justifyContent: "center",
-                                        '&:hover': {backgroundColor: 'transparent', cursor: 'default'}
+                                        "&:hover": {backgroundColor: "transparent", cursor: "default"}
                                     }}
                                 >
                                     <ThemeButton />

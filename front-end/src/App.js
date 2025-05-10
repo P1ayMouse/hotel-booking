@@ -24,9 +24,9 @@ const router = createBrowserRouter([
         errorElement: <div>Something went wrong!</div>,
         children: [
             {
-              index: true,
-              element: <PrivateRoute><Home/></PrivateRoute>,
-              loader: hotelsAndDestinationsLoader
+                index: true,
+                element: <PrivateRoute><Home/></PrivateRoute>,
+                loader: hotelsAndDestinationsLoader
             },
             {
                 path: "/login",

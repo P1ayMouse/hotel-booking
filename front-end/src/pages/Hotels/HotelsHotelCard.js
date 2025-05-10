@@ -31,7 +31,7 @@ export default function HotelsHotelCard({hotel}) {
                 <Box sx={{ position: "relative" }}>
                     <CardMedia
                         component="img"
-                        image={hotel.image_url ? `/assets/img/hotels/${hotel.image_url}` : `/assets/img/none.png`}
+                        image={hotel.image_url ? `/assets/img/hotels/${hotel.image_url}` : "/assets/img/none.png"}
                         alt={hotel.name}
                         onError={(e) => e.target.src = "/assets/img/none.png"}
                         className={styles.cardImg}
@@ -84,5 +84,5 @@ export default function HotelsHotelCard({hotel}) {
                 </CardContent>
             </Card>
         </Box>
-    )
+    );
 }

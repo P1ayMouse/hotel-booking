@@ -122,6 +122,7 @@
   "phoneNumber": "Phone number",
   "reservedHotels": "Reserved hotels",
   "favouritePlaces": "Favourite places",
+  "successSubscription": "Subscription to {{email}} successful!",
   "features-list": {
     "breakfast": "Breakfast included",
     "all-inclusive": "All-inclusive",

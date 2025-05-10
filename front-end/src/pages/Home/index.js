@@ -1,4 +1,4 @@
-import "./Home.scss"
+import "./Home.scss";
 
 import HomeSearchForm from "./HomeSearchForm";
 import HomeHotelsList from "./HomeHotelsList";
@@ -15,5 +15,5 @@ export default function Home() {
             {hotels.length > 3 && <HomeHotelsList />}
             <HomeHotelBenefits />
         </Box>
-    )
+    );
 }

@@ -4,7 +4,7 @@ import styles from "./HotelFeature.module.scss";
 
 export default function HotelFeature (feature) {
     const featureDetails = features.find(item => item.key === feature);
-    if (!featureDetails) return null;
+    if (!featureDetails) {return null;}
 
     return (
         <Typography key={featureDetails.key} className={styles.hotelFeature}>

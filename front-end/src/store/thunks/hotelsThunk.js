@@ -1,11 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
 import {createAsyncThunk} from "@reduxjs/toolkit";
 
 const url = process.env.REACT_APP_BASE_URL;
 const hotelGetUrl = process.env.REACT_APP_URL_GET_HOTELS;
 const hotelPostUrl = process.env.REACT_APP_URL_POST_HOTELS;
 
-export const fetchHotels = createAsyncThunk('hotels/fetchHotels', async (_, {rejectWithError}) => {
+export const fetchHotels = createAsyncThunk("hotels/fetchHotels", async (_, {rejectWithError}) => {
     try {
         const response = await axios.get(url + hotelGetUrl);
 
@@ -14,12 +14,12 @@ export const fetchHotels = createAsyncThunk('hotels/fetchHotels', async (_, {rej
     catch (e) {
         return rejectWithError(e.response?.data?.message || e.message);
     }
-})
+});
 
-export const bookHotel = createAsyncThunk('hotels/bookHotels', async (newBook, {rejectWithError}) => {
+export const bookHotel = createAsyncThunk("hotels/bookHotels", async (newBook, {rejectWithError}) => {
     try {
         const response = await axios.post(url + hotelPostUrl, newBook, {
-            headers: { 'Content-Type': 'application/json' },
+            headers: { "Content-Type": "application/json" },
         });
 
         return response.data;
@@ -27,9 +27,9 @@ export const bookHotel = createAsyncThunk('hotels/bookHotels', async (newBook, {
     catch (e) {
         return rejectWithError(e.message);
     }
-})
+});
 
-export const updateBook = createAsyncThunk('hotels/updateBook', async (updatedBook, {rejectWithError}) => {
+export const updateBook = createAsyncThunk("hotels/updateBook", async (updatedBook, {rejectWithError}) => {
     try {
         const response = await axios.put(`${url + hotelPostUrl}/${updatedBook.id}`, updatedBook);
 
@@ -38,9 +38,9 @@ export const updateBook = createAsyncThunk('hotels/updateBook', async (updatedBo
     catch (e) {
         return rejectWithError(e.message);
     }
-})
+});
 
-export const deleteBook = createAsyncThunk('hotels/deleteBook', async (bookId, {rejectWithError}) => {
+export const deleteBook = createAsyncThunk("hotels/deleteBook", async (bookId, {rejectWithError}) => {
     try {
         await axios.delete(`${url + hotelPostUrl}/${bookId}`);
 
@@ -49,15 +49,15 @@ export const deleteBook = createAsyncThunk('hotels/deleteBook', async (bookId, {
     catch (e) {
         return rejectWithError(e.message);
     }
-})
+});
 
-export const fetchHotel = createAsyncThunk('hotels/hotel', async (id, {rejectWithValue}) => {
+export const fetchHotel = createAsyncThunk("hotels/hotel", async (id, {rejectWithValue}) => {
     try {
-        const response = await axios.get(`${url + hotelGetUrl}/hotel/${id}`)
+        const response = await axios.get(`${url + hotelGetUrl}/hotel/${id}`);
 
         return response.data;
     }
     catch (e) {
         return rejectWithValue(e.response?.data?.error || e.message);
     }
-})
+});

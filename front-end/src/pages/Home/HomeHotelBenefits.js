@@ -1,9 +1,9 @@
 import { Box, Typography } from "@mui/material";
 
-import {ReactComponent as Benefit} from "../../assets/img/Benefit.svg"
-import {ReactComponent as SmartCar} from "../../assets/icons/smart-car.svg"
-import {ReactComponent as Weight} from "../../assets/icons/weight.svg"
-import {ReactComponent as Reserve} from "../../assets/icons/reserve.svg"
+import {ReactComponent as Benefit} from "../../assets/img/Benefit.svg";
+import {ReactComponent as SmartCar} from "../../assets/icons/smart-car.svg";
+import {ReactComponent as Weight} from "../../assets/icons/weight.svg";
+import {ReactComponent as Reserve} from "../../assets/icons/reserve.svg";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -28,7 +28,7 @@ export default function HomeHotelBenefits() {
             title: "Free Breakfast",
             body: "Whose does not like meal in the morning, breakfast is free."
         }
-    ]
+    ];
     return (
         <Box className="home-hotel-benefits">
             <Benefit className="benefit-img" />

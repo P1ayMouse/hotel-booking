@@ -11,7 +11,7 @@ export default function ThemeButton() {
 
     const toggleTheme = () => {
         dispatch(toggle());
-    }
+    };
 
     return (
         <Box>

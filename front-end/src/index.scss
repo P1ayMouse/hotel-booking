@@ -15,11 +15,17 @@ h1 {
     font-size: 44px;
 }
 
-.error {
+.status {
     display: block;
-    position: static;
-    color: #D32F2F !important;
     font-size: 14px;
     font-weight: bold;
-    margin: 8px 0 -14px 16px !important;
+    margin: 8px 0 -14px 16px;
+
+    &--error {
+        color: #D32F2F !important;
+    }
+
+    &--success {
+        color: #14b600 !important;
+    }
 }

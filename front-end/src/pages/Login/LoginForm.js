@@ -21,7 +21,7 @@ export default function LoginForm() {
     const navigate = useNavigate();
     const { t, i18n } = useTranslation();
 
-    const from = location.state?.from || '/';
+    const from = location.state?.from || "/";
 
     const userInfo = {
         email: "example@gmail.com",
@@ -37,7 +37,7 @@ export default function LoginForm() {
         password: yup
             .string()
             .required(`${t("password")} ${t("isRequired")}`)
-    })
+    });
 
     const handleLogin = async (values) => {
         const resultAction = await dispatch(loginUser(values));
@@ -86,7 +86,7 @@ export default function LoginForm() {
                             className="login-field"
                             name="password"
                             label={t("password")}
-                            type={showPassword ? 'text' : 'password'}
+                            type={showPassword ? "text" : "password"}
                             value={values.password}
                             onChange={handleChange}
                             error={touched.password && Boolean(errors.password)}
@@ -97,7 +97,7 @@ export default function LoginForm() {
                                         <InputAdornment position="end">
                                             <IconButton
                                                 onClick={() => setShowPassword(!showPassword)}
-                                                sx={{color: 'var(--primary-text)'}}
+                                                sx={{color: "var(--primary-text)"}}
                                                 edge="end"
                                             >
                                                 {showPassword ? <Visibility/> : <VisibilityOff/>}
@@ -121,5 +121,5 @@ export default function LoginForm() {
                 </Form>
             )}
         </Formik>
-    )
+    );
 }

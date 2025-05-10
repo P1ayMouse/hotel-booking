@@ -1,11 +1,11 @@
-import {IconButton, Divider, Link, Box, Typography} from '@mui/material';
+import {IconButton, Divider, Link, Box, Typography} from "@mui/material";
 
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import {FacebookIcon, GoogleIcon, XIcon} from "../../components/CustomIcons";
 import LoginForm from "./LoginForm";
-import "./Login.scss"
+import "./Login.scss";
 
 export default function Login() {
     const { t } = useTranslation();
@@ -23,10 +23,10 @@ export default function Login() {
 
             <LoginForm />
 
-            <Divider sx={{ my: 3, '&::before, &::after': { borderTopStyle: 'dashed', borderColor: "var(--primary-text)" } }}>
+            <Divider sx={{ my: 3, "&::before, &::after": { borderTopStyle: "dashed", borderColor: "var(--primary-text)" } }}>
                 <Typography
                     variant="overline"
-                    sx={{ color: 'var(--primary-text)', fontWeight: 'fontWeightMedium', fontStyle: 'capitalize' }}
+                    sx={{ color: "var(--primary-text)", fontWeight: "fontWeightMedium", fontStyle: "capitalize" }}
                 >
                     {t("or")}
                 </Typography>

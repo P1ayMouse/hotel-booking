@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 
 import { Box, Button, TextField, MenuItem, InputAdornment, IconButton, Alert } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import Grid from '@mui/material/Grid2';
+import Grid from "@mui/material/Grid2";
 
 import * as yup from "yup";
 
@@ -53,12 +53,12 @@ export default function RegisterForm() {
         gender: yup
             .string()
             .required(`${t("gender")} ${t("isRequired")}`)
-    })
+    });
 
     const handleSubmit = async (values) => {
         const resultAction = await dispatch(registerUser(values));
         if (registerUser.fulfilled.match(resultAction)) {
-            navigate('/login');
+            navigate("/login");
         }
     };
 
@@ -101,7 +101,7 @@ export default function RegisterForm() {
                                     className="register-field"
                                     name="password"
                                     label={t("password")}
-                                    type={showPassword ? 'text' : 'password'}
+                                    type={showPassword ? "text" : "password"}
                                     value={values.password}
                                     onChange={handleChange}
                                     error={touched.password && Boolean(errors.password)}
@@ -112,7 +112,7 @@ export default function RegisterForm() {
                                                 <InputAdornment position="end">
                                                     <IconButton
                                                         onClick={() => setShowPassword(!showPassword)}
-                                                        sx={{color: 'var(--primary-text)'}}
+                                                        sx={{color: "var(--primary-text)"}}
                                                         edge="end"
                                                     >
                                                         {showPassword ? <Visibility/> : <VisibilityOff/>}

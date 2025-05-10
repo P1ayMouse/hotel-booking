@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import {Box, Typography} from "@mui/material";
 
-import "../styles/variables.scss"
+import "../styles/variables.scss";
 import HotelCard from "../components/HotelCard";
 import {useTranslation} from "react-i18next";
 
@@ -31,5 +31,5 @@ export default function FavoriteHotels() {
                 ))}
             </Box>
         </Box>
-    )
+    );
 }

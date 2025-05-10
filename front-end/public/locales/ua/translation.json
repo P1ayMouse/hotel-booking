@@ -121,6 +121,7 @@
   "phoneNumber": "Номер телефону",
   "reservedHotels": "Зарезервовані готелі",
   "favouritePlaces": "Улюблені місця",
+  "successSubscription": "{{email}} успішно підписано на розсилку!",
   "features-list": {
     "breakfast": "Сніданок включено",
     "all-inclusive": "Все включено",

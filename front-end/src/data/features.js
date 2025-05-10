@@ -41,4 +41,4 @@ export const features = [
         key: "gym",
         icon: <FitnessCenterRounded />
     }
-]
+];

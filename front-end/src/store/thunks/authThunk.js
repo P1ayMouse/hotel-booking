@@ -1,58 +1,58 @@
-import axios from 'axios';
+import axios from "axios";
 
 import {createAsyncThunk} from "@reduxjs/toolkit";
 
 const url = process.env.REACT_APP_BASE_URL;
 const userLoginUrl = process.env.REACT_APP_URL_USER_LOGIN;
 
-export const registerUser = createAsyncThunk('user/register', async ({username, email, password, gender, age}, {rejectWithValue}) => {
+export const registerUser = createAsyncThunk("user/register", async ({username, email, password, gender, age}, {rejectWithValue}) => {
     try {
-        const response = await axios.post(url + "/register", { username, email, password, gender, age });
+        const response = await axios.post(`${url  }/register`, { username, email, password, gender, age });
 
         return response.data;
     }
     catch (e) {
-        return rejectWithValue(e.response?.data?.error || e.message) || 'Registration failed';
+        return rejectWithValue(e.response?.data?.error || e.message) || "Registration failed";
     }
-})
+});
 
-export const loginUser = createAsyncThunk('user/login', async ({email, password}, {rejectWithValue, dispatch}) => {
+export const loginUser = createAsyncThunk("user/login", async ({email, password}, {rejectWithValue, dispatch}) => {
     try {
         const response = await axios.post(url + userLoginUrl, { email, password });
 
-        localStorage.setItem('token', response.data.token);
+        localStorage.setItem("token", response.data.token);
 
         dispatch(fetchUserProfile());
 
         return response.data;
     }
     catch (e) {
-        return rejectWithValue(e.response?.data?.error || e.message) || 'Login failed';
+        return rejectWithValue(e.response?.data?.error || e.message) || "Login failed";
     }
-})
+});
 
-export const fetchUserProfile = createAsyncThunk('user/fetchProfile', async (_, { rejectWithValue }) => {
-        try {
-            const token = localStorage.getItem('token');
+export const fetchUserProfile = createAsyncThunk("user/fetchProfile", async (_, { rejectWithValue }) => {
+    try {
+        const token = localStorage.getItem("token");
 
-            const response = await axios.get(url + '/profile', {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
+        const response = await axios.get(`${url  }/profile`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
 
-            return response.data;
-        } catch (e) {
-            return rejectWithValue(e.response?.data?.error || e.message) || 'Profile fetch failed';
-        }
+        return response.data;
+    } catch (e) {
+        return rejectWithValue(e.response?.data?.error || e.message) || "Profile fetch failed";
     }
+}
 );
 
-export const toggleLikeHotel = createAsyncThunk('user/toggleLikeHotel', async (hotelId, {rejectWithError}) => {
+export const toggleLikeHotel = createAsyncThunk("user/toggleLikeHotel", async (hotelId, {rejectWithError}) => {
     try {
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem("token");
 
-        const response = await axios.put(url + "/profile/toggle-like-hotel", {hotelId},
+        const response = await axios.put(`${url  }/profile/toggle-like-hotel`, {hotelId},
             {
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -65,4 +65,4 @@ export const toggleLikeHotel = createAsyncThunk('user/toggleLikeHotel', async (h
     catch (e) {
         return rejectWithError(e.response?.data?.message || e.message);
     }
-})
+});

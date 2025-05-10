@@ -3,7 +3,7 @@ import {fetchUserProfile, loginUser, registerUser, toggleLikeHotel} from "../thu
 
 const initialState = {
     user: null,
-    token: localStorage.getItem('token') || null,
+    token: localStorage.getItem("token") || null,
     error: "",
     loading: true,
 };
@@ -15,7 +15,7 @@ const authSlices = createSlice({
         logout: (state) => {
             state.user = null;
             state.token = null;
-            localStorage.removeItem('token');
+            localStorage.removeItem("token");
         },
         clearError: (state) => {
             state.error = "";
@@ -26,12 +26,12 @@ const authSlices = createSlice({
             // login
             .addCase(loginUser.pending, (state) => {
                 state.loading = true;
-                state.error = '';
+                state.error = "";
             })
             .addCase(loginUser.fulfilled, (state, action) => {
                 state.loading = false;
                 state.token = action.payload.token;
-                state.error = '';
+                state.error = "";
             })
             .addCase(loginUser.rejected, (state, action) => {
                 state.loading = false;

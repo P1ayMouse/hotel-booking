@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { Box, Button, TextField, MenuItem } from "@mui/material";
-import Grid from '@mui/material/Grid2';
+import Grid from "@mui/material/Grid2";
 
 export default function RegisterForm() {
     const { t } = useTranslation();
@@ -69,7 +69,7 @@ export default function RegisterForm() {
                         type="submit"
                         variant="contained"
                         className="profile-button"
-                        onClick={() => {navigate("/favorite-hotels")}}
+                        onClick={() => {navigate("/favorite-hotels");}}
                     >
                         {t("favouritePlaces")}
                     </Button>
@@ -80,7 +80,7 @@ export default function RegisterForm() {
                         type="submit"
                         variant="contained"
                         className="profile-button"
-                        onClick={() => {navigate("/reserved-hotels")}}
+                        onClick={() => {navigate("/reserved-hotels");}}
                     >
                         {t("reservedHotels")}
                     </Button>

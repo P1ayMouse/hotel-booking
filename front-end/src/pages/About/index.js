@@ -1,6 +1,6 @@
 import {Box, Button, Typography} from "@mui/material";
-import Grid from '@mui/material/Grid2';
-import "./About.scss"
+import Grid from "@mui/material/Grid2";
+import "./About.scss";
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 
@@ -53,5 +53,5 @@ export default function About() {
                 </Grid>
             </Grid>
         </Box>
-    )
+    );
 }

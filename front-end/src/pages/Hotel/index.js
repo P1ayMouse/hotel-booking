@@ -18,8 +18,8 @@ export default function Hotel() {
         dispatch(fetchHotel(id));
     }, [id, dispatch]);
 
-    if (loading) return <Typography className="hotel-page__loading">{t("loading")}</Typography>;
-    if (error) return <Typography className="hotel-page__error">{t(`server-errors.${error}`)}</Typography>;
+    if (loading) {return <Typography className="hotel-page__loading">{t("loading")}</Typography>;}
+    if (error) {return <Typography className="hotel-page__error">{t(`server-errors.${error}`)}</Typography>;}
 
     const { name, phone_number, image_url, description, address, hotel_rating, price, features = [] } = hotel;
     const bgImage = image_url ? `/assets/img/hotels/${image_url}` : "/assets/img/none.png";

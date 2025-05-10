@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Typography } from "@mui/material";
 
 import HotelsList from "./HotelsList";
-import "./Hotels.scss"
+import "./Hotels.scss";
 import HotelsTopFilter from "./HotelsTopFilter";
 import HotelsLeftFilter from "./HotelsLeftFilter";
 
@@ -35,5 +35,5 @@ export default function Hotels() {
                 <HotelsList />
             </Box>
         </Box>
-    )
+    );
 }
