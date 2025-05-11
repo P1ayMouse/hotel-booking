@@ -1,7 +1,9 @@
-import { useTranslation } from "react-i18next";
 import { Checkbox, FormControlLabel, FormGroup, Box, Typography } from "@mui/material";
+
+import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 import {ReactComponent as CheckedMark} from "../assets/icons/CheckedMark.svg";
 import {ReactComponent as CheckMark} from "../assets/icons/CheckMark.svg";
@@ -35,7 +37,7 @@ export default function CheckBoxesFilter({title, elements, filterKey}) {
             </Typography>
 
             <FormGroup>
-                {elements.slice(0,itemsNum).map((item) => (
+                {elements.slice(0, itemsNum).map((item) => (
                     <FormControlLabel
                         key={item.key}
                         label={item.label}
@@ -57,3 +59,14 @@ export default function CheckBoxesFilter({title, elements, filterKey}) {
         </Box>
     );
 }
+
+CheckBoxesFilter.propTypes = {
+    title: PropTypes.string.isRequired,
+    elements: PropTypes.arrayOf(
+        PropTypes.shape({
+            key: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+    filterKey: PropTypes.string.isRequired,
+};

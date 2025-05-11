@@ -1,14 +1,15 @@
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
+import { toggleLikeHotel } from "../../store/thunks/authThunk";
+import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { NavLink } from "react-router-dom";
 import { PlaceOutlined, Star } from "@mui/icons-material";
 
-import { toggleLikeHotel } from "../../store/thunks/authThunk";
 import { FavoriteIcon, RightArrowIcon } from "../../components/CustomIcons";
-import styles from "./HotelsHotelCard.module.scss";
 import HotelFeature from "../../components/HotelFeature";
+import styles from "./HotelsHotelCard.module.scss";
 
 export default function HotelsHotelCard({hotel}) {
     const { t } = useTranslation();
@@ -89,3 +90,17 @@ export default function HotelsHotelCard({hotel}) {
         </Box>
     );
 }
+
+HotelsHotelCard.propTypes = {
+    hotel: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        name: PropTypes.string.isRequired,
+        image_url: PropTypes.string,
+        address: PropTypes.string.isRequired,
+        city: PropTypes.string.isRequired,
+        state: PropTypes.string,
+        features: PropTypes.arrayOf(PropTypes.string).isRequired,
+        hotel_rating: PropTypes.number,
+        price: PropTypes.number.isRequired,
+    }).isRequired,
+};

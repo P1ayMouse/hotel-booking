@@ -1,6 +1,6 @@
-import {Navigate, useLocation} from "react-router-dom";
-
-import {useSelector} from "react-redux";
+import { Navigate, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
 export default function PrivateRoute({ children }) {
     const location = useLocation();
@@ -12,3 +12,7 @@ export default function PrivateRoute({ children }) {
 
     return user ? children : <Navigate to="/login" replace state={{ from: location.pathname }} />;
 }
+
+PrivateRoute.propTypes = {
+    children: PropTypes.node.isRequired,
+};

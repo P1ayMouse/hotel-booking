@@ -1,8 +1,10 @@
-import {Box, Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
-import {PlaceOutlined, StarRate} from "@mui/icons-material";
+import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
+import { PlaceOutlined, StarRate } from "@mui/icons-material";
+
+import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import "./HotelCard.scss";
-import {NavLink} from "react-router-dom";
 
 export default function HotelCard({hotel}) {
     return (
@@ -46,3 +48,15 @@ export default function HotelCard({hotel}) {
         </Card>
     );
 }
+
+HotelCard.propTypes = {
+    hotel: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        name: PropTypes.string.isRequired,
+        image_url: PropTypes.string,
+        address: PropTypes.string.isRequired,
+        state: PropTypes.string,
+        hotel_rating: PropTypes.number,
+        price: PropTypes.number.isRequired,
+    }).isRequired,
+};

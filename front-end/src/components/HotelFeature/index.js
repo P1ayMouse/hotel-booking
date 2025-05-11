@@ -1,6 +1,7 @@
 import { features } from "../../data/features";
 import {Typography} from "@mui/material";
 import styles from "./HotelFeature.module.scss";
+import PropTypes from "prop-types";
 
 export default function HotelFeature (feature) {
     const featureDetails = features.find(item => item.key === feature);
@@ -12,4 +13,8 @@ export default function HotelFeature (feature) {
             {featureDetails.label}
         </Typography>
     );
+};
+
+HotelFeature.propTypes = {
+    feature: PropTypes.string.isRequired,
 };

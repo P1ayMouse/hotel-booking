@@ -2,11 +2,12 @@ import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 
 import { logout } from "../../store/slices/authSlices";
 import "./AuthButton.scss";
 
-export default function AuthButton({ user, fullWidth = false }) {
+export default function AuthButton({ user, fullWidth }) {
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -27,3 +28,12 @@ export default function AuthButton({ user, fullWidth = false }) {
         </Button>
     );
 }
+
+AuthButton.propTypes = {
+    user: PropTypes.object,
+    fullWidth: PropTypes.bool,
+};
+
+AuthButton.defaultProps = {
+    fullWidth: false,
+};
