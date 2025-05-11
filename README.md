@@ -1,7 +1,6 @@
 ## Overview
 Hotee Site is a responsive web application for searching and booking hotels. It provides users with an intuitive interface to browse hotel options, apply advanced filters, view detailed information, and save favorites.
 
----
 
 ## Features
 ### Search & Filtering
@@ -24,7 +23,6 @@ Hotee Site is a responsive web application for searching and booking hotels. It 
 ### Form Validation
 - Date pickers, budget fields, and other inputs validated with Formik & Yup.
 
----
 
 ## Technology Stack
 
@@ -50,8 +48,6 @@ Hotee Site is a responsive web application for searching and booking hotels. It 
 - **Data Storage**: JSON files (`users-db.json`, `db.json`)
 - **Env Variables**: dotenv
 
-
----
 
 ## Getting Started
 ### Prerequisites
