@@ -5,11 +5,8 @@ import pluginHooks from "eslint-plugin-react-hooks";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  // 1) Рекомендовані правила для React
   pluginReact.configs.flat.recommended,
-  // 2) Базові правила JavaScript
   js.configs.recommended,
-  // 3) Кастомна конфігурація та overrides
   {
     files: ["**/*.{js,jsx,mjs,cjs}"],
     languageOptions: {
