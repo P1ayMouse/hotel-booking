@@ -65,7 +65,7 @@
         flex-wrap: wrap;
         margin-top: 16px;
         gap: 18px;
-        max-width: 40%;
+        max-width: 60%;
       }
     }
 
@@ -130,6 +130,7 @@
 
         .hotelRating {
           font-size: 14px;
+
           svg {
             font-size: 16px;
           }
@@ -156,8 +157,11 @@
         .hotelRating {
           font-size: 13px;
 
-          svg { font-size: 14px; }
+          svg {
+            font-size: 14px;
+          }
         }
+
         .taxesAndCharges {
           font-size: 10px;
         }

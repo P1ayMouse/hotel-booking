@@ -15,6 +15,7 @@
         color: grey;
       }
     }
+
     &:not(:disabled) {
       .pagination-icon {
         color: var(--primary-text);
@@ -43,7 +44,7 @@
       text-transform: none;
       border-radius: 4px;
       border: 1px solid #C3731C;
-      background: var(--Neutral-White, #FFF);
+      background: #FFF;
       color: #C3731C;
       padding: 8px 16px;
       font-size: 16px;
@@ -52,7 +53,7 @@
       justify-content: center;
 
       .rounded-favorite-icon {
-        background: var(--Neutral-Black, #000);
+        background: #000;
         font-size: 20px;
         opacity: 0.7;
         border-radius: 50%;

@@ -48,7 +48,7 @@
                 color: #959493;
 
                 &:hover {
-                    border-bottom: 2px solid rgba(50, 47, 42, 0.15);
+                    border-bottom: 2px solid rgb(50 47 42 / 15%);
                 }
 
                 &.active {
@@ -57,7 +57,7 @@
                     border-bottom: 2px solid var(--primary-text);
 
                     &:hover {
-                        background-color: rgba(50, 47, 42, 0.15);
+                        background-color: rgb(50 47 42 / 15%);
                     }
                 }
             }
@@ -83,9 +83,7 @@
 }
 
 .content {
-    /* цей рядок забезпечить, що .content "розтягнеться" */
     flex: 1 0 auto;
-    /* у вас був flex-grow:1 – воно теж працює, але краще явно flex */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -99,7 +97,6 @@
     margin-top: 20px;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     background-color: #1A1A1A;
-
 
     .footer-container {
         width: 85%;
@@ -126,6 +123,7 @@
                     margin-bottom: 8px;
                     color: #FCFDFF;
                 }
+
                 .newsletter-subtitle {
                     font-size: 16px;
                     font-weight: 100;
@@ -303,7 +301,7 @@
         padding: 0 28px;
 
         &:hover {
-            background-color: darken(#7F2203, 5%);
+            opacity: 0.95;
         }
     }
 }

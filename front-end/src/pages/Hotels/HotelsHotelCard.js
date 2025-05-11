@@ -57,7 +57,7 @@ export default function HotelsHotelCard({hotel}) {
                                 {hotel.address}, {hotel.city} {hotel.state && `(${hotel.state})`}
                             </Typography>
                             <Box className={styles.hotelFeaturesContainer}>
-                                {hotel.features.map((feature) => HotelFeature(feature))}
+                                {hotel.features.slice(0, 4).map((feature) => HotelFeature(feature))}
                             </Box>
                         </Box>
                     </Box>
