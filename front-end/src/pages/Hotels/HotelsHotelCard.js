@@ -27,6 +27,9 @@ export default function HotelsHotelCard({hotel}) {
                 key={hotel.id}
                 variant="outlined"
                 className={styles.hotelCard}
+                sx={{
+                    backgroundColor: "var(--second-bg)"
+                }}
             >
                 <Box sx={{ position: "relative" }}>
                     <CardMedia

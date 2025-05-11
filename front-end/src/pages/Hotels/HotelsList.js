@@ -73,7 +73,6 @@ export default function HotelsList() {
             break;
     }
 
-    // Pagination navigation
     const itemsPerPage = 5;
     const totalPages = Math.ceil(sortedHotels.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -120,39 +119,49 @@ export default function HotelsList() {
                 )}
             </Box>
 
-            { totalPages > 0 &&
-                <Box display="flex" justifyContent="space-between" alignItems="center" marginTop={4}>
+            {totalPages > 0 && (
+                <Box className="pagination-controls">
                     <Button
-                        sx={{width: "290px", height: "48px", textTransform: "none", borderRadius: "4px", border: "1px solid #C3731C", background: "var(--Neutral-White, #FFF)", color: "#C3731C", padding: "8px 16px", fontSize: "16px"}}
+                        className="favorites-button"
                         variant="outlined"
                         onClick={() => navigate("/favorite-hotels")}
                     >
                         {t("favouritePlacesList")}
                         <FavoriteIcon
-                            className={styles.favoriteImg}
-                            sx={{background: "var(--Neutral-Black, #000)", fontSize: "20px", opacity: "0.7", borderRadius: "50%", padding: "4px", marginLeft: "10px"}}
+                            className={`${styles.favoriteImg} rounded-favorite-icon`}
                         />
                     </Button>
 
-                    <Box display="flex" justifyContent="center" alignItems="center">
+                    <Box className="page-nav">
                         <IconButton onClick={goToFirstPage} disabled={currentPage === 1}>
                             <KeyboardDoubleArrowLeft className="pagination-icon" />
                         </IconButton>
-                        <IconButton onClick={handlePrev} disabled={currentPage === 1}>
+                        <IconButton
+                            onClick={handlePrev}
+                            disabled={currentPage === 1}
+                        >
                             <NavigateBefore className="pagination-icon" />
                         </IconButton>
-                        <Typography marginX={2}>
+
+                        <Typography className="page-number">
                             {currentPage} / {totalPages}
                         </Typography>
-                        <IconButton onClick={handleNext} disabled={currentPage === totalPages}>
+
+                        <IconButton
+                            onClick={handleNext}
+                            disabled={currentPage === totalPages}
+                        >
                             <NavigateNext className="pagination-icon" />
                         </IconButton>
-                        <IconButton onClick={goToLastPage} disabled={currentPage === totalPages}>
+                        <IconButton
+                            onClick={goToLastPage}
+                            disabled={currentPage === totalPages}
+                        >
                             <KeyboardDoubleArrowRight className="pagination-icon" />
                         </IconButton>
                     </Box>
                 </Box>
-            }
+            )}
         </Box>
     );
 }

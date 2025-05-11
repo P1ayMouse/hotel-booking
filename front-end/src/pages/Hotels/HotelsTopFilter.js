@@ -4,10 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { Form, Formik } from "formik";
-import {
-    Button, Box, Typography, FormHelperText, Select, MenuItem, InputAdornment,
-    TextField, Autocomplete
-} from "@mui/material";
+import { Button, Box, FormHelperText, Select, MenuItem, InputAdornment, TextField, Autocomplete } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
@@ -20,7 +17,6 @@ import * as yup from "yup";
 
 export default function HotelsTopFilter() {
     const { t, i18n } = useTranslation();
-
     const [searchParams, setSearchParams] = useSearchParams();
 
     const hotelsFilterData = {
@@ -142,134 +138,121 @@ export default function HotelsTopFilter() {
             >
                 {({ errors, touched, setFieldValue, values, resetForm }) => (
                     <Form className={styles.form}>
-                        <Box display="flex" flexDirection="column" gap={3}>
-                            <Box display="flex" flexDirection="row" gap={3} width="100%">
-                                <Box>
-                                    <Typography gutterBottom>
-                                        {t("location")}
-                                    </Typography>
-                                    <Autocomplete
-                                        clearOnBlur
-                                        freeSolo
-                                        inputValue={query}
-                                        options={filteredDestinations.slice(0, 5)}
-                                        filterOptions={(options) => options}
-                                        getOptionLabel={(option) => option.label || ""}
-                                        isOptionEqualToValue={(option, value) => option.value === value.value}
-                                        value={
-                                            destinations.find((destination) => destination.value === values.destination) || null
-                                        }
-                                        onInputChange={(e, newInputValue) => setQuery(newInputValue)}
-                                        onChange={(e, newValue) =>
-                                            setFieldValue("destination", newValue ? newValue.value : "")
-                                        }
-                                        className={styles.field}
-                                        renderInput={(params) => (
-                                            <TextField
-                                                {...params}
-                                                fullWidth
-                                                error={touched.destination && Boolean(errors.destination)}
-                                                placeholder={t("chooseCity")}
-                                                slotProps={{
-                                                    input: {
-                                                        ...params.InputProps,
-                                                        startAdornment: (
-                                                            <InputAdornment position="start" sx={{ marginLeft: "6px" }}>
-                                                                <Hotel />
-                                                            </InputAdornment>
-                                                        ),
-                                                    }
-                                                }}
-                                            />
-                                        )}
-                                    />
+                        <Box className={styles.leftColumn}>
+                            <Box className={styles.fieldsRow}>
+                                <Autocomplete
+                                    className={styles.field}
+                                    clearOnBlur
+                                    freeSolo
+                                    inputValue={query}
+                                    options={filteredDestinations.slice(0, 5)}
+                                    filterOptions={(options) => options}
+                                    getOptionLabel={(option) => option.label || ""}
+                                    isOptionEqualToValue={(option, value) => option.value === value.value}
+                                    value={
+                                        destinations.find((destination) => destination.value === values.destination) || null
+                                    }
+                                    onInputChange={(e, newInputValue) => setQuery(newInputValue)}
+                                    onChange={(e, newValue) =>
+                                        setFieldValue("destination", newValue ? newValue.value : "")
+                                    }
+                                    renderInput={(params) => (
+                                        <TextField
+                                            {...params}
+                                            fullWidth
+                                            error={touched.destination && Boolean(errors.destination)}
+                                            placeholder={t("chooseCity")}
+                                            slotProps={{
+                                                input: {
+                                                    ...params.InputProps,
+                                                    startAdornment: (
+                                                        <InputAdornment position="start" sx={{ marginLeft: "6px" }}>
+                                                            <Hotel />
+                                                        </InputAdornment>
+                                                    ),
+                                                }
+                                            }}
+                                        />
+                                    )}
+                                />
 
-                                    {touched.destination && errors.destination && (
+                                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                    <DatePicker
+                                        className={`${styles.field} ${styles.dateField}`}
+                                        format="D MMM YYYY"
+                                        open={openCheckIn}
+                                        onOpen={() => setCheckInOpen(true)}
+                                        onClose={() => setCheckInOpen(false)}
+                                        value={values.checkIn ? dayjs(values.checkIn) : null}
+                                        onChange={(newValue) =>
+                                            setFieldValue(
+                                                "checkIn",
+                                                newValue ? newValue.format("YYYY-MM-DD") : ""
+                                            )
+                                        }
+                                        slotProps={{
+                                            textField: {
+                                                error: touched.checkIn && Boolean(errors.checkIn),
+                                                placeholder: t("chooseDate"),
+                                                InputProps: {
+                                                    readOnly: true,
+                                                    startAdornment: (
+                                                        <InputAdornment position="start">
+                                                            <Calendar />
+                                                        </InputAdornment>
+                                                    ),
+                                                    endAdornment: null,
+                                                },
+                                                onClick: () => setCheckInOpen(true),
+                                            },
+                                        }}
+                                    />
+                                    {touched.checkIn && errors.checkIn && (
                                         <FormHelperText className="status--error">
-                                            {errors.destination}
+                                            {errors.checkIn}
                                         </FormHelperText>
                                     )}
-                                </Box>
-                                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                    <Box>
-                                        <Typography gutterBottom>
-                                            {t("checkIn")}
-                                        </Typography>
-                                        <DatePicker
-                                            className={styles.field}
-                                            format="D MMM YYYY"
-                                            open={openCheckIn}
-                                            onOpen={() => setCheckInOpen(true)}
-                                            onClose={() => setCheckInOpen(false)}
-                                            value={values.checkIn ? dayjs(values.checkIn) : null}
-                                            onChange={(newValue) =>
-                                                setFieldValue("checkIn", newValue ? newValue.format("YYYY-MM-DD") : "")
-                                            }
-                                            slotProps={{
-                                                textField: {
-                                                    error: touched.checkIn && Boolean(errors.checkIn),
-                                                    placeholder: t("chooseDate"),
-                                                    InputProps: {
-                                                        readOnly: true,
-                                                        startAdornment: (
-                                                            <InputAdornment position="start">
-                                                                <Calendar />
-                                                            </InputAdornment>
-                                                        ),
-                                                        endAdornment: null,
-                                                    },
-                                                    onClick: () => setCheckInOpen(true),
+
+                                    <DatePicker
+                                        className={`${styles.field} ${styles.dateField}`}
+                                        format="D MMM YYYY"
+                                        open={openCheckOut}
+                                        onOpen={() => setCheckOutOpen(true)}
+                                        onClose={() => setCheckOutOpen(false)}
+                                        value={values.checkOut ? dayjs(values.checkOut) : null}
+                                        onChange={(newValue) =>
+                                            setFieldValue(
+                                                "checkOut",
+                                                newValue ? newValue.format("YYYY-MM-DD") : ""
+                                            )
+                                        }
+                                        slotProps={{
+                                            textField: {
+                                                error: touched.checkOut && Boolean(errors.checkOut),
+                                                placeholder: t("chooseDate"),
+                                                InputProps: {
+                                                    readOnly: true,
+                                                    startAdornment: (
+                                                        <InputAdornment position="start">
+                                                            <Calendar />
+                                                        </InputAdornment>
+                                                    ),
+                                                    endAdornment: null,
                                                 },
-                                            }}
-                                        />
-                                        {touched.checkIn && errors.checkIn && (
-                                            <FormHelperText className="status--error">
-                                                {errors.checkIn}
-                                            </FormHelperText>
-                                        )}
-                                    </Box>
-                                    <Box>
-                                        <Typography gutterBottom>
-                                            {t("checkOut")}
-                                        </Typography>
-                                        <DatePicker
-                                            className={styles.field}
-                                            format="D MMM YYYY"
-                                            open={openCheckOut}
-                                            onOpen={() => setCheckOutOpen(true)}
-                                            onClose={() => setCheckOutOpen(false)}
-                                            value={values.checkOut ? dayjs(values.checkOut) : null}
-                                            onChange={(newValue) =>
-                                                setFieldValue("checkOut", newValue ? newValue.format("YYYY-MM-DD") : "")
-                                            }
-                                            slotProps={{
-                                                textField: {
-                                                    error: touched.checkOut && Boolean(errors.checkOut),
-                                                    placeholder: t("chooseDate"),
-                                                    InputProps: {
-                                                        readOnly: true,
-                                                        startAdornment: (
-                                                            <InputAdornment position="start">
-                                                                <Calendar />
-                                                            </InputAdornment>
-                                                        ),
-                                                        endAdornment: null,
-                                                    },
-                                                    onClick: () => setCheckOutOpen(true),
-                                                },
-                                            }}
-                                        />
-                                        {touched.checkOut && errors.checkOut && (
-                                            <FormHelperText className="error" flex={2}>
-                                                {errors.checkOut}
-                                            </FormHelperText>
-                                        )}
-                                    </Box>
+                                                onClick: () => setCheckOutOpen(true),
+                                            },
+                                        }}
+                                    />
+                                    {touched.checkOut && errors.checkOut && (
+                                        <FormHelperText className="status--error">
+                                            {errors.checkOut}
+                                        </FormHelperText>
+                                    )}
                                 </LocalizationProvider>
                             </Box>
                             <Select
-                                variant="outlined"
                                 className={styles.field}
+                                variant="outlined"
                                 value={values.sortBy}
                                 onChange={(e) =>
                                     handleSortByChange(e, setFieldValue, searchParams, setSearchParams)
@@ -289,11 +272,15 @@ export default function HotelsTopFilter() {
                                 ))}
                             </Select>
                         </Box>
-                        <Box display="flex" flexDirection="column" gap={3} width="100%">
-                            <Button type="submit" variant="contained" style={{marginTop: "30px"}} className={styles.button}>
+                        <Box className={styles.buttonsContainer}>
+                            <Button type="submit" variant="contained" className={styles.button}>
                                 {t("search")}
                             </Button>
-                            <Button onClick={() => handleClear(resetForm)} variant="contained" className={styles.button}>
+                            <Button
+                                onClick={() => handleClear(resetForm)}
+                                variant="contained"
+                                className={styles.button}
+                            >
                                 {t("clear")}
                             </Button>
                         </Box>

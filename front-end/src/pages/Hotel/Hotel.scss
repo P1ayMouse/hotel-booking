@@ -55,9 +55,7 @@
     }
   }
 
-  &__about,
-  &__details,
-  &__features {
+  &__about, &__details, &__features {
     background-color: var(--second-bg);
     border-radius: 12px;
   }
@@ -138,10 +136,5 @@
     display: inline-flex;
     align-items: center;
     transition: box-shadow 0.2s, background-color 1s;
-
-    &:hover {
-      background-color: #efebe9;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
   }
 }

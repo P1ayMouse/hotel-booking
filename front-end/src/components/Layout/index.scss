@@ -83,12 +83,15 @@
 }
 
 .content {
-    flex-grow: 1;
+    /* цей рядок забезпечить, що .content "розтягнеться" */
+    flex: 1 0 auto;
+    /* у вас був flex-grow:1 – воно теж працює, але краще явно flex */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 16px;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
 }
 
 .footer {

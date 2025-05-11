@@ -6,63 +6,108 @@
     display: flex;
     flex-direction: row;
     gap: 15px;
+  }
 
-    .field {
-      width: 256px;
+  .leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
 
-      :global(.MuiOutlinedInput-root) {
-        background-color: #FFF;
-        color: var(--text-color, #959493);
-        border-radius: 4px;
+  .fieldsRow {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
 
-        input {
-          display: flex;
-          align-items: center;
-          font-weight: 300;
-          font-size: 14px;
-        }
+  .field {
+    width: 256px;
 
-        fieldset {
-          transition: border-color 0.3s ease-in-out;
-        }
-      }
+    :global(.MuiOutlinedInput-root) {
+      background-color: #fff;
+      color: var(--text-color, #959493);
+      border-radius: 4px;
 
-      :global(.MuiOutlinedInput-root.Mui-error) {
-        fieldset {
-          border-color: #FF4D4D;
-        }
-      }
-
-      :global(.MuiInputLabel-root.Mui-error) {
-        color: #FF4D4D;
-      }
-
-      :global(.MuiSelect-select) {
-        background-color: #FFF;
-        color: var(--text-color, #959493);
-        display: flex;
-        align-items: center;
+      input {
         font-weight: 300;
         font-size: 14px;
       }
+
+      fieldset {
+        transition: border-color 0.3s ease-in-out;
+      }
     }
 
+    :global(.MuiOutlinedInput-root.Mui-error) fieldset {
+      border-color: #ff4d4d;
+    }
 
-    .button {
-      align-self: flex-end;
-      justify-self: flex-end;
-      font-size: 16px;
+    :global(.MuiInputLabel-root.Mui-error) {
+      color: #ff4d4d;
+    }
+
+    :global(.MuiSelect-select) {
+      background-color: #fff;
+      color: var(--text-color, #959493);
       font-weight: 300;
+      font-size: 14px;
+    }
+  }
+
+  .dateField {
+    width: 256px;
+  }
+
+  .buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .button {
+    align-self: flex-end;
+    font-size: 16px;
+    font-weight: 300;
+    width: 100%;
+    max-width: 182px;
+    height: 56px;
+    padding: 10px;
+    border-radius: 4px;
+    text-transform: capitalize;
+    box-shadow: none;
+    background-color: #c3731c;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+  }
+
+  @media (max-width: 950px) {
+    .form {
+      flex-direction: column;
+    }
+
+    .fieldsRow {
+      flex-wrap: wrap;
+    }
+
+    .field {
       width: 100%;
-      max-width: 182px;
-      height: 56px;
-      padding: 10px;
-      border-radius: 4px;
-      text-transform: capitalize;
-      box-shadow: none;
-      transition: color 0.3s ease-in-out;
-      background-color: #C3731C;
-      color: #FFFFFF;
+    }
+
+    .dateField {
+      width: calc(50% - 8px);
+    }
+
+    .buttonsContainer {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .button {
+        max-width: none;
+      }
     }
   }
 }

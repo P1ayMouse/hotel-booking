@@ -7,17 +7,17 @@ import {
 } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 
-import {ReactComponent as Logo} from "../../assets/img/Logo.svg";
-import {ReactComponent as FooterLogo} from "../../assets/img/Logo-footer.svg";
+import { ReactComponent as Logo } from "../../assets/img/Logo.svg";
+import { ReactComponent as FooterLogo } from "../../assets/img/Logo-footer.svg";
 
 import LocalisationButton from "../LocalisationButton";
 import ThemeButton from "../ThemeButton";
 import MailForm from "../MailForm";
+import AuthButton from "../AuthButton";
 
 import "./index.scss";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { fetchUserProfile } from "../../store/thunks/authThunk";
-import AuthButton from "../AuthButton";
 
 export default function LayoutComponent() {
     const dispatch = useDispatch();
@@ -181,6 +181,7 @@ export default function LayoutComponent() {
                         </List>
                     </Box>
                     <Drawer
+                        disableScrollLock
                         anchor="left"
                         open={isMobileMenuOpen}
                         onClose={() => toggleMobileMenu(false)}
