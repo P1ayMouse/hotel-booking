@@ -8,7 +8,7 @@ Hotee Site is a responsive web application for searching and booking hotels. It 
 - Adaptive layout for desktop and mobile devices.
 
 ### Hotel Card View
--Photo gallery, key amenities, rating, and a special button to like a hotel. 
+- Photo gallery, key amenities, rating, and a special button to like a hotel. 
 
 ### User Accounts & Auth
 - Registration & login with JWT. 
@@ -54,7 +54,6 @@ Hotee Site is a responsive web application for searching and booking hotels. It 
 - Node.js (v22.13.1) & npm (10.9.2)
 - Git
 
----
 
 ### Frontend Setup
 1. Install the npm:
@@ -78,7 +77,6 @@ Hotee Site is a responsive web application for searching and booking hotels. It 
     ```
 4. Open: http://localhost:3000
 
----
 
 ### Backend Setup
 1. Install the npm:
