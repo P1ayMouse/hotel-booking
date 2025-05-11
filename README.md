@@ -5,20 +5,24 @@ Hotee Site is a responsive web application for searching and booking hotels. It 
 
 ## Features
 ### Search & Filtering
-* Select destination, check-in/check-out dates, price range, rating, and more.
-* Adaptive layout for desktop and mobile devices.
+- Select destination, check-in/check-out dates, price range, rating, and more. 
+- Adaptive layout for desktop and mobile devices.
 
 ### Hotel Card View
-* Photo gallery, key amenities, rating, and a special button to like a hotel. 
+-Photo gallery, key amenities, rating, and a special button to like a hotel. 
+
+### User Accounts & Auth
+- Registration & login with JWT. 
+- Profile endpoint to fetch user data (username, email, age, gender, liked/reserved hotels).
 
 ### Favorites Management
-* Logged-in users can save and revisit their liked hotels.
+- Logged-in users can save and revisit their liked hotels.
 
 ### Internationalization
-* Multi-language support via react-i18next.
+- Multi-language support via react-i18next.
 
 ### Form Validation
-* Date pickers, budget fields, and other inputs validated with Formik & Yup.
+- Date pickers, budget fields, and other inputs validated with Formik & Yup.
 
 ---
 
